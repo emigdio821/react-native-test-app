@@ -1,0 +1,27 @@
+{
+  "extends": [
+    "standard-with-typescript",
+    "plugin:jsx-a11y/recommended",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:react-native/all",
+    "prettier"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "react-native/react-native": true
+  },
+  "plugins": ["react", "react-native"],
+  "rules": {
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "react-native/no-raw-text": "off",
+    "@typescript-eslint/strict-boolean-expressions": "off"
+    // "@typescript-eslint/no-misused-promises": "off"
+  }
+}
