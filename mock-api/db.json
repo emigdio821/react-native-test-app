@@ -1,0 +1,11 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "powder@arcane.com",
+      "password": "123123",
+      "imgUrl": "https://i.pinimg.com/474x/b4/44/06/b44406b163f1e54aa7408fb86d31bfb1.jpg"
+    }
+  ],
+  "categories": []
+}

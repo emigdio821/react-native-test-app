@@ -9,7 +9,7 @@ import { formatDate } from '@/lib/utils'
 const CategoryItemPage = () => {
   const { itemName, category, imgUrl, isBorrowed, returnDate } = useLocalSearchParams()
   const borrowed = isBorrowed === 'true'
-  const date = new Date(parseInt(returnDate as string) * 1000)
+  const date = new Date(returnDate as string)
   const returningDate = returnDate ? formatDate(date) : null
 
   function handleBorrowingProcess() {

@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { CATEGORY_DATA, type CategoryItem } from '@/apiMock/categories'
+import React, { useCallback, useEffect, useState } from 'react'
+import type { CategoryItem } from '@/types'
 import { router, useLocalSearchParams, useNavigation } from 'expo-router'
 import { ChevronRight, RabbitIcon as RabbitIc, RotateCwIcon, SearchIcon } from 'lucide-react-native'
 import { ActivityIndicator } from 'react-native'
@@ -12,12 +12,15 @@ import {
   ScrollView,
   styled,
   Text,
+  ToggleGroup,
   View,
   XStack,
   YGroup,
 } from 'tamagui'
 
 import { formatDate } from '@/lib/utils'
+import { useCategoryById } from '@/hooks/use-category-byid'
+import ErrorCard from '@/components/error-card'
 
 interface NotFoundCardProps {
   message?: string
@@ -51,42 +54,59 @@ const NotFoundCard = ({
 }
 
 const CategoryPage = () => {
-  const [isLoading, setLoading] = useState(true)
-  const [categoryItems, setCategoryItems] = useState<CategoryItem[]>([])
-  const [filteredItems, setFilteredItems] = useState<CategoryItem[]>([])
-  const { id, category } = useLocalSearchParams()
   const navigation = useNavigation()
+  const { id, category } = useLocalSearchParams()
+  const { data, error, isLoading, refetch } = useCategoryById(id as string)
+  const [filteredItems, setFilteredItems] = useState<CategoryItem[]>([])
+  const [filters, setFilters] = useState({
+    byName: '',
+    byStatus: '',
+  })
 
-  const handleFilterItem = (value: string) => {
-    const filtered = categoryItems.filter((item) =>
-      item.name.toLowerCase().includes(value.toLowerCase()),
-    )
+  const handleFilters = useCallback(() => {
+    if (data) {
+      let filterData = data.items
+      const byName = filters.byName
+      const byStatus = filters.byStatus
 
-    setFilteredItems(filtered)
-  }
+      if (byName) {
+        const filtered = filterData.filter((item) =>
+          item.name.toLowerCase().includes(byName.toLowerCase()),
+        )
+        filterData = filtered
+      }
+
+      if (byStatus) {
+        const filtered = filterData.filter((item) => {
+          switch (byStatus) {
+            case 'available':
+              return !item.isBorrowed
+            case 'unavailable':
+              return item.isBorrowed
+            default:
+              return true
+          }
+        })
+        filterData = filtered
+      }
+
+      setFilteredItems(filterData)
+    }
+  }, [data, filters.byName, filters.byStatus])
 
   useEffect(() => {
-    async function getItems() {
-      try {
-        await new Promise((resolve) => {
-          setTimeout(() => {
-            const data = CATEGORY_DATA.find((category) => category.id === parseInt(id as string))
-            const items = data?.items ?? []
-
-            setCategoryItems(items)
-            setFilteredItems(items)
-            resolve('cool')
-          }, 0)
-        })
-      } catch (err) {
-        console.error(err)
-      } finally {
-        setLoading(false)
-      }
-    }
     navigation.setOptions({ headerTitle: category ?? '' })
-    void getItems()
-  }, [category, id, navigation])
+  }, [category, navigation])
+
+  useEffect(() => {
+    if (data) {
+      setFilteredItems(data.items)
+    }
+  }, [data])
+
+  useEffect(() => {
+    handleFilters()
+  }, [handleFilters])
 
   if (isLoading) {
     return (
@@ -96,73 +116,99 @@ const CategoryPage = () => {
     )
   }
 
-  if (categoryItems.length === 0) {
+  if (error) {
+    return (
+      <ErrorCard
+        msg={error.message}
+        action={() => {
+          void refetch()
+        }}
+      />
+    )
+  }
+
+  if (!data) {
     return <NotFoundCard withSpacing />
   }
 
   return (
-    <View p="$2" gap="$2" flex={1}>
+    <View px="$2" pt="$2" gap="$2" flex={1}>
       <XStack w="100%" alignItems="center" justifyContent="flex-end">
         <Input
           flexGrow={1}
           placeholder="Search"
           paddingEnd="$8"
           onChangeText={(value) => {
-            handleFilterItem(value)
+            setFilters({ ...filters, byName: value })
           }}
         />
         <XStack paddingEnd="$3" position="absolute">
           <SearchIcon />
         </XStack>
       </XStack>
+
+      <ToggleGroup
+        size="$2"
+        type="single"
+        alignSelf="flex-end"
+        onValueChange={(value) => {
+          setFilters({ ...filters, byStatus: value })
+        }}
+      >
+        <ToggleGroup.Item value="available">
+          <Text fontSize="$1">Available</Text>
+        </ToggleGroup.Item>
+        <ToggleGroup.Item value="unavailable">
+          <Text fontSize="$1">Unavailable</Text>
+        </ToggleGroup.Item>
+      </ToggleGroup>
+
       {filteredItems.length > 0 ? (
-        <View bw={1} bc="$borderColor" br="$4" ov="hidden" mb="$12">
-          <ScrollView>
-            <YGroup>
-              {filteredItems.map((item) => (
-                <YGroup.Item key={item.id}>
-                  <ListItem
-                    onPress={() => {
-                      router.navigate({
-                        pathname: '/category/item/[id]',
-                        params: {
-                          category,
-                          id: item.id,
-                          imgUrl: item.imgUrl,
-                          itemName: item.name,
-                        },
-                      })
-                    }}
-                    pressTheme
-                    title={item.name}
-                    disabled={item.isBorrowed}
-                    iconAfter={<ChevronRight />}
-                    subTitle={
-                      <>
-                        {item.isBorrowed ? (
-                          <>
-                            <Text fontSize={12} color="$color05">
-                              Unavailable
-                            </Text>
-                            {item.returnDate != null && (
-                              <Text fontSize={12} color="$color05">
-                                Returning on {formatDate(new Date(item.returnDate * 1000))}
-                              </Text>
-                            )}
-                          </>
-                        ) : (
+        <ScrollView>
+          <YGroup mb="$6">
+            {filteredItems.map((item) => (
+              <YGroup.Item key={item.id}>
+                <ListItem
+                  onPress={() => {
+                    router.navigate({
+                      pathname: '/category/item/[id]',
+                      params: {
+                        category,
+                        id: item.id,
+                        imgUrl: item.imgUrl,
+                        itemName: item.name,
+                      },
+                    })
+                  }}
+                  pressTheme
+                  title={item.name}
+                  disabled={item.isBorrowed}
+                  iconAfter={<ChevronRight />}
+                  subTitle={
+                    <>
+                      {item.isBorrowed ? (
+                        <>
                           <Text fontSize={12} color="$color05">
-                            Available
+                            Unavailable
                           </Text>
-                        )}
-                      </>
-                    }
-                  />
-                </YGroup.Item>
-              ))}
-            </YGroup>
-          </ScrollView>
-        </View>
+                          {item.returnDate != null && (
+                            <Text fontSize={12} color="$color05">
+                              Returning on {formatDate(new Date(item.returnDate))}
+                            </Text>
+                          )}
+                        </>
+                      ) : (
+                        <Text fontSize={12} color="$color05">
+                          Available
+                        </Text>
+                      )}
+                    </>
+                  }
+                />
+              </YGroup.Item>
+            ))}
+          </YGroup>
+        </ScrollView>
       ) : (
         <NotFoundCard message="No items found" />
       )}

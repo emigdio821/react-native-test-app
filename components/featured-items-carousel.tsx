@@ -4,9 +4,9 @@ import { Image } from 'expo-image'
 import { router } from 'expo-router'
 import { ImageOffIcon as ImageOffIc } from 'lucide-react-native'
 import { Dimensions, FlatList, StyleSheet, TouchableOpacity } from 'react-native'
-import { Card, H3, H4, styled, View } from 'tamagui'
+import { Card, H3, H4, styled, Text, View } from 'tamagui'
 
-import { useCategories } from '@/hooks/use-categories'
+import { useFeaturedItems } from '@/hooks/use-featured-items'
 
 import ErrorCard from './error-card'
 
@@ -15,8 +15,8 @@ const BASE_SPACING = size['$0.75']
 const cardW = screenW - 100
 const cardH = 180
 
-const CategoriesCarousel = () => {
-  const { data, error, isLoading, refetch } = useCategories()
+const FeaturedItemsCarousel = () => {
+  const { data, error, isLoading, refetch } = useFeaturedItems()
 
   if (isLoading) {
     return (
@@ -40,7 +40,7 @@ const CategoriesCarousel = () => {
 
   return (
     <View gap="$2">
-      <H3 px="$2">Categories</H3>
+      <H3 px="$2">Featured items</H3>
       {data && data.length > 0 && (
         <FlatList
           horizontal
@@ -57,10 +57,14 @@ const CategoriesCarousel = () => {
               <TouchableOpacity
                 onPress={() => {
                   router.navigate({
-                    pathname: '/category/[id]',
+                    pathname: '/category/item/[id]',
                     params: {
+                      category: item.category,
                       id: item.id,
-                      category: item.name,
+                      imgUrl: item.imgUrl,
+                      itemName: item.name,
+                      isBorrowed: item.isBorrowed,
+                      returnDate: item.returnDate,
                     },
                   })
                 }}
@@ -68,8 +72,9 @@ const CategoriesCarousel = () => {
                 style={[styles.touchableCard, lastItemStyles]}
               >
                 <Card style={styles.card} w={cardW} h={cardH}>
-                  <Card.Footer p="$2">
+                  <Card.Footer p="$2" fd="column">
                     <H4 col="white">{item.name}</H4>
+                    <Text col="$white075">{item.category}</Text>
                   </Card.Footer>
                   <Card.Background>
                     <View style={styles.bgMask} />
@@ -124,4 +129,4 @@ const styles = StyleSheet.create({
   },
 })
 
-export default CategoriesCarousel
+export default FeaturedItemsCarousel
