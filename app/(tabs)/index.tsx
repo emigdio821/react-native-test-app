@@ -9,10 +9,11 @@ import { Link, router } from 'expo-router'
 import { WrenchIcon } from 'lucide-react-native'
 import { Button, H2, View, YStack } from 'tamagui'
 
-import ImageCarousel, { type ImageCareouselItem } from '@/components/image-carousel'
+import CategoriesCarousel from '@/components/categories-carousel'
+import MBCarousel from '@/components/most-borrowed-carousel'
 
 export default function Home() {
-  const handleCategoryNavigate = (item: ImageCareouselItem<Category>) => {
+  const handleCategoryNavigate = (item: Category) => {
     router.navigate({
       pathname: '/category/[id]',
       params: {
@@ -22,7 +23,7 @@ export default function Home() {
     })
   }
 
-  const handleItemNavigate = (item: ImageCareouselItem<MostBorrowedItem>) => {
+  const handleItemNavigate = (item: MostBorrowedItem) => {
     router.navigate({
       pathname: '/category/item/[id]',
       params: {
@@ -30,6 +31,8 @@ export default function Home() {
         id: item.id,
         imgUrl: item.imgUrl,
         itemName: item.name,
+        isBorrowed: item.isBorrowed,
+        returnDate: item.returnDate,
       },
     })
   }
@@ -39,10 +42,10 @@ export default function Home() {
       <View gap="$2">
         <YStack gap="$2">
           <H2 px="$2">Categories</H2>
-          <ImageCarousel onPress={handleCategoryNavigate} data={CATEGORIES} />
+          <CategoriesCarousel onPress={handleCategoryNavigate} data={CATEGORIES} />
 
           <H2 px="$2">Most borrowed</H2>
-          <ImageCarousel onPress={handleItemNavigate} titleSize={20} data={MOST_BORROWED} />
+          <MBCarousel onPress={handleItemNavigate} data={MOST_BORROWED} />
         </YStack>
       </View>
 

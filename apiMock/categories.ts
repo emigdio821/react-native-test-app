@@ -64,12 +64,25 @@ export const CATEGORIES: Category[] = [
 
 export const MOST_BORROWED: MostBorrowedItem[] = [
   {
+    id: 6,
+    name: 'World of Warcraft',
+    isBorrowed: true,
+    borrowedDate: 1704697200,
+    returnDate: 1725778800,
+    category: 'Games',
+    imgUrl:
+      'https://images.unsplash.com/photo-1612980848349-3e3e98730014?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8d29ybGQlMjBvZiUyMHdhcmNyYWZ0fGVufDB8fDB8fHww',
+  },
+  {
     id: 1,
     category: 'Tech',
     name: 'MacBook Pro 2021',
     isBorrowed: false,
     borrowedDate: null,
-    returnDate: null,},
+    returnDate: null,
+    imgUrl:
+      'https://images.unsplash.com/photo-1569770218135-bea267ed7e84?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bWFjYm9vayUyMHByb3xlbnwwfHwwfHx8MA%3D%3D',
+  },
   {
     id: 2,
     category: 'Tech',
@@ -125,6 +138,8 @@ export const TECH_ITEMS: CategoryItem[] = [
     isBorrowed: true,
     borrowedDate: 1704697200,
     returnDate: 1725778800,
+    imgUrl:
+      'https://images.unsplash.com/photo-1705332112231-4dff35a9587c?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cmF6ZXIlMjBtb3VzZXxlbnwwfHwwfHx8MA%3D%3D',
   },
   {
     id: 4,
@@ -132,6 +147,8 @@ export const TECH_ITEMS: CategoryItem[] = [
     isBorrowed: true,
     borrowedDate: 1704697200,
     returnDate: 1725778800,
+    imgUrl:
+      'https://images.unsplash.com/photo-1590602846581-7d3eec520d07?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fG1pY3xlbnwwfHwwfHx8MA%3D%3D',
   },
   {
     id: 5,
@@ -139,6 +156,8 @@ export const TECH_ITEMS: CategoryItem[] = [
     isBorrowed: true,
     borrowedDate: 1704697200,
     returnDate: 1725778800,
+    imgUrl:
+      'https://images.unsplash.com/photo-1595044426077-d36d9236d54a?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGtleWJvYXJkfGVufDB8fDB8fHww',
   },
   {
     id: 6,

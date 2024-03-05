@@ -1,29 +1,24 @@
 import React from 'react'
+import type { Category } from '@/apiMock/categories'
 import { blackA, size } from '@tamagui/themes'
 import { Image } from 'expo-image'
 import { ImageOffIcon as ImageOffIc } from 'lucide-react-native'
 import { Dimensions, FlatList, StyleSheet, TouchableOpacity } from 'react-native'
-import { Card, H3, styled, View } from 'tamagui'
+import { Card, H4, styled, View } from 'tamagui'
 
-export type ImageCareouselItem<T> = T & {
-  id: string | number
-  name: string
-  imgUrl?: string
-}
-
-interface ImageCarouselProps<T> {
-  data: Array<ImageCareouselItem<T>>
+interface ImageCarouselProps {
+  data: Category[]
   withTitle?: boolean
   itemWidth?: number
   itemHeight?: number
   titleSize?: number
-  onPress?: (dataItem: any) => void
+  onPress?: (dataItem: Category) => void
 }
 
 const { width: screenW } = Dimensions.get('window')
 const BASE_SPACING = size['$0.75']
 
-function ImageCarousel<T>(props: ImageCarouselProps<T>) {
+const CategoriesCarousel = (props: ImageCarouselProps) => {
   const { data, withTitle = true, onPress, itemWidth, itemHeight, titleSize } = props
   const cardW = screenW - (itemWidth ?? 100)
   const cardH = itemHeight ?? 180
@@ -51,9 +46,9 @@ function ImageCarousel<T>(props: ImageCarouselProps<T>) {
             <Card style={styles.card} w={cardW} h={cardH}>
               {withTitle && (
                 <Card.Footer p="$2">
-                  <H3 col="white" fontSize={titleSize ?? 24}>
+                  <H4 col="white" fontSize={titleSize}>
                     {item.name}
-                  </H3>
+                  </H4>
                 </Card.Footer>
               )}
               <Card.Background>
@@ -107,4 +102,4 @@ const styles = StyleSheet.create({
   },
 })
 
-export default ImageCarousel
+export default CategoriesCarousel

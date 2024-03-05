@@ -75,11 +75,12 @@ const DateTimePicker = (props: PickerProps) => {
           <Input
             readOnly
             flexGrow={1}
+            paddingEnd="$8"
             editable={false}
             pointerEvents="none"
             value={handleValue()}
           />
-          <XStack paddingRight={10} position="absolute">
+          <XStack paddingEnd="$3" position="absolute">
             {handleModeIcon()}
           </XStack>
         </XStack>

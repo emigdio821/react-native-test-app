@@ -1,11 +1,17 @@
 import React from 'react'
 import { Image } from 'expo-image'
 import { router, useLocalSearchParams } from 'expo-router'
-import { ImageOffIcon as ImageOffIc, SmilePlusIcon } from 'lucide-react-native'
+import { BanIcon, ImageOffIcon as ImageOffIc, SmilePlusIcon } from 'lucide-react-native'
 import { Button, Card, H3, styled, Text, View, YStack } from 'tamagui'
 
+import { formatDate } from '@/lib/utils'
+
 const CategoryItemPage = () => {
-  const { itemName, category, imgUrl } = useLocalSearchParams()
+  const { itemName, category, imgUrl, isBorrowed, returnDate } = useLocalSearchParams()
+  const borrowed = isBorrowed === 'true'
+  const date = new Date(parseInt(returnDate as string) * 1000)
+  const returningDate = returnDate ? formatDate(date) : null
+
   function handleBorrowingProcess() {
     router.navigate({
       pathname: '/(modals)/borrow-form',
@@ -32,9 +38,14 @@ const CategoryItemPage = () => {
         <YStack>
           <H3>{itemName}</H3>
           <Text color="$color05">{category}</Text>
+          {returningDate && <Text color="$color05">Returning on {returningDate}</Text>}
         </YStack>
-        <Button width="100%" onPress={handleBorrowingProcess} icon={<SmilePlusIcon />}>
-          I want to take it
+        <Button
+          disabled={borrowed}
+          onPress={handleBorrowingProcess}
+          icon={borrowed ? <BanIcon /> : <SmilePlusIcon />}
+        >
+          {borrowed ? 'Unavailable' : 'I want to take it'}
         </Button>
       </Card.Header>
     </Card>

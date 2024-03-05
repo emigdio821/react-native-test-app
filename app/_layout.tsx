@@ -15,8 +15,6 @@ void SplashScreen.preventAutoHideAsync()
 export default function RootLayout() {
   const [loaded] = useFonts({
     Inter: require('@tamagui/font-inter/otf/Inter-Medium.otf'),
-    InterMedium: require('@tamagui/font-inter/otf/Inter-Medium.otf'),
-    InterSemiBold: require('@tamagui/font-inter/otf/Inter-SemiBold.otf'),
     InterBold: require('@tamagui/font-inter/otf/Inter-Bold.otf'),
   })
 
@@ -49,7 +47,7 @@ function RootLayoutNav() {
           <Stack.Screen name="category/item/[id]" options={{ headerTitle: 'Item details' }} />
           <Stack.Screen
             name="(modals)/borrow-form"
-            options={{ headerTitle: 'Apply for borrowing', presentation: 'modal' }}
+            options={{ headerTitle: 'Borrow', presentation: 'modal' }}
           />
         </Stack>
       </ThemeProvider>
