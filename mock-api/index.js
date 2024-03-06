@@ -1,5 +1,20 @@
+const fs = require('fs')
 const { faker } = require('@faker-js/faker')
-const data = { users: [], categories: [], 'featured-items': [] }
+
+const defaultUser = {
+  id: '0',
+  email: 'powder@arcane.com',
+  password: '$2a$10$2WwIIqWtUP1oRwW26uLy.u3AOe19qnORfAAfV3W6VJUv0S/DbxsJe',
+  firstname: 'Powder',
+  lastname: 'Jinx',
+  imgUrl: 'https://i.pinimg.com/474x/b4/44/06/b44406b163f1e54aa7408fb86d31bfb1.jpg',
+}
+
+const data = {
+  categories: [],
+  'featured-items': [],
+  users: [defaultUser],
+}
 
 function generateCategoryItem(category) {
   const items = []
@@ -33,14 +48,14 @@ function generateMostBorrowedItems() {
   })
 }
 
-module.exports = () => {
+function generateData() {
   for (let i = 0; i < 10; i++) {
-    const user = {
-      id: i,
-      name: faker.person.fullName(),
-      email: faker.internet.email(),
-      imgUrl: faker.image.avatar(),
-    }
+    // const user = {
+    //   id: i,
+    //   name: faker.person.fullName(),
+    //   email: faker.internet.email(),
+    //   imgUrl: faker.image.avatar(),
+    // }
 
     const category = faker.commerce.department()
 
@@ -51,11 +66,19 @@ module.exports = () => {
       items: generateCategoryItem(category),
     }
 
-    data.users.push(user)
+    // data.users.push(user)
     data.categories.push(categories)
   }
 
   generateMostBorrowedItems()
 
+  fs.writeFileSync('db.json', JSON.stringify(data), (err) => {
+    if (err) throw err
+
+    console.log('Done writing')
+  })
+
   return data
 }
+
+generateData()

@@ -1,4 +1,4 @@
-// import '@tamagui/core/reset.css'
+// // import '@tamagui/core/reset.css'
 import React, { useEffect } from 'react'
 import { tamaguiConfig } from '@/tamagui.config'
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native'
@@ -16,7 +16,10 @@ void SplashScreen.preventAutoHideAsync()
 
 const queryClient = new QueryClient()
 
-export default function RootLayout() {
+export default function Root() {
+  const colorScheme = useColorScheme()
+  const theme = colorScheme ?? undefined
+
   const [loaded] = useFonts({
     // Inter: require('@tamagui/font-inter/otf/Inter-Medium.otf'),
     // InterBold: require('@tamagui/font-inter/otf/Inter-Bold.otf'),
@@ -33,31 +36,17 @@ export default function RootLayout() {
 
   if (!loaded) return null
 
-  return <RootLayoutNav />
-}
-
-function RootLayoutNav() {
-  const colorScheme = useColorScheme()
-  const theme = colorScheme ?? undefined
-
   return (
     <QueryClientProvider client={queryClient}>
       <TamaguiProvider config={tamaguiConfig} defaultTheme={theme}>
         <ThemeProvider value={theme === 'dark' ? DarkTheme : DefaultTheme}>
-          <Stack>
-            <Stack.Screen name="(tabs)" options={{ headerShown: false, headerTitle: 'Home' }} />
-            <Stack.Screen name="test-view" options={{ headerTitle: 'Test page' }} />
-            <Stack.Screen
-              name="(modals)/edit-profile"
-              options={{ presentation: 'modal', headerTitle: 'Edit profile' }}
-            />
-            <Stack.Screen name="category/[id]" options={{ headerTitle: '' }} />
-            <Stack.Screen name="category/item/[id]" options={{ headerTitle: 'Item details' }} />
-            <Stack.Screen
-              name="(modals)/borrow-form"
-              options={{ headerTitle: 'Borrow', presentation: 'modal' }}
-            />
-          </Stack>
+          <Stack
+            screenOptions={{
+              headerTitleStyle: {
+                fontFamily: 'InterBold',
+              },
+            }}
+          />
         </ThemeProvider>
       </TamaguiProvider>
       <DevToolsBubble />

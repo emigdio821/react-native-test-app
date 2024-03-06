@@ -10,11 +10,11 @@ export const useCategories = () => {
       const res = await axios.get<Category[]>(EP)
       return res.data
     } catch (err) {
-      let defaultErr = 'Something went wrong while fetching categories'
+      let errorMsg = 'Something went wrong while fetching categories'
       if (isAxiosError(err)) {
-        defaultErr = err.message
+        errorMsg = err.message
       }
-      throw new Error(defaultErr)
+      throw new Error(errorMsg)
     }
   }
 

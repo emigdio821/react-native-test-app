@@ -10,11 +10,11 @@ export const useFeaturedItems = () => {
       const res = await axios.get<CategoryItem[]>(EP)
       return res.data
     } catch (err) {
-      let defaultErr = 'Something went wrong while fetching featured items'
+      let errorMsg = 'Something went wrong while fetching featured items'
       if (isAxiosError(err)) {
-        defaultErr = err.message
+        errorMsg = err.message
       }
-      throw new Error(defaultErr)
+      throw new Error(errorMsg)
     }
   }
 

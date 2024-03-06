@@ -1,11 +1,5916 @@
 {
-  "users": [
+  "categories": [
+    {
+      "id": 0,
+      "name": "Computers",
+      "imgUrl": "https://picsum.photos/seed/UzrIz9Rv/640/480",
+      "items": [
+        {
+          "id": 0,
+          "category": "Computers",
+          "isBorrowed": false,
+          "name": "Bike",
+          "borrowedTimes": 20,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/CTCLBg5j/640/480"
+        },
+        {
+          "id": 1,
+          "category": "Computers",
+          "isBorrowed": true,
+          "name": "Pants",
+          "borrowedTimes": 10,
+          "borrowedDate": "2024-02-26T06:07:26.775Z",
+          "returnDate": "2025-01-08T07:06:36.699Z",
+          "imgUrl": "https://picsum.photos/seed/uZfBYacCfx/640/480"
+        },
+        {
+          "id": 2,
+          "category": "Computers",
+          "isBorrowed": false,
+          "name": "Cheese",
+          "borrowedTimes": 14,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/5L0IP6eR6d/640/480"
+        },
+        {
+          "id": 3,
+          "category": "Computers",
+          "isBorrowed": true,
+          "name": "Soap",
+          "borrowedTimes": 2,
+          "borrowedDate": "2023-03-12T14:44:15.079Z",
+          "returnDate": "2024-03-26T11:56:10.952Z",
+          "imgUrl": "https://picsum.photos/seed/bUT1leyPbA/640/480"
+        },
+        {
+          "id": 4,
+          "category": "Computers",
+          "isBorrowed": false,
+          "name": "Bacon",
+          "borrowedTimes": 3,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/mx5rQXz/640/480"
+        },
+        {
+          "id": 5,
+          "category": "Computers",
+          "isBorrowed": true,
+          "name": "Hat",
+          "borrowedTimes": 4,
+          "borrowedDate": "2023-10-23T12:27:45.051Z",
+          "returnDate": "2024-10-09T10:20:30.153Z",
+          "imgUrl": "https://picsum.photos/seed/d2Lrwy/640/480"
+        },
+        {
+          "id": 6,
+          "category": "Computers",
+          "isBorrowed": false,
+          "name": "Bike",
+          "borrowedTimes": 7,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/AsYQyeJ/640/480"
+        },
+        {
+          "id": 7,
+          "category": "Computers",
+          "isBorrowed": true,
+          "name": "Bacon",
+          "borrowedTimes": 1,
+          "borrowedDate": "2023-06-19T06:56:59.987Z",
+          "returnDate": "2025-02-22T13:45:46.730Z",
+          "imgUrl": "https://picsum.photos/seed/ADvs1kmd1C/640/480"
+        },
+        {
+          "id": 8,
+          "category": "Computers",
+          "isBorrowed": true,
+          "name": "Bacon",
+          "borrowedTimes": 20,
+          "borrowedDate": "2023-08-28T21:31:14.377Z",
+          "returnDate": "2024-03-25T05:01:42.833Z",
+          "imgUrl": "https://picsum.photos/seed/ln3w2PJyh/640/480"
+        },
+        {
+          "id": 9,
+          "category": "Computers",
+          "isBorrowed": true,
+          "name": "Fish",
+          "borrowedTimes": 13,
+          "borrowedDate": "2023-09-08T04:47:54.056Z",
+          "returnDate": "2024-04-22T07:27:34.710Z",
+          "imgUrl": "https://picsum.photos/seed/OCDRf/640/480"
+        },
+        {
+          "id": 10,
+          "category": "Computers",
+          "isBorrowed": false,
+          "name": "Hat",
+          "borrowedTimes": 0,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/hLiU0X/640/480"
+        },
+        {
+          "id": 11,
+          "category": "Computers",
+          "isBorrowed": true,
+          "name": "Chips",
+          "borrowedTimes": 0,
+          "borrowedDate": "2023-07-21T13:05:57.950Z",
+          "returnDate": "2024-12-18T21:23:25.609Z",
+          "imgUrl": "https://picsum.photos/seed/WNtnK/640/480"
+        },
+        {
+          "id": 12,
+          "category": "Computers",
+          "isBorrowed": true,
+          "name": "Car",
+          "borrowedTimes": 2,
+          "borrowedDate": "2023-04-24T06:05:43.815Z",
+          "returnDate": "2025-01-02T12:32:29.485Z",
+          "imgUrl": "https://picsum.photos/seed/7qvJ2M/640/480"
+        },
+        {
+          "id": 13,
+          "category": "Computers",
+          "isBorrowed": false,
+          "name": "Shoes",
+          "borrowedTimes": 15,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/i9diePhRZ/640/480"
+        },
+        {
+          "id": 14,
+          "category": "Computers",
+          "isBorrowed": false,
+          "name": "Sausages",
+          "borrowedTimes": 9,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/Nsb1cqO/640/480"
+        },
+        {
+          "id": 15,
+          "category": "Computers",
+          "isBorrowed": false,
+          "name": "Chips",
+          "borrowedTimes": 20,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/FEdHMqF8/640/480"
+        },
+        {
+          "id": 16,
+          "category": "Computers",
+          "isBorrowed": false,
+          "name": "Computer",
+          "borrowedTimes": 2,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/itt5fSCt23/640/480"
+        },
+        {
+          "id": 17,
+          "category": "Computers",
+          "isBorrowed": true,
+          "name": "Shirt",
+          "borrowedTimes": 14,
+          "borrowedDate": "2023-09-21T21:19:30.186Z",
+          "returnDate": "2024-07-17T01:43:40.287Z",
+          "imgUrl": "https://picsum.photos/seed/7QeYeL/640/480"
+        },
+        {
+          "id": 18,
+          "category": "Computers",
+          "isBorrowed": false,
+          "name": "Gloves",
+          "borrowedTimes": 15,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/zjIzE3yN/640/480"
+        },
+        {
+          "id": 19,
+          "category": "Computers",
+          "isBorrowed": true,
+          "name": "Chips",
+          "borrowedTimes": 8,
+          "borrowedDate": "2023-07-04T20:32:17.276Z",
+          "returnDate": "2024-07-19T22:22:31.848Z",
+          "imgUrl": "https://picsum.photos/seed/amZPlh/640/480"
+        },
+        {
+          "id": 20,
+          "category": "Computers",
+          "isBorrowed": false,
+          "name": "Ball",
+          "borrowedTimes": 4,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/jIITpC/640/480"
+        },
+        {
+          "id": 21,
+          "category": "Computers",
+          "isBorrowed": false,
+          "name": "Computer",
+          "borrowedTimes": 9,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/Rph2m/640/480"
+        },
+        {
+          "id": 22,
+          "category": "Computers",
+          "isBorrowed": true,
+          "name": "Sausages",
+          "borrowedTimes": 14,
+          "borrowedDate": "2023-03-07T19:19:24.416Z",
+          "returnDate": "2024-05-30T02:32:15.042Z",
+          "imgUrl": "https://picsum.photos/seed/uiGjhCVzg5/640/480"
+        },
+        {
+          "id": 23,
+          "category": "Computers",
+          "isBorrowed": true,
+          "name": "Chips",
+          "borrowedTimes": 18,
+          "borrowedDate": "2023-07-05T08:19:56.928Z",
+          "returnDate": "2024-03-09T02:18:04.835Z",
+          "imgUrl": "https://picsum.photos/seed/9XeP8hETZ9/640/480"
+        },
+        {
+          "id": 24,
+          "category": "Computers",
+          "isBorrowed": false,
+          "name": "Pants",
+          "borrowedTimes": 2,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/EyntW/640/480"
+        },
+        {
+          "id": 25,
+          "category": "Computers",
+          "isBorrowed": false,
+          "name": "Salad",
+          "borrowedTimes": 10,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/Jq7f7Er/640/480"
+        },
+        {
+          "id": 26,
+          "category": "Computers",
+          "isBorrowed": true,
+          "name": "Table",
+          "borrowedTimes": 7,
+          "borrowedDate": "2023-10-19T05:56:18.206Z",
+          "returnDate": "2024-06-23T12:19:16.335Z",
+          "imgUrl": "https://picsum.photos/seed/kdhT6ri/640/480"
+        },
+        {
+          "id": 27,
+          "category": "Computers",
+          "isBorrowed": true,
+          "name": "Hat",
+          "borrowedTimes": 11,
+          "borrowedDate": "2023-06-01T04:42:25.485Z",
+          "returnDate": "2024-08-06T08:26:58.847Z",
+          "imgUrl": "https://picsum.photos/seed/kqgwSW/640/480"
+        },
+        {
+          "id": 28,
+          "category": "Computers",
+          "isBorrowed": true,
+          "name": "Soap",
+          "borrowedTimes": 17,
+          "borrowedDate": "2023-10-20T03:24:45.534Z",
+          "returnDate": "2024-11-22T23:20:44.084Z",
+          "imgUrl": "https://picsum.photos/seed/4yhILNA/640/480"
+        },
+        {
+          "id": 29,
+          "category": "Computers",
+          "isBorrowed": true,
+          "name": "Keyboard",
+          "borrowedTimes": 4,
+          "borrowedDate": "2023-09-07T19:52:28.549Z",
+          "returnDate": "2024-04-05T17:37:54.666Z",
+          "imgUrl": "https://picsum.photos/seed/gNSrv/640/480"
+        },
+        {
+          "id": 30,
+          "category": "Computers",
+          "isBorrowed": true,
+          "name": "Fish",
+          "borrowedTimes": 7,
+          "borrowedDate": "2023-12-05T23:00:56.986Z",
+          "returnDate": "2024-11-08T19:03:06.884Z",
+          "imgUrl": "https://picsum.photos/seed/FCIU4MUPxy/640/480"
+        },
+        {
+          "id": 31,
+          "category": "Computers",
+          "isBorrowed": false,
+          "name": "Towels",
+          "borrowedTimes": 8,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/Pz1z6c1/640/480"
+        },
+        {
+          "id": 32,
+          "category": "Computers",
+          "isBorrowed": false,
+          "name": "Tuna",
+          "borrowedTimes": 17,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/fmizd9Zw/640/480"
+        },
+        {
+          "id": 33,
+          "category": "Computers",
+          "isBorrowed": false,
+          "name": "Ball",
+          "borrowedTimes": 7,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/xjtBlpJ2T/640/480"
+        },
+        {
+          "id": 34,
+          "category": "Computers",
+          "isBorrowed": true,
+          "name": "Gloves",
+          "borrowedTimes": 1,
+          "borrowedDate": "2023-12-12T09:10:21.054Z",
+          "returnDate": "2025-01-09T21:23:34.477Z",
+          "imgUrl": "https://picsum.photos/seed/tqFohqojnw/640/480"
+        },
+        {
+          "id": 35,
+          "category": "Computers",
+          "isBorrowed": true,
+          "name": "Tuna",
+          "borrowedTimes": 14,
+          "borrowedDate": "2023-12-28T23:25:36.984Z",
+          "returnDate": "2024-09-02T06:07:23.125Z",
+          "imgUrl": "https://picsum.photos/seed/FFsP8MJ4ZP/640/480"
+        },
+        {
+          "id": 36,
+          "category": "Computers",
+          "isBorrowed": true,
+          "name": "Keyboard",
+          "borrowedTimes": 6,
+          "borrowedDate": "2024-02-13T17:08:33.416Z",
+          "returnDate": "2024-09-21T19:04:13.627Z",
+          "imgUrl": "https://picsum.photos/seed/wa2tn7/640/480"
+        },
+        {
+          "id": 37,
+          "category": "Computers",
+          "isBorrowed": false,
+          "name": "Chips",
+          "borrowedTimes": 2,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/Ummwc5sSW/640/480"
+        },
+        {
+          "id": 38,
+          "category": "Computers",
+          "isBorrowed": true,
+          "name": "Bike",
+          "borrowedTimes": 11,
+          "borrowedDate": "2023-12-18T17:45:12.666Z",
+          "returnDate": "2024-07-04T22:40:11.642Z",
+          "imgUrl": "https://picsum.photos/seed/IjVeoU3K/640/480"
+        },
+        {
+          "id": 39,
+          "category": "Computers",
+          "isBorrowed": false,
+          "name": "Tuna",
+          "borrowedTimes": 17,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/qcFEa/640/480"
+        }
+      ]
+    },
     {
       "id": 1,
-      "email": "powder@arcane.com",
-      "password": "123123",
-      "imgUrl": "https://i.pinimg.com/474x/b4/44/06/b44406b163f1e54aa7408fb86d31bfb1.jpg"
+      "name": "Outdoors",
+      "imgUrl": "https://picsum.photos/seed/ggFHj9PhV1/640/480",
+      "items": [
+        {
+          "id": 0,
+          "category": "Outdoors",
+          "isBorrowed": false,
+          "name": "Chair",
+          "borrowedTimes": 7,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/R966m/640/480"
+        },
+        {
+          "id": 1,
+          "category": "Outdoors",
+          "isBorrowed": false,
+          "name": "Mouse",
+          "borrowedTimes": 3,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/3BXtvk792/640/480"
+        },
+        {
+          "id": 2,
+          "category": "Outdoors",
+          "isBorrowed": false,
+          "name": "Gloves",
+          "borrowedTimes": 1,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/TenTaQ/640/480"
+        },
+        {
+          "id": 3,
+          "category": "Outdoors",
+          "isBorrowed": true,
+          "name": "Keyboard",
+          "borrowedTimes": 2,
+          "borrowedDate": "2024-01-31T20:46:14.917Z",
+          "returnDate": "2024-06-13T04:40:08.380Z",
+          "imgUrl": "https://picsum.photos/seed/cLolH4M/640/480"
+        },
+        {
+          "id": 4,
+          "category": "Outdoors",
+          "isBorrowed": false,
+          "name": "Chicken",
+          "borrowedTimes": 11,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/cCAn82/640/480"
+        },
+        {
+          "id": 5,
+          "category": "Outdoors",
+          "isBorrowed": true,
+          "name": "Salad",
+          "borrowedTimes": 11,
+          "borrowedDate": "2023-08-06T11:48:26.895Z",
+          "returnDate": "2024-05-26T17:53:43.564Z",
+          "imgUrl": "https://picsum.photos/seed/DV6MKx0OC/640/480"
+        },
+        {
+          "id": 6,
+          "category": "Outdoors",
+          "isBorrowed": true,
+          "name": "Shirt",
+          "borrowedTimes": 5,
+          "borrowedDate": "2023-10-08T00:57:21.360Z",
+          "returnDate": "2024-11-20T04:58:51.917Z",
+          "imgUrl": "https://picsum.photos/seed/FMbPZ/640/480"
+        },
+        {
+          "id": 7,
+          "category": "Outdoors",
+          "isBorrowed": false,
+          "name": "Fish",
+          "borrowedTimes": 4,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/g5VTuRC2sc/640/480"
+        },
+        {
+          "id": 8,
+          "category": "Outdoors",
+          "isBorrowed": true,
+          "name": "Shirt",
+          "borrowedTimes": 10,
+          "borrowedDate": "2023-11-09T10:24:46.658Z",
+          "returnDate": "2024-11-13T16:06:27.585Z",
+          "imgUrl": "https://picsum.photos/seed/rqMY2cdwTn/640/480"
+        },
+        {
+          "id": 9,
+          "category": "Outdoors",
+          "isBorrowed": true,
+          "name": "Soap",
+          "borrowedTimes": 11,
+          "borrowedDate": "2024-01-26T01:52:58.844Z",
+          "returnDate": "2024-08-24T06:10:26.987Z",
+          "imgUrl": "https://picsum.photos/seed/8Qj1o/640/480"
+        },
+        {
+          "id": 10,
+          "category": "Outdoors",
+          "isBorrowed": false,
+          "name": "Chips",
+          "borrowedTimes": 10,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/7L01zgAyB/640/480"
+        },
+        {
+          "id": 11,
+          "category": "Outdoors",
+          "isBorrowed": false,
+          "name": "Chicken",
+          "borrowedTimes": 15,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/QoXdAyY/640/480"
+        },
+        {
+          "id": 12,
+          "category": "Outdoors",
+          "isBorrowed": true,
+          "name": "Chair",
+          "borrowedTimes": 0,
+          "borrowedDate": "2024-02-26T06:32:15.529Z",
+          "returnDate": "2025-01-26T15:39:57.310Z",
+          "imgUrl": "https://picsum.photos/seed/KGx71y/640/480"
+        },
+        {
+          "id": 13,
+          "category": "Outdoors",
+          "isBorrowed": false,
+          "name": "Sausages",
+          "borrowedTimes": 14,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/FAMwjiN87m/640/480"
+        },
+        {
+          "id": 14,
+          "category": "Outdoors",
+          "isBorrowed": true,
+          "name": "Chips",
+          "borrowedTimes": 11,
+          "borrowedDate": "2024-01-31T12:30:11.579Z",
+          "returnDate": "2024-09-28T00:40:51.737Z",
+          "imgUrl": "https://picsum.photos/seed/M3Xs1bjhZ0/640/480"
+        },
+        {
+          "id": 15,
+          "category": "Outdoors",
+          "isBorrowed": false,
+          "name": "Ball",
+          "borrowedTimes": 3,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/UXboESb/640/480"
+        },
+        {
+          "id": 16,
+          "category": "Outdoors",
+          "isBorrowed": true,
+          "name": "Sausages",
+          "borrowedTimes": 2,
+          "borrowedDate": "2023-08-19T19:25:43.241Z",
+          "returnDate": "2024-06-12T10:40:30.603Z",
+          "imgUrl": "https://picsum.photos/seed/XFr5x7Me/640/480"
+        },
+        {
+          "id": 17,
+          "category": "Outdoors",
+          "isBorrowed": true,
+          "name": "Computer",
+          "borrowedTimes": 0,
+          "borrowedDate": "2023-05-29T23:50:15.221Z",
+          "returnDate": "2024-10-17T06:55:38.183Z",
+          "imgUrl": "https://picsum.photos/seed/O0cgnyB/640/480"
+        },
+        {
+          "id": 18,
+          "category": "Outdoors",
+          "isBorrowed": false,
+          "name": "Soap",
+          "borrowedTimes": 20,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/h5ExZS4/640/480"
+        },
+        {
+          "id": 19,
+          "category": "Outdoors",
+          "isBorrowed": false,
+          "name": "Sausages",
+          "borrowedTimes": 11,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/DvhXmyg1ZT/640/480"
+        },
+        {
+          "id": 20,
+          "category": "Outdoors",
+          "isBorrowed": false,
+          "name": "Ball",
+          "borrowedTimes": 16,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/ou1uNM/640/480"
+        },
+        {
+          "id": 21,
+          "category": "Outdoors",
+          "isBorrowed": false,
+          "name": "Sausages",
+          "borrowedTimes": 2,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/egqCBL/640/480"
+        },
+        {
+          "id": 22,
+          "category": "Outdoors",
+          "isBorrowed": false,
+          "name": "Salad",
+          "borrowedTimes": 13,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/xfE82iV/640/480"
+        },
+        {
+          "id": 23,
+          "category": "Outdoors",
+          "isBorrowed": false,
+          "name": "Chair",
+          "borrowedTimes": 8,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/6nH8GGr7/640/480"
+        },
+        {
+          "id": 24,
+          "category": "Outdoors",
+          "isBorrowed": false,
+          "name": "Shirt",
+          "borrowedTimes": 9,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/DDBaenwBNA/640/480"
+        },
+        {
+          "id": 25,
+          "category": "Outdoors",
+          "isBorrowed": false,
+          "name": "Gloves",
+          "borrowedTimes": 12,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/FmWzBFZIal/640/480"
+        },
+        {
+          "id": 26,
+          "category": "Outdoors",
+          "isBorrowed": false,
+          "name": "Chips",
+          "borrowedTimes": 6,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/hrF4UGACGv/640/480"
+        },
+        {
+          "id": 27,
+          "category": "Outdoors",
+          "isBorrowed": true,
+          "name": "Mouse",
+          "borrowedTimes": 15,
+          "borrowedDate": "2024-02-09T20:15:22.190Z",
+          "returnDate": "2024-04-22T01:34:50.253Z",
+          "imgUrl": "https://picsum.photos/seed/reWC2OMn/640/480"
+        },
+        {
+          "id": 28,
+          "category": "Outdoors",
+          "isBorrowed": true,
+          "name": "Hat",
+          "borrowedTimes": 18,
+          "borrowedDate": "2024-02-20T16:33:04.786Z",
+          "returnDate": "2024-06-09T14:26:00.444Z",
+          "imgUrl": "https://picsum.photos/seed/KyeAzgEAu/640/480"
+        },
+        {
+          "id": 29,
+          "category": "Outdoors",
+          "isBorrowed": false,
+          "name": "Pants",
+          "borrowedTimes": 3,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/Lh1osyyNbe/640/480"
+        },
+        {
+          "id": 30,
+          "category": "Outdoors",
+          "isBorrowed": true,
+          "name": "Ball",
+          "borrowedTimes": 10,
+          "borrowedDate": "2023-11-11T09:05:10.573Z",
+          "returnDate": "2024-05-16T02:46:52.910Z",
+          "imgUrl": "https://picsum.photos/seed/HamJsqb7h/640/480"
+        },
+        {
+          "id": 31,
+          "category": "Outdoors",
+          "isBorrowed": true,
+          "name": "Mouse",
+          "borrowedTimes": 15,
+          "borrowedDate": "2024-01-05T21:52:35.484Z",
+          "returnDate": "2024-05-10T10:08:25.615Z",
+          "imgUrl": "https://picsum.photos/seed/ZbzspNeDI6/640/480"
+        },
+        {
+          "id": 32,
+          "category": "Outdoors",
+          "isBorrowed": true,
+          "name": "Chair",
+          "borrowedTimes": 17,
+          "borrowedDate": "2023-12-21T02:41:11.669Z",
+          "returnDate": "2024-05-17T02:30:38.891Z",
+          "imgUrl": "https://picsum.photos/seed/C47sJy/640/480"
+        },
+        {
+          "id": 33,
+          "category": "Outdoors",
+          "isBorrowed": true,
+          "name": "Chicken",
+          "borrowedTimes": 0,
+          "borrowedDate": "2024-02-22T09:42:56.232Z",
+          "returnDate": "2024-08-24T08:14:45.296Z",
+          "imgUrl": "https://picsum.photos/seed/Xf4oJt/640/480"
+        },
+        {
+          "id": 34,
+          "category": "Outdoors",
+          "isBorrowed": false,
+          "name": "Shoes",
+          "borrowedTimes": 10,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/QWpydbj/640/480"
+        },
+        {
+          "id": 35,
+          "category": "Outdoors",
+          "isBorrowed": true,
+          "name": "Table",
+          "borrowedTimes": 8,
+          "borrowedDate": "2023-05-14T22:48:09.928Z",
+          "returnDate": "2024-10-21T16:38:49.596Z",
+          "imgUrl": "https://picsum.photos/seed/Sz0LlkrW/640/480"
+        },
+        {
+          "id": 36,
+          "category": "Outdoors",
+          "isBorrowed": true,
+          "name": "Pants",
+          "borrowedTimes": 18,
+          "borrowedDate": "2023-04-18T00:26:51.814Z",
+          "returnDate": "2024-07-11T01:13:05.821Z",
+          "imgUrl": "https://picsum.photos/seed/aXI0Q/640/480"
+        },
+        {
+          "id": 37,
+          "category": "Outdoors",
+          "isBorrowed": true,
+          "name": "Mouse",
+          "borrowedTimes": 18,
+          "borrowedDate": "2023-10-21T05:18:29.814Z",
+          "returnDate": "2024-04-24T01:06:58.670Z",
+          "imgUrl": "https://picsum.photos/seed/55xAMoLKF/640/480"
+        },
+        {
+          "id": 38,
+          "category": "Outdoors",
+          "isBorrowed": false,
+          "name": "Fish",
+          "borrowedTimes": 8,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/1CuEaOum/640/480"
+        },
+        {
+          "id": 39,
+          "category": "Outdoors",
+          "isBorrowed": true,
+          "name": "Computer",
+          "borrowedTimes": 9,
+          "borrowedDate": "2023-12-04T20:12:25.705Z",
+          "returnDate": "2024-08-07T07:45:38.020Z",
+          "imgUrl": "https://picsum.photos/seed/n1RNeMdJ/640/480"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Kids",
+      "imgUrl": "https://picsum.photos/seed/15SS7/640/480",
+      "items": [
+        {
+          "id": 0,
+          "category": "Kids",
+          "isBorrowed": true,
+          "name": "Bacon",
+          "borrowedTimes": 12,
+          "borrowedDate": "2024-01-04T17:20:22.687Z",
+          "returnDate": "2025-01-10T11:20:21.169Z",
+          "imgUrl": "https://picsum.photos/seed/qPtF4Sn0Qk/640/480"
+        },
+        {
+          "id": 1,
+          "category": "Kids",
+          "isBorrowed": false,
+          "name": "Ball",
+          "borrowedTimes": 2,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/Cv1SX4Q/640/480"
+        },
+        {
+          "id": 2,
+          "category": "Kids",
+          "isBorrowed": false,
+          "name": "Chips",
+          "borrowedTimes": 12,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/AetuIHU/640/480"
+        },
+        {
+          "id": 3,
+          "category": "Kids",
+          "isBorrowed": true,
+          "name": "Bacon",
+          "borrowedTimes": 6,
+          "borrowedDate": "2024-01-24T20:57:21.968Z",
+          "returnDate": "2024-11-23T04:59:28.533Z",
+          "imgUrl": "https://picsum.photos/seed/9fKpkKOwD/640/480"
+        },
+        {
+          "id": 4,
+          "category": "Kids",
+          "isBorrowed": false,
+          "name": "Fish",
+          "borrowedTimes": 10,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/XwRyK9yk/640/480"
+        },
+        {
+          "id": 5,
+          "category": "Kids",
+          "isBorrowed": true,
+          "name": "Gloves",
+          "borrowedTimes": 10,
+          "borrowedDate": "2023-07-28T01:13:16.100Z",
+          "returnDate": "2024-06-29T10:46:15.827Z",
+          "imgUrl": "https://picsum.photos/seed/5oZk2mLfP/640/480"
+        },
+        {
+          "id": 6,
+          "category": "Kids",
+          "isBorrowed": false,
+          "name": "Hat",
+          "borrowedTimes": 19,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/cIAN7/640/480"
+        },
+        {
+          "id": 7,
+          "category": "Kids",
+          "isBorrowed": false,
+          "name": "Shirt",
+          "borrowedTimes": 4,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/41HqWJ64tq/640/480"
+        },
+        {
+          "id": 8,
+          "category": "Kids",
+          "isBorrowed": true,
+          "name": "Hat",
+          "borrowedTimes": 11,
+          "borrowedDate": "2023-08-21T20:48:42.354Z",
+          "returnDate": "2024-10-31T09:54:56.198Z",
+          "imgUrl": "https://picsum.photos/seed/N7jDbt/640/480"
+        },
+        {
+          "id": 9,
+          "category": "Kids",
+          "isBorrowed": true,
+          "name": "Computer",
+          "borrowedTimes": 1,
+          "borrowedDate": "2023-05-04T21:01:09.433Z",
+          "returnDate": "2024-09-14T06:09:00.541Z",
+          "imgUrl": "https://picsum.photos/seed/VdvGkkWhz/640/480"
+        },
+        {
+          "id": 10,
+          "category": "Kids",
+          "isBorrowed": true,
+          "name": "Cheese",
+          "borrowedTimes": 20,
+          "borrowedDate": "2023-10-16T13:19:57.620Z",
+          "returnDate": "2024-07-04T04:09:54.270Z",
+          "imgUrl": "https://picsum.photos/seed/zkO48x/640/480"
+        },
+        {
+          "id": 11,
+          "category": "Kids",
+          "isBorrowed": false,
+          "name": "Car",
+          "borrowedTimes": 11,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/38qnyD/640/480"
+        },
+        {
+          "id": 12,
+          "category": "Kids",
+          "isBorrowed": false,
+          "name": "Bacon",
+          "borrowedTimes": 1,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/hIeul/640/480"
+        },
+        {
+          "id": 13,
+          "category": "Kids",
+          "isBorrowed": false,
+          "name": "Tuna",
+          "borrowedTimes": 13,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/OJIxW/640/480"
+        },
+        {
+          "id": 14,
+          "category": "Kids",
+          "isBorrowed": true,
+          "name": "Chair",
+          "borrowedTimes": 8,
+          "borrowedDate": "2023-08-20T17:54:01.573Z",
+          "returnDate": "2024-11-12T09:15:43.384Z",
+          "imgUrl": "https://picsum.photos/seed/6NRZoFMn/640/480"
+        },
+        {
+          "id": 15,
+          "category": "Kids",
+          "isBorrowed": true,
+          "name": "Pizza",
+          "borrowedTimes": 6,
+          "borrowedDate": "2023-12-26T04:10:53.204Z",
+          "returnDate": "2024-10-06T11:26:25.637Z",
+          "imgUrl": "https://picsum.photos/seed/V8WoLFA/640/480"
+        },
+        {
+          "id": 16,
+          "category": "Kids",
+          "isBorrowed": true,
+          "name": "Towels",
+          "borrowedTimes": 4,
+          "borrowedDate": "2023-06-23T06:06:55.210Z",
+          "returnDate": "2024-08-11T05:02:18.824Z",
+          "imgUrl": "https://picsum.photos/seed/uLf3DYjW0G/640/480"
+        },
+        {
+          "id": 17,
+          "category": "Kids",
+          "isBorrowed": true,
+          "name": "Computer",
+          "borrowedTimes": 1,
+          "borrowedDate": "2023-11-28T04:09:01.639Z",
+          "returnDate": "2024-08-18T17:47:04.651Z",
+          "imgUrl": "https://picsum.photos/seed/TGaWLqQ/640/480"
+        },
+        {
+          "id": 18,
+          "category": "Kids",
+          "isBorrowed": false,
+          "name": "Shoes",
+          "borrowedTimes": 10,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/X99ehr6DU/640/480"
+        },
+        {
+          "id": 19,
+          "category": "Kids",
+          "isBorrowed": false,
+          "name": "Table",
+          "borrowedTimes": 14,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/z8hAPj2J/640/480"
+        },
+        {
+          "id": 20,
+          "category": "Kids",
+          "isBorrowed": true,
+          "name": "Shoes",
+          "borrowedTimes": 4,
+          "borrowedDate": "2023-09-13T00:43:03.755Z",
+          "returnDate": "2024-09-11T21:20:22.912Z",
+          "imgUrl": "https://picsum.photos/seed/lFMh9c/640/480"
+        },
+        {
+          "id": 21,
+          "category": "Kids",
+          "isBorrowed": true,
+          "name": "Towels",
+          "borrowedTimes": 6,
+          "borrowedDate": "2023-11-14T16:02:47.747Z",
+          "returnDate": "2024-08-12T15:13:49.215Z",
+          "imgUrl": "https://picsum.photos/seed/Jo2bWtlwm/640/480"
+        },
+        {
+          "id": 22,
+          "category": "Kids",
+          "isBorrowed": true,
+          "name": "Mouse",
+          "borrowedTimes": 14,
+          "borrowedDate": "2023-04-24T10:52:37.396Z",
+          "returnDate": "2024-08-03T01:37:42.059Z",
+          "imgUrl": "https://picsum.photos/seed/bscNlg1ouF/640/480"
+        },
+        {
+          "id": 23,
+          "category": "Kids",
+          "isBorrowed": true,
+          "name": "Pants",
+          "borrowedTimes": 18,
+          "borrowedDate": "2024-03-03T14:05:34.185Z",
+          "returnDate": "2024-10-16T04:36:34.451Z",
+          "imgUrl": "https://picsum.photos/seed/xpNFX2/640/480"
+        },
+        {
+          "id": 24,
+          "category": "Kids",
+          "isBorrowed": false,
+          "name": "Table",
+          "borrowedTimes": 7,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/gcqX0vhyT1/640/480"
+        },
+        {
+          "id": 25,
+          "category": "Kids",
+          "isBorrowed": false,
+          "name": "Sausages",
+          "borrowedTimes": 0,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/UyIFvR207M/640/480"
+        },
+        {
+          "id": 26,
+          "category": "Kids",
+          "isBorrowed": false,
+          "name": "Car",
+          "borrowedTimes": 0,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/0iI3X8NVY/640/480"
+        },
+        {
+          "id": 27,
+          "category": "Kids",
+          "isBorrowed": false,
+          "name": "Fish",
+          "borrowedTimes": 8,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/yBmpSw/640/480"
+        },
+        {
+          "id": 28,
+          "category": "Kids",
+          "isBorrowed": true,
+          "name": "Keyboard",
+          "borrowedTimes": 10,
+          "borrowedDate": "2024-01-26T06:44:26.133Z",
+          "returnDate": "2024-10-10T14:09:04.548Z",
+          "imgUrl": "https://picsum.photos/seed/mvtD6Jk8/640/480"
+        },
+        {
+          "id": 29,
+          "category": "Kids",
+          "isBorrowed": true,
+          "name": "Pizza",
+          "borrowedTimes": 8,
+          "borrowedDate": "2023-08-15T21:43:30.019Z",
+          "returnDate": "2024-07-05T00:19:06.865Z",
+          "imgUrl": "https://picsum.photos/seed/2OlVXaCnI/640/480"
+        },
+        {
+          "id": 30,
+          "category": "Kids",
+          "isBorrowed": true,
+          "name": "Chicken",
+          "borrowedTimes": 15,
+          "borrowedDate": "2023-05-04T12:23:22.772Z",
+          "returnDate": "2025-02-07T11:24:12.961Z",
+          "imgUrl": "https://picsum.photos/seed/IrntBZeiIM/640/480"
+        },
+        {
+          "id": 31,
+          "category": "Kids",
+          "isBorrowed": false,
+          "name": "Shirt",
+          "borrowedTimes": 8,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/K4qyE4lDVF/640/480"
+        },
+        {
+          "id": 32,
+          "category": "Kids",
+          "isBorrowed": true,
+          "name": "Pants",
+          "borrowedTimes": 2,
+          "borrowedDate": "2023-05-20T17:25:53.798Z",
+          "returnDate": "2024-06-12T15:59:46.199Z",
+          "imgUrl": "https://picsum.photos/seed/wMnWkH2/640/480"
+        },
+        {
+          "id": 33,
+          "category": "Kids",
+          "isBorrowed": false,
+          "name": "Gloves",
+          "borrowedTimes": 3,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/EsJE6u/640/480"
+        },
+        {
+          "id": 34,
+          "category": "Kids",
+          "isBorrowed": false,
+          "name": "Chair",
+          "borrowedTimes": 4,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/SAw3R9UMo8/640/480"
+        },
+        {
+          "id": 35,
+          "category": "Kids",
+          "isBorrowed": false,
+          "name": "Sausages",
+          "borrowedTimes": 10,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/cRVlJ/640/480"
+        },
+        {
+          "id": 36,
+          "category": "Kids",
+          "isBorrowed": true,
+          "name": "Keyboard",
+          "borrowedTimes": 3,
+          "borrowedDate": "2023-05-22T04:08:23.138Z",
+          "returnDate": "2024-04-27T09:22:45.044Z",
+          "imgUrl": "https://picsum.photos/seed/ab93AH3/640/480"
+        },
+        {
+          "id": 37,
+          "category": "Kids",
+          "isBorrowed": true,
+          "name": "Bacon",
+          "borrowedTimes": 14,
+          "borrowedDate": "2023-11-16T08:29:06.502Z",
+          "returnDate": "2024-07-10T10:59:58.246Z",
+          "imgUrl": "https://picsum.photos/seed/TmmPIwF1/640/480"
+        },
+        {
+          "id": 38,
+          "category": "Kids",
+          "isBorrowed": false,
+          "name": "Tuna",
+          "borrowedTimes": 8,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/IGrfkPBwE/640/480"
+        },
+        {
+          "id": 39,
+          "category": "Kids",
+          "isBorrowed": true,
+          "name": "Soap",
+          "borrowedTimes": 19,
+          "borrowedDate": "2024-02-08T04:23:25.913Z",
+          "returnDate": "2024-09-26T19:49:24.823Z",
+          "imgUrl": "https://picsum.photos/seed/myM0206C/640/480"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Toys",
+      "imgUrl": "https://picsum.photos/seed/zzBbZb7xbk/640/480",
+      "items": [
+        {
+          "id": 0,
+          "category": "Toys",
+          "isBorrowed": true,
+          "name": "Bacon",
+          "borrowedTimes": 2,
+          "borrowedDate": "2023-08-14T01:11:53.782Z",
+          "returnDate": "2024-12-12T21:30:20.995Z",
+          "imgUrl": "https://picsum.photos/seed/3Efe8/640/480"
+        },
+        {
+          "id": 1,
+          "category": "Toys",
+          "isBorrowed": false,
+          "name": "Car",
+          "borrowedTimes": 9,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/n9x7lRUJvS/640/480"
+        },
+        {
+          "id": 2,
+          "category": "Toys",
+          "isBorrowed": true,
+          "name": "Sausages",
+          "borrowedTimes": 1,
+          "borrowedDate": "2023-04-27T21:57:34.401Z",
+          "returnDate": "2024-12-29T22:19:42.766Z",
+          "imgUrl": "https://picsum.photos/seed/7dkjJA/640/480"
+        },
+        {
+          "id": 3,
+          "category": "Toys",
+          "isBorrowed": false,
+          "name": "Keyboard",
+          "borrowedTimes": 9,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/h23ft6mqXI/640/480"
+        },
+        {
+          "id": 4,
+          "category": "Toys",
+          "isBorrowed": true,
+          "name": "Cheese",
+          "borrowedTimes": 17,
+          "borrowedDate": "2023-08-01T16:04:38.248Z",
+          "returnDate": "2024-09-12T12:38:37.060Z",
+          "imgUrl": "https://picsum.photos/seed/3vHHtI0di/640/480"
+        },
+        {
+          "id": 5,
+          "category": "Toys",
+          "isBorrowed": false,
+          "name": "Table",
+          "borrowedTimes": 5,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/GYkQNgFE/640/480"
+        },
+        {
+          "id": 6,
+          "category": "Toys",
+          "isBorrowed": true,
+          "name": "Shoes",
+          "borrowedTimes": 9,
+          "borrowedDate": "2023-03-12T03:18:03.378Z",
+          "returnDate": "2024-06-24T22:21:18.890Z",
+          "imgUrl": "https://picsum.photos/seed/k3Ygjy7h5U/640/480"
+        },
+        {
+          "id": 7,
+          "category": "Toys",
+          "isBorrowed": false,
+          "name": "Ball",
+          "borrowedTimes": 9,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/5aJlGu0/640/480"
+        },
+        {
+          "id": 8,
+          "category": "Toys",
+          "isBorrowed": true,
+          "name": "Shirt",
+          "borrowedTimes": 6,
+          "borrowedDate": "2023-03-26T01:57:35.956Z",
+          "returnDate": "2025-02-28T18:54:18.406Z",
+          "imgUrl": "https://picsum.photos/seed/J4olpVF/640/480"
+        },
+        {
+          "id": 9,
+          "category": "Toys",
+          "isBorrowed": true,
+          "name": "Shirt",
+          "borrowedTimes": 2,
+          "borrowedDate": "2023-10-18T21:52:22.751Z",
+          "returnDate": "2025-01-12T17:40:20.261Z",
+          "imgUrl": "https://picsum.photos/seed/leIOFQzr22/640/480"
+        },
+        {
+          "id": 10,
+          "category": "Toys",
+          "isBorrowed": true,
+          "name": "Mouse",
+          "borrowedTimes": 6,
+          "borrowedDate": "2023-07-28T05:49:59.720Z",
+          "returnDate": "2024-06-19T05:49:40.200Z",
+          "imgUrl": "https://picsum.photos/seed/2nI86j/640/480"
+        },
+        {
+          "id": 11,
+          "category": "Toys",
+          "isBorrowed": false,
+          "name": "Soap",
+          "borrowedTimes": 9,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/vZpiT/640/480"
+        },
+        {
+          "id": 12,
+          "category": "Toys",
+          "isBorrowed": false,
+          "name": "Pizza",
+          "borrowedTimes": 2,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/BQ4JqY/640/480"
+        },
+        {
+          "id": 13,
+          "category": "Toys",
+          "isBorrowed": false,
+          "name": "Tuna",
+          "borrowedTimes": 19,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/gyfuuGdTm/640/480"
+        },
+        {
+          "id": 14,
+          "category": "Toys",
+          "isBorrowed": true,
+          "name": "Towels",
+          "borrowedTimes": 0,
+          "borrowedDate": "2023-10-08T05:11:01.748Z",
+          "returnDate": "2024-09-13T18:44:39.476Z",
+          "imgUrl": "https://picsum.photos/seed/c1jXnScBN/640/480"
+        },
+        {
+          "id": 15,
+          "category": "Toys",
+          "isBorrowed": true,
+          "name": "Table",
+          "borrowedTimes": 3,
+          "borrowedDate": "2023-09-26T00:42:49.225Z",
+          "returnDate": "2024-09-23T01:55:52.816Z",
+          "imgUrl": "https://picsum.photos/seed/sQQvF86I0B/640/480"
+        },
+        {
+          "id": 16,
+          "category": "Toys",
+          "isBorrowed": false,
+          "name": "Keyboard",
+          "borrowedTimes": 4,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/ABLIi31/640/480"
+        },
+        {
+          "id": 17,
+          "category": "Toys",
+          "isBorrowed": false,
+          "name": "Sausages",
+          "borrowedTimes": 12,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/Iz3RG/640/480"
+        },
+        {
+          "id": 18,
+          "category": "Toys",
+          "isBorrowed": true,
+          "name": "Mouse",
+          "borrowedTimes": 11,
+          "borrowedDate": "2023-05-12T11:16:12.092Z",
+          "returnDate": "2024-12-09T17:56:34.881Z",
+          "imgUrl": "https://picsum.photos/seed/tUrhk6aSRu/640/480"
+        },
+        {
+          "id": 19,
+          "category": "Toys",
+          "isBorrowed": false,
+          "name": "Pizza",
+          "borrowedTimes": 9,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/nJiQwGHDpX/640/480"
+        },
+        {
+          "id": 20,
+          "category": "Toys",
+          "isBorrowed": true,
+          "name": "Salad",
+          "borrowedTimes": 14,
+          "borrowedDate": "2023-09-11T08:21:03.619Z",
+          "returnDate": "2024-04-22T14:40:11.033Z",
+          "imgUrl": "https://picsum.photos/seed/DHdDRgNt12/640/480"
+        },
+        {
+          "id": 21,
+          "category": "Toys",
+          "isBorrowed": false,
+          "name": "Salad",
+          "borrowedTimes": 18,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/sni7Qiwr/640/480"
+        },
+        {
+          "id": 22,
+          "category": "Toys",
+          "isBorrowed": true,
+          "name": "Pants",
+          "borrowedTimes": 18,
+          "borrowedDate": "2023-05-18T18:48:13.534Z",
+          "returnDate": "2024-11-28T21:46:37.656Z",
+          "imgUrl": "https://picsum.photos/seed/9A8WZMNA/640/480"
+        },
+        {
+          "id": 23,
+          "category": "Toys",
+          "isBorrowed": true,
+          "name": "Shirt",
+          "borrowedTimes": 19,
+          "borrowedDate": "2023-03-25T12:33:01.449Z",
+          "returnDate": "2025-01-10T09:35:33.534Z",
+          "imgUrl": "https://picsum.photos/seed/P1w36/640/480"
+        },
+        {
+          "id": 24,
+          "category": "Toys",
+          "isBorrowed": false,
+          "name": "Computer",
+          "borrowedTimes": 11,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/hLm5g/640/480"
+        },
+        {
+          "id": 25,
+          "category": "Toys",
+          "isBorrowed": false,
+          "name": "Gloves",
+          "borrowedTimes": 4,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/OQnX7q0/640/480"
+        },
+        {
+          "id": 26,
+          "category": "Toys",
+          "isBorrowed": false,
+          "name": "Salad",
+          "borrowedTimes": 18,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/GiENI7/640/480"
+        },
+        {
+          "id": 27,
+          "category": "Toys",
+          "isBorrowed": false,
+          "name": "Chicken",
+          "borrowedTimes": 4,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/rFRpKN/640/480"
+        },
+        {
+          "id": 28,
+          "category": "Toys",
+          "isBorrowed": true,
+          "name": "Chair",
+          "borrowedTimes": 9,
+          "borrowedDate": "2023-05-26T20:24:51.243Z",
+          "returnDate": "2024-10-24T15:42:31.011Z",
+          "imgUrl": "https://picsum.photos/seed/rgXG7834bB/640/480"
+        },
+        {
+          "id": 29,
+          "category": "Toys",
+          "isBorrowed": true,
+          "name": "Keyboard",
+          "borrowedTimes": 19,
+          "borrowedDate": "2023-07-18T11:21:14.987Z",
+          "returnDate": "2024-08-06T06:31:43.512Z",
+          "imgUrl": "https://picsum.photos/seed/Dh7FIYs/640/480"
+        },
+        {
+          "id": 30,
+          "category": "Toys",
+          "isBorrowed": true,
+          "name": "Pizza",
+          "borrowedTimes": 8,
+          "borrowedDate": "2023-08-24T05:42:40.177Z",
+          "returnDate": "2025-01-13T13:03:03.438Z",
+          "imgUrl": "https://picsum.photos/seed/nL15IW6F/640/480"
+        },
+        {
+          "id": 31,
+          "category": "Toys",
+          "isBorrowed": false,
+          "name": "Bacon",
+          "borrowedTimes": 3,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/b8RsP1kBX/640/480"
+        },
+        {
+          "id": 32,
+          "category": "Toys",
+          "isBorrowed": false,
+          "name": "Chicken",
+          "borrowedTimes": 6,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/cAUANkU/640/480"
+        },
+        {
+          "id": 33,
+          "category": "Toys",
+          "isBorrowed": false,
+          "name": "Cheese",
+          "borrowedTimes": 6,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/f9cBH/640/480"
+        },
+        {
+          "id": 34,
+          "category": "Toys",
+          "isBorrowed": true,
+          "name": "Chicken",
+          "borrowedTimes": 18,
+          "borrowedDate": "2024-01-09T09:39:40.757Z",
+          "returnDate": "2024-11-05T10:38:11.684Z",
+          "imgUrl": "https://picsum.photos/seed/0EO5KMi2rG/640/480"
+        },
+        {
+          "id": 35,
+          "category": "Toys",
+          "isBorrowed": false,
+          "name": "Mouse",
+          "borrowedTimes": 8,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/csPFZS9Ejz/640/480"
+        },
+        {
+          "id": 36,
+          "category": "Toys",
+          "isBorrowed": false,
+          "name": "Bike",
+          "borrowedTimes": 2,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/lgMW9lnGzu/640/480"
+        },
+        {
+          "id": 37,
+          "category": "Toys",
+          "isBorrowed": true,
+          "name": "Cheese",
+          "borrowedTimes": 4,
+          "borrowedDate": "2024-01-20T18:06:30.175Z",
+          "returnDate": "2024-09-19T03:09:25.227Z",
+          "imgUrl": "https://picsum.photos/seed/wQzQubGa/640/480"
+        },
+        {
+          "id": 38,
+          "category": "Toys",
+          "isBorrowed": true,
+          "name": "Shirt",
+          "borrowedTimes": 3,
+          "borrowedDate": "2023-03-22T20:13:09.897Z",
+          "returnDate": "2025-02-05T12:44:10.054Z",
+          "imgUrl": "https://picsum.photos/seed/UpKePZFCu/640/480"
+        },
+        {
+          "id": 39,
+          "category": "Toys",
+          "isBorrowed": false,
+          "name": "Towels",
+          "borrowedTimes": 3,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/XNW4l/640/480"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Outdoors",
+      "imgUrl": "https://picsum.photos/seed/2JPIMCAxKt/640/480",
+      "items": [
+        {
+          "id": 0,
+          "category": "Outdoors",
+          "isBorrowed": false,
+          "name": "Pizza",
+          "borrowedTimes": 13,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/DcN4H5/640/480"
+        },
+        {
+          "id": 1,
+          "category": "Outdoors",
+          "isBorrowed": true,
+          "name": "Towels",
+          "borrowedTimes": 1,
+          "borrowedDate": "2023-06-09T14:54:57.735Z",
+          "returnDate": "2024-08-14T23:07:20.686Z",
+          "imgUrl": "https://picsum.photos/seed/p7KJ9vv9/640/480"
+        },
+        {
+          "id": 2,
+          "category": "Outdoors",
+          "isBorrowed": true,
+          "name": "Chicken",
+          "borrowedTimes": 14,
+          "borrowedDate": "2023-08-16T23:25:23.203Z",
+          "returnDate": "2024-07-11T16:26:00.738Z",
+          "imgUrl": "https://picsum.photos/seed/IvY63sf8q/640/480"
+        },
+        {
+          "id": 3,
+          "category": "Outdoors",
+          "isBorrowed": true,
+          "name": "Cheese",
+          "borrowedTimes": 5,
+          "borrowedDate": "2023-04-11T07:13:07.730Z",
+          "returnDate": "2025-01-26T22:39:51.954Z",
+          "imgUrl": "https://picsum.photos/seed/5Be5Sm/640/480"
+        },
+        {
+          "id": 4,
+          "category": "Outdoors",
+          "isBorrowed": true,
+          "name": "Chicken",
+          "borrowedTimes": 8,
+          "borrowedDate": "2023-07-03T16:17:13.252Z",
+          "returnDate": "2025-02-11T00:08:46.403Z",
+          "imgUrl": "https://picsum.photos/seed/ueKhTNl/640/480"
+        },
+        {
+          "id": 5,
+          "category": "Outdoors",
+          "isBorrowed": true,
+          "name": "Chair",
+          "borrowedTimes": 8,
+          "borrowedDate": "2023-07-13T17:07:38.803Z",
+          "returnDate": "2024-04-20T16:15:01.494Z",
+          "imgUrl": "https://picsum.photos/seed/ydyPUsZeH/640/480"
+        },
+        {
+          "id": 6,
+          "category": "Outdoors",
+          "isBorrowed": true,
+          "name": "Ball",
+          "borrowedTimes": 14,
+          "borrowedDate": "2024-01-19T17:07:50.804Z",
+          "returnDate": "2024-06-01T20:42:17.326Z",
+          "imgUrl": "https://picsum.photos/seed/LXcAJuxT9/640/480"
+        },
+        {
+          "id": 7,
+          "category": "Outdoors",
+          "isBorrowed": true,
+          "name": "Sausages",
+          "borrowedTimes": 12,
+          "borrowedDate": "2023-09-15T17:50:34.826Z",
+          "returnDate": "2024-11-15T12:34:35.140Z",
+          "imgUrl": "https://picsum.photos/seed/QFY7m5pvB/640/480"
+        },
+        {
+          "id": 8,
+          "category": "Outdoors",
+          "isBorrowed": false,
+          "name": "Ball",
+          "borrowedTimes": 2,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/3vCpv4E/640/480"
+        },
+        {
+          "id": 9,
+          "category": "Outdoors",
+          "isBorrowed": false,
+          "name": "Hat",
+          "borrowedTimes": 8,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/PKP6l/640/480"
+        },
+        {
+          "id": 10,
+          "category": "Outdoors",
+          "isBorrowed": true,
+          "name": "Soap",
+          "borrowedTimes": 0,
+          "borrowedDate": "2024-03-04T23:16:31.059Z",
+          "returnDate": "2024-10-20T23:00:21.096Z",
+          "imgUrl": "https://picsum.photos/seed/ZSfgY/640/480"
+        },
+        {
+          "id": 11,
+          "category": "Outdoors",
+          "isBorrowed": false,
+          "name": "Cheese",
+          "borrowedTimes": 5,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/hfhWS59y/640/480"
+        },
+        {
+          "id": 12,
+          "category": "Outdoors",
+          "isBorrowed": false,
+          "name": "Shoes",
+          "borrowedTimes": 19,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/N5buosWp1/640/480"
+        },
+        {
+          "id": 13,
+          "category": "Outdoors",
+          "isBorrowed": false,
+          "name": "Shirt",
+          "borrowedTimes": 10,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/oVrF4AW/640/480"
+        },
+        {
+          "id": 14,
+          "category": "Outdoors",
+          "isBorrowed": false,
+          "name": "Shirt",
+          "borrowedTimes": 14,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/xDnt9/640/480"
+        },
+        {
+          "id": 15,
+          "category": "Outdoors",
+          "isBorrowed": false,
+          "name": "Chicken",
+          "borrowedTimes": 3,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/OTOzzh/640/480"
+        },
+        {
+          "id": 16,
+          "category": "Outdoors",
+          "isBorrowed": true,
+          "name": "Cheese",
+          "borrowedTimes": 7,
+          "borrowedDate": "2023-05-04T08:08:02.071Z",
+          "returnDate": "2025-02-10T16:57:14.431Z",
+          "imgUrl": "https://picsum.photos/seed/KhpiBy8gt1/640/480"
+        },
+        {
+          "id": 17,
+          "category": "Outdoors",
+          "isBorrowed": true,
+          "name": "Chair",
+          "borrowedTimes": 8,
+          "borrowedDate": "2024-02-09T11:18:59.051Z",
+          "returnDate": "2025-01-15T16:43:51.653Z",
+          "imgUrl": "https://picsum.photos/seed/DMEP6s2/640/480"
+        },
+        {
+          "id": 18,
+          "category": "Outdoors",
+          "isBorrowed": false,
+          "name": "Cheese",
+          "borrowedTimes": 11,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/iXEl1aWM5/640/480"
+        },
+        {
+          "id": 19,
+          "category": "Outdoors",
+          "isBorrowed": false,
+          "name": "Ball",
+          "borrowedTimes": 17,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/VwbMl/640/480"
+        },
+        {
+          "id": 20,
+          "category": "Outdoors",
+          "isBorrowed": false,
+          "name": "Mouse",
+          "borrowedTimes": 7,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/hkmD2w/640/480"
+        },
+        {
+          "id": 21,
+          "category": "Outdoors",
+          "isBorrowed": false,
+          "name": "Tuna",
+          "borrowedTimes": 20,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/ZCbxWpj/640/480"
+        },
+        {
+          "id": 22,
+          "category": "Outdoors",
+          "isBorrowed": true,
+          "name": "Fish",
+          "borrowedTimes": 15,
+          "borrowedDate": "2023-08-08T17:30:37.677Z",
+          "returnDate": "2024-05-30T00:46:09.342Z",
+          "imgUrl": "https://picsum.photos/seed/DlMnhe/640/480"
+        },
+        {
+          "id": 23,
+          "category": "Outdoors",
+          "isBorrowed": true,
+          "name": "Pizza",
+          "borrowedTimes": 9,
+          "borrowedDate": "2023-05-26T04:16:31.519Z",
+          "returnDate": "2024-04-03T10:02:49.733Z",
+          "imgUrl": "https://picsum.photos/seed/qmndVFahX/640/480"
+        },
+        {
+          "id": 24,
+          "category": "Outdoors",
+          "isBorrowed": false,
+          "name": "Hat",
+          "borrowedTimes": 0,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/VvO0v/640/480"
+        },
+        {
+          "id": 25,
+          "category": "Outdoors",
+          "isBorrowed": false,
+          "name": "Ball",
+          "borrowedTimes": 6,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/IKi1h/640/480"
+        },
+        {
+          "id": 26,
+          "category": "Outdoors",
+          "isBorrowed": false,
+          "name": "Pizza",
+          "borrowedTimes": 15,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/eejvwmK/640/480"
+        },
+        {
+          "id": 27,
+          "category": "Outdoors",
+          "isBorrowed": true,
+          "name": "Tuna",
+          "borrowedTimes": 17,
+          "borrowedDate": "2023-07-19T16:40:11.397Z",
+          "returnDate": "2024-05-05T23:16:46.717Z",
+          "imgUrl": "https://picsum.photos/seed/AYAeC/640/480"
+        },
+        {
+          "id": 28,
+          "category": "Outdoors",
+          "isBorrowed": true,
+          "name": "Hat",
+          "borrowedTimes": 0,
+          "borrowedDate": "2024-02-27T03:31:02.597Z",
+          "returnDate": "2024-12-12T19:50:36.365Z",
+          "imgUrl": "https://picsum.photos/seed/0QTZ7n/640/480"
+        },
+        {
+          "id": 29,
+          "category": "Outdoors",
+          "isBorrowed": true,
+          "name": "Bacon",
+          "borrowedTimes": 0,
+          "borrowedDate": "2023-08-21T06:22:57.661Z",
+          "returnDate": "2024-05-28T10:06:59.230Z",
+          "imgUrl": "https://picsum.photos/seed/lJOmO3q9/640/480"
+        },
+        {
+          "id": 30,
+          "category": "Outdoors",
+          "isBorrowed": false,
+          "name": "Shoes",
+          "borrowedTimes": 2,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/DdVf5Pf/640/480"
+        },
+        {
+          "id": 31,
+          "category": "Outdoors",
+          "isBorrowed": true,
+          "name": "Computer",
+          "borrowedTimes": 13,
+          "borrowedDate": "2023-08-18T12:41:28.431Z",
+          "returnDate": "2024-10-05T16:12:01.836Z",
+          "imgUrl": "https://picsum.photos/seed/QP7wSqtd6o/640/480"
+        },
+        {
+          "id": 32,
+          "category": "Outdoors",
+          "isBorrowed": true,
+          "name": "Chair",
+          "borrowedTimes": 6,
+          "borrowedDate": "2023-04-08T02:46:50.621Z",
+          "returnDate": "2024-05-13T15:00:16.833Z",
+          "imgUrl": "https://picsum.photos/seed/UHaryFrl/640/480"
+        },
+        {
+          "id": 33,
+          "category": "Outdoors",
+          "isBorrowed": false,
+          "name": "Car",
+          "borrowedTimes": 14,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/uBA7XT/640/480"
+        },
+        {
+          "id": 34,
+          "category": "Outdoors",
+          "isBorrowed": false,
+          "name": "Ball",
+          "borrowedTimes": 18,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/MjDiTW/640/480"
+        },
+        {
+          "id": 35,
+          "category": "Outdoors",
+          "isBorrowed": true,
+          "name": "Pizza",
+          "borrowedTimes": 6,
+          "borrowedDate": "2023-05-14T13:42:12.308Z",
+          "returnDate": "2025-01-13T01:07:27.667Z",
+          "imgUrl": "https://picsum.photos/seed/fGnsSQ0qA/640/480"
+        },
+        {
+          "id": 36,
+          "category": "Outdoors",
+          "isBorrowed": true,
+          "name": "Bacon",
+          "borrowedTimes": 13,
+          "borrowedDate": "2024-01-16T00:30:45.209Z",
+          "returnDate": "2024-06-13T19:14:13.757Z",
+          "imgUrl": "https://picsum.photos/seed/PwABa/640/480"
+        },
+        {
+          "id": 37,
+          "category": "Outdoors",
+          "isBorrowed": true,
+          "name": "Mouse",
+          "borrowedTimes": 12,
+          "borrowedDate": "2023-06-13T05:04:41.442Z",
+          "returnDate": "2024-11-25T21:36:09.782Z",
+          "imgUrl": "https://picsum.photos/seed/MPynX5Ce/640/480"
+        },
+        {
+          "id": 38,
+          "category": "Outdoors",
+          "isBorrowed": true,
+          "name": "Keyboard",
+          "borrowedTimes": 20,
+          "borrowedDate": "2023-05-24T00:23:52.957Z",
+          "returnDate": "2024-08-18T23:45:02.358Z",
+          "imgUrl": "https://picsum.photos/seed/ix7oke0/640/480"
+        },
+        {
+          "id": 39,
+          "category": "Outdoors",
+          "isBorrowed": false,
+          "name": "Salad",
+          "borrowedTimes": 0,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/Vw7yFClNIZ/640/480"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Garden",
+      "imgUrl": "https://picsum.photos/seed/J2OaepEA/640/480",
+      "items": [
+        {
+          "id": 0,
+          "category": "Garden",
+          "isBorrowed": false,
+          "name": "Shoes",
+          "borrowedTimes": 17,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/W8QQHCDI/640/480"
+        },
+        {
+          "id": 1,
+          "category": "Garden",
+          "isBorrowed": true,
+          "name": "Shirt",
+          "borrowedTimes": 14,
+          "borrowedDate": "2024-02-03T04:11:52.265Z",
+          "returnDate": "2024-05-04T08:05:24.303Z",
+          "imgUrl": "https://picsum.photos/seed/a03nj/640/480"
+        },
+        {
+          "id": 2,
+          "category": "Garden",
+          "isBorrowed": false,
+          "name": "Mouse",
+          "borrowedTimes": 19,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/WzNd1T/640/480"
+        },
+        {
+          "id": 3,
+          "category": "Garden",
+          "isBorrowed": false,
+          "name": "Chips",
+          "borrowedTimes": 7,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/xjDlYG0z/640/480"
+        },
+        {
+          "id": 4,
+          "category": "Garden",
+          "isBorrowed": false,
+          "name": "Pants",
+          "borrowedTimes": 6,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/xe3KRxvLB4/640/480"
+        },
+        {
+          "id": 5,
+          "category": "Garden",
+          "isBorrowed": false,
+          "name": "Bacon",
+          "borrowedTimes": 20,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/SLoRnu8Na/640/480"
+        },
+        {
+          "id": 6,
+          "category": "Garden",
+          "isBorrowed": false,
+          "name": "Sausages",
+          "borrowedTimes": 1,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/oomkfn/640/480"
+        },
+        {
+          "id": 7,
+          "category": "Garden",
+          "isBorrowed": false,
+          "name": "Cheese",
+          "borrowedTimes": 1,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/FST4c/640/480"
+        },
+        {
+          "id": 8,
+          "category": "Garden",
+          "isBorrowed": false,
+          "name": "Ball",
+          "borrowedTimes": 19,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/oP2wFKO/640/480"
+        },
+        {
+          "id": 9,
+          "category": "Garden",
+          "isBorrowed": false,
+          "name": "Chair",
+          "borrowedTimes": 17,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/9Aj27e2O/640/480"
+        },
+        {
+          "id": 10,
+          "category": "Garden",
+          "isBorrowed": true,
+          "name": "Tuna",
+          "borrowedTimes": 15,
+          "borrowedDate": "2023-12-30T13:23:12.232Z",
+          "returnDate": "2024-10-31T03:24:53.328Z",
+          "imgUrl": "https://picsum.photos/seed/XtwbuPfkR/640/480"
+        },
+        {
+          "id": 11,
+          "category": "Garden",
+          "isBorrowed": true,
+          "name": "Cheese",
+          "borrowedTimes": 3,
+          "borrowedDate": "2023-05-26T15:38:29.000Z",
+          "returnDate": "2024-04-15T05:52:10.502Z",
+          "imgUrl": "https://picsum.photos/seed/xrQ4aB9Ly/640/480"
+        },
+        {
+          "id": 12,
+          "category": "Garden",
+          "isBorrowed": true,
+          "name": "Shirt",
+          "borrowedTimes": 4,
+          "borrowedDate": "2023-03-22T10:49:59.290Z",
+          "returnDate": "2024-03-12T04:57:06.430Z",
+          "imgUrl": "https://picsum.photos/seed/hgsl9MJyNU/640/480"
+        },
+        {
+          "id": 13,
+          "category": "Garden",
+          "isBorrowed": false,
+          "name": "Chicken",
+          "borrowedTimes": 19,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/6Gt5gq4r/640/480"
+        },
+        {
+          "id": 14,
+          "category": "Garden",
+          "isBorrowed": true,
+          "name": "Keyboard",
+          "borrowedTimes": 3,
+          "borrowedDate": "2023-07-29T11:18:41.530Z",
+          "returnDate": "2024-11-23T14:40:47.901Z",
+          "imgUrl": "https://picsum.photos/seed/IgIG5zBTV/640/480"
+        },
+        {
+          "id": 15,
+          "category": "Garden",
+          "isBorrowed": false,
+          "name": "Ball",
+          "borrowedTimes": 16,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/kuYs7JJJ/640/480"
+        },
+        {
+          "id": 16,
+          "category": "Garden",
+          "isBorrowed": true,
+          "name": "Keyboard",
+          "borrowedTimes": 9,
+          "borrowedDate": "2023-08-01T07:00:44.240Z",
+          "returnDate": "2024-11-05T17:05:31.976Z",
+          "imgUrl": "https://picsum.photos/seed/2x9hvfM64/640/480"
+        },
+        {
+          "id": 17,
+          "category": "Garden",
+          "isBorrowed": true,
+          "name": "Ball",
+          "borrowedTimes": 20,
+          "borrowedDate": "2024-01-31T08:01:27.171Z",
+          "returnDate": "2024-03-06T18:55:19.707Z",
+          "imgUrl": "https://picsum.photos/seed/8k2r1dS/640/480"
+        },
+        {
+          "id": 18,
+          "category": "Garden",
+          "isBorrowed": false,
+          "name": "Gloves",
+          "borrowedTimes": 16,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/6xSLDzR/640/480"
+        },
+        {
+          "id": 19,
+          "category": "Garden",
+          "isBorrowed": true,
+          "name": "Pizza",
+          "borrowedTimes": 9,
+          "borrowedDate": "2023-11-08T10:59:58.450Z",
+          "returnDate": "2024-12-27T21:33:28.790Z",
+          "imgUrl": "https://picsum.photos/seed/0I7xJmM/640/480"
+        },
+        {
+          "id": 20,
+          "category": "Garden",
+          "isBorrowed": false,
+          "name": "Chicken",
+          "borrowedTimes": 3,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/pKSnhTJDUr/640/480"
+        },
+        {
+          "id": 21,
+          "category": "Garden",
+          "isBorrowed": true,
+          "name": "Towels",
+          "borrowedTimes": 15,
+          "borrowedDate": "2023-09-03T23:26:59.992Z",
+          "returnDate": "2025-01-02T01:13:19.556Z",
+          "imgUrl": "https://picsum.photos/seed/gZNlqabpH/640/480"
+        },
+        {
+          "id": 22,
+          "category": "Garden",
+          "isBorrowed": false,
+          "name": "Computer",
+          "borrowedTimes": 5,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/9AJ8wPL/640/480"
+        },
+        {
+          "id": 23,
+          "category": "Garden",
+          "isBorrowed": true,
+          "name": "Chicken",
+          "borrowedTimes": 19,
+          "borrowedDate": "2023-07-29T04:35:27.978Z",
+          "returnDate": "2024-07-07T05:34:55.343Z",
+          "imgUrl": "https://picsum.photos/seed/rOCB0fmf/640/480"
+        },
+        {
+          "id": 24,
+          "category": "Garden",
+          "isBorrowed": true,
+          "name": "Chicken",
+          "borrowedTimes": 18,
+          "borrowedDate": "2023-11-08T00:47:40.618Z",
+          "returnDate": "2025-01-03T07:45:44.556Z",
+          "imgUrl": "https://picsum.photos/seed/jGrSTW/640/480"
+        },
+        {
+          "id": 25,
+          "category": "Garden",
+          "isBorrowed": true,
+          "name": "Car",
+          "borrowedTimes": 11,
+          "borrowedDate": "2024-01-25T17:58:55.537Z",
+          "returnDate": "2024-10-12T19:50:27.993Z",
+          "imgUrl": "https://picsum.photos/seed/iTPSvj8BM/640/480"
+        },
+        {
+          "id": 26,
+          "category": "Garden",
+          "isBorrowed": false,
+          "name": "Shoes",
+          "borrowedTimes": 11,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/c4fRP78k/640/480"
+        },
+        {
+          "id": 27,
+          "category": "Garden",
+          "isBorrowed": false,
+          "name": "Bike",
+          "borrowedTimes": 13,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/Qr16kAaEMa/640/480"
+        },
+        {
+          "id": 28,
+          "category": "Garden",
+          "isBorrowed": false,
+          "name": "Keyboard",
+          "borrowedTimes": 7,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/Hn6Wi/640/480"
+        },
+        {
+          "id": 29,
+          "category": "Garden",
+          "isBorrowed": true,
+          "name": "Fish",
+          "borrowedTimes": 13,
+          "borrowedDate": "2023-06-08T16:59:43.366Z",
+          "returnDate": "2025-03-01T10:00:46.818Z",
+          "imgUrl": "https://picsum.photos/seed/p9hx6n/640/480"
+        },
+        {
+          "id": 30,
+          "category": "Garden",
+          "isBorrowed": false,
+          "name": "Fish",
+          "borrowedTimes": 18,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/JGxGu0B950/640/480"
+        },
+        {
+          "id": 31,
+          "category": "Garden",
+          "isBorrowed": false,
+          "name": "Car",
+          "borrowedTimes": 17,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/u4ZTg38k/640/480"
+        },
+        {
+          "id": 32,
+          "category": "Garden",
+          "isBorrowed": true,
+          "name": "Chips",
+          "borrowedTimes": 20,
+          "borrowedDate": "2024-01-27T09:58:31.075Z",
+          "returnDate": "2024-06-04T15:53:34.179Z",
+          "imgUrl": "https://picsum.photos/seed/3VkWrO/640/480"
+        },
+        {
+          "id": 33,
+          "category": "Garden",
+          "isBorrowed": true,
+          "name": "Bike",
+          "borrowedTimes": 12,
+          "borrowedDate": "2023-12-04T17:32:48.631Z",
+          "returnDate": "2024-08-03T17:36:00.143Z",
+          "imgUrl": "https://picsum.photos/seed/gKgkoTfe/640/480"
+        },
+        {
+          "id": 34,
+          "category": "Garden",
+          "isBorrowed": true,
+          "name": "Bacon",
+          "borrowedTimes": 2,
+          "borrowedDate": "2024-01-08T16:30:07.645Z",
+          "returnDate": "2024-06-20T11:40:20.827Z",
+          "imgUrl": "https://picsum.photos/seed/KxEOzn/640/480"
+        },
+        {
+          "id": 35,
+          "category": "Garden",
+          "isBorrowed": false,
+          "name": "Cheese",
+          "borrowedTimes": 12,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/gnBwJO/640/480"
+        },
+        {
+          "id": 36,
+          "category": "Garden",
+          "isBorrowed": false,
+          "name": "Soap",
+          "borrowedTimes": 3,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/5Ot7Al/640/480"
+        },
+        {
+          "id": 37,
+          "category": "Garden",
+          "isBorrowed": false,
+          "name": "Keyboard",
+          "borrowedTimes": 8,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/SzBRDPkcx/640/480"
+        },
+        {
+          "id": 38,
+          "category": "Garden",
+          "isBorrowed": false,
+          "name": "Salad",
+          "borrowedTimes": 18,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/OnvoL/640/480"
+        },
+        {
+          "id": 39,
+          "category": "Garden",
+          "isBorrowed": false,
+          "name": "Towels",
+          "borrowedTimes": 16,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/pkHnSH4/640/480"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Music",
+      "imgUrl": "https://picsum.photos/seed/L7hz0MLu/640/480",
+      "items": [
+        {
+          "id": 0,
+          "category": "Music",
+          "isBorrowed": true,
+          "name": "Gloves",
+          "borrowedTimes": 5,
+          "borrowedDate": "2023-05-19T00:10:58.797Z",
+          "returnDate": "2024-06-02T06:43:18.337Z",
+          "imgUrl": "https://picsum.photos/seed/ZFBUSNDsPE/640/480"
+        },
+        {
+          "id": 1,
+          "category": "Music",
+          "isBorrowed": true,
+          "name": "Bacon",
+          "borrowedTimes": 11,
+          "borrowedDate": "2023-08-04T11:49:13.141Z",
+          "returnDate": "2024-11-03T02:21:38.794Z",
+          "imgUrl": "https://picsum.photos/seed/IvTYhlU/640/480"
+        },
+        {
+          "id": 2,
+          "category": "Music",
+          "isBorrowed": false,
+          "name": "Bacon",
+          "borrowedTimes": 8,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/0YvjSXKQ/640/480"
+        },
+        {
+          "id": 3,
+          "category": "Music",
+          "isBorrowed": true,
+          "name": "Towels",
+          "borrowedTimes": 3,
+          "borrowedDate": "2024-02-16T15:14:01.650Z",
+          "returnDate": "2024-11-07T19:48:43.548Z",
+          "imgUrl": "https://picsum.photos/seed/8lRl5/640/480"
+        },
+        {
+          "id": 4,
+          "category": "Music",
+          "isBorrowed": true,
+          "name": "Chair",
+          "borrowedTimes": 10,
+          "borrowedDate": "2023-11-16T06:48:23.631Z",
+          "returnDate": "2025-01-22T12:52:00.776Z",
+          "imgUrl": "https://picsum.photos/seed/Eq7LNTE/640/480"
+        },
+        {
+          "id": 5,
+          "category": "Music",
+          "isBorrowed": true,
+          "name": "Gloves",
+          "borrowedTimes": 12,
+          "borrowedDate": "2024-01-07T03:58:58.556Z",
+          "returnDate": "2025-02-22T21:06:38.728Z",
+          "imgUrl": "https://picsum.photos/seed/TruzZEw/640/480"
+        },
+        {
+          "id": 6,
+          "category": "Music",
+          "isBorrowed": true,
+          "name": "Towels",
+          "borrowedTimes": 20,
+          "borrowedDate": "2023-08-22T09:55:23.639Z",
+          "returnDate": "2024-06-15T19:02:17.028Z",
+          "imgUrl": "https://picsum.photos/seed/MafZkJFUt4/640/480"
+        },
+        {
+          "id": 7,
+          "category": "Music",
+          "isBorrowed": true,
+          "name": "Ball",
+          "borrowedTimes": 18,
+          "borrowedDate": "2024-02-27T17:30:53.403Z",
+          "returnDate": "2024-07-09T15:08:11.775Z",
+          "imgUrl": "https://picsum.photos/seed/qh4kBHneF/640/480"
+        },
+        {
+          "id": 8,
+          "category": "Music",
+          "isBorrowed": true,
+          "name": "Bike",
+          "borrowedTimes": 15,
+          "borrowedDate": "2023-08-03T17:38:34.284Z",
+          "returnDate": "2024-07-21T21:33:12.266Z",
+          "imgUrl": "https://picsum.photos/seed/1yRzTtLKR/640/480"
+        },
+        {
+          "id": 9,
+          "category": "Music",
+          "isBorrowed": true,
+          "name": "Shoes",
+          "borrowedTimes": 16,
+          "borrowedDate": "2023-08-01T00:16:19.487Z",
+          "returnDate": "2024-10-19T13:09:31.838Z",
+          "imgUrl": "https://picsum.photos/seed/GvB3qlX/640/480"
+        },
+        {
+          "id": 10,
+          "category": "Music",
+          "isBorrowed": false,
+          "name": "Keyboard",
+          "borrowedTimes": 8,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/ZfwO9pRS8R/640/480"
+        },
+        {
+          "id": 11,
+          "category": "Music",
+          "isBorrowed": true,
+          "name": "Shoes",
+          "borrowedTimes": 17,
+          "borrowedDate": "2023-11-01T13:00:38.373Z",
+          "returnDate": "2024-12-15T10:28:40.167Z",
+          "imgUrl": "https://picsum.photos/seed/8AeH8coit6/640/480"
+        },
+        {
+          "id": 12,
+          "category": "Music",
+          "isBorrowed": false,
+          "name": "Computer",
+          "borrowedTimes": 5,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/FEdPnzpX/640/480"
+        },
+        {
+          "id": 13,
+          "category": "Music",
+          "isBorrowed": true,
+          "name": "Shirt",
+          "borrowedTimes": 3,
+          "borrowedDate": "2023-04-16T21:44:29.709Z",
+          "returnDate": "2024-03-27T07:34:32.830Z",
+          "imgUrl": "https://picsum.photos/seed/XYzrRv/640/480"
+        },
+        {
+          "id": 14,
+          "category": "Music",
+          "isBorrowed": false,
+          "name": "Keyboard",
+          "borrowedTimes": 16,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/6wyEUk/640/480"
+        },
+        {
+          "id": 15,
+          "category": "Music",
+          "isBorrowed": true,
+          "name": "Ball",
+          "borrowedTimes": 2,
+          "borrowedDate": "2024-02-10T10:36:24.043Z",
+          "returnDate": "2024-09-23T18:04:17.967Z",
+          "imgUrl": "https://picsum.photos/seed/lFkZC6/640/480"
+        },
+        {
+          "id": 16,
+          "category": "Music",
+          "isBorrowed": false,
+          "name": "Fish",
+          "borrowedTimes": 15,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/AGvwsO4M/640/480"
+        },
+        {
+          "id": 17,
+          "category": "Music",
+          "isBorrowed": true,
+          "name": "Ball",
+          "borrowedTimes": 8,
+          "borrowedDate": "2024-02-01T00:05:26.021Z",
+          "returnDate": "2024-03-08T17:49:31.054Z",
+          "imgUrl": "https://picsum.photos/seed/NE9gaJf7U/640/480"
+        },
+        {
+          "id": 18,
+          "category": "Music",
+          "isBorrowed": true,
+          "name": "Shirt",
+          "borrowedTimes": 15,
+          "borrowedDate": "2023-11-23T22:33:26.190Z",
+          "returnDate": "2025-03-05T12:34:17.571Z",
+          "imgUrl": "https://picsum.photos/seed/sDYsN8S0/640/480"
+        },
+        {
+          "id": 19,
+          "category": "Music",
+          "isBorrowed": false,
+          "name": "Table",
+          "borrowedTimes": 19,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/vaHPI/640/480"
+        },
+        {
+          "id": 20,
+          "category": "Music",
+          "isBorrowed": true,
+          "name": "Chair",
+          "borrowedTimes": 16,
+          "borrowedDate": "2024-03-03T16:41:26.637Z",
+          "returnDate": "2024-10-30T18:06:03.022Z",
+          "imgUrl": "https://picsum.photos/seed/JHKKCaT5/640/480"
+        },
+        {
+          "id": 21,
+          "category": "Music",
+          "isBorrowed": false,
+          "name": "Salad",
+          "borrowedTimes": 10,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/2bZRlpZ/640/480"
+        },
+        {
+          "id": 22,
+          "category": "Music",
+          "isBorrowed": true,
+          "name": "Soap",
+          "borrowedTimes": 18,
+          "borrowedDate": "2023-07-14T23:26:31.731Z",
+          "returnDate": "2024-04-24T19:24:25.751Z",
+          "imgUrl": "https://picsum.photos/seed/RmqPmc/640/480"
+        },
+        {
+          "id": 23,
+          "category": "Music",
+          "isBorrowed": false,
+          "name": "Towels",
+          "borrowedTimes": 13,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/8KQgpi/640/480"
+        },
+        {
+          "id": 24,
+          "category": "Music",
+          "isBorrowed": false,
+          "name": "Car",
+          "borrowedTimes": 11,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/9zv5A/640/480"
+        },
+        {
+          "id": 25,
+          "category": "Music",
+          "isBorrowed": false,
+          "name": "Gloves",
+          "borrowedTimes": 5,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/0rcP4QfJfM/640/480"
+        },
+        {
+          "id": 26,
+          "category": "Music",
+          "isBorrowed": true,
+          "name": "Ball",
+          "borrowedTimes": 20,
+          "borrowedDate": "2023-12-17T12:28:48.079Z",
+          "returnDate": "2025-03-05T16:08:10.493Z",
+          "imgUrl": "https://picsum.photos/seed/ZRF1p2/640/480"
+        },
+        {
+          "id": 27,
+          "category": "Music",
+          "isBorrowed": true,
+          "name": "Shirt",
+          "borrowedTimes": 11,
+          "borrowedDate": "2023-12-21T02:30:29.330Z",
+          "returnDate": "2024-03-20T03:50:32.221Z",
+          "imgUrl": "https://picsum.photos/seed/XEVLP/640/480"
+        },
+        {
+          "id": 28,
+          "category": "Music",
+          "isBorrowed": true,
+          "name": "Fish",
+          "borrowedTimes": 9,
+          "borrowedDate": "2023-11-03T21:26:06.109Z",
+          "returnDate": "2024-03-23T05:23:16.578Z",
+          "imgUrl": "https://picsum.photos/seed/VtQ48G/640/480"
+        },
+        {
+          "id": 29,
+          "category": "Music",
+          "isBorrowed": false,
+          "name": "Mouse",
+          "borrowedTimes": 10,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/8IGireWdrQ/640/480"
+        },
+        {
+          "id": 30,
+          "category": "Music",
+          "isBorrowed": false,
+          "name": "Keyboard",
+          "borrowedTimes": 7,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/PsW7M0/640/480"
+        },
+        {
+          "id": 31,
+          "category": "Music",
+          "isBorrowed": false,
+          "name": "Soap",
+          "borrowedTimes": 2,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/EPMJe2/640/480"
+        },
+        {
+          "id": 32,
+          "category": "Music",
+          "isBorrowed": true,
+          "name": "Chair",
+          "borrowedTimes": 18,
+          "borrowedDate": "2023-05-30T21:07:32.887Z",
+          "returnDate": "2025-01-02T08:32:13.204Z",
+          "imgUrl": "https://picsum.photos/seed/nCQGQpi5y/640/480"
+        },
+        {
+          "id": 33,
+          "category": "Music",
+          "isBorrowed": false,
+          "name": "Bacon",
+          "borrowedTimes": 3,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/TAHEUtG9/640/480"
+        },
+        {
+          "id": 34,
+          "category": "Music",
+          "isBorrowed": true,
+          "name": "Pizza",
+          "borrowedTimes": 5,
+          "borrowedDate": "2024-01-27T08:32:18.200Z",
+          "returnDate": "2025-02-17T18:01:20.234Z",
+          "imgUrl": "https://picsum.photos/seed/CFL2VIRWl7/640/480"
+        },
+        {
+          "id": 35,
+          "category": "Music",
+          "isBorrowed": false,
+          "name": "Keyboard",
+          "borrowedTimes": 1,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/ZiJRFRfZy/640/480"
+        },
+        {
+          "id": 36,
+          "category": "Music",
+          "isBorrowed": true,
+          "name": "Gloves",
+          "borrowedTimes": 17,
+          "borrowedDate": "2023-10-05T06:25:34.037Z",
+          "returnDate": "2024-12-24T16:12:10.369Z",
+          "imgUrl": "https://picsum.photos/seed/OTBqD/640/480"
+        },
+        {
+          "id": 37,
+          "category": "Music",
+          "isBorrowed": true,
+          "name": "Gloves",
+          "borrowedTimes": 3,
+          "borrowedDate": "2023-10-27T21:13:51.703Z",
+          "returnDate": "2024-04-27T08:49:22.880Z",
+          "imgUrl": "https://picsum.photos/seed/13Qmz/640/480"
+        },
+        {
+          "id": 38,
+          "category": "Music",
+          "isBorrowed": false,
+          "name": "Bacon",
+          "borrowedTimes": 1,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/ENPPXLTbHv/640/480"
+        },
+        {
+          "id": 39,
+          "category": "Music",
+          "isBorrowed": true,
+          "name": "Keyboard",
+          "borrowedTimes": 16,
+          "borrowedDate": "2023-03-28T21:11:11.759Z",
+          "returnDate": "2024-03-21T18:17:37.690Z",
+          "imgUrl": "https://picsum.photos/seed/8ypa4f5aF/640/480"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Jewelery",
+      "imgUrl": "https://picsum.photos/seed/S2mupndlZT/640/480",
+      "items": [
+        {
+          "id": 0,
+          "category": "Jewelery",
+          "isBorrowed": true,
+          "name": "Chips",
+          "borrowedTimes": 17,
+          "borrowedDate": "2023-06-22T17:18:56.272Z",
+          "returnDate": "2024-06-12T12:40:31.315Z",
+          "imgUrl": "https://picsum.photos/seed/nasyZ/640/480"
+        },
+        {
+          "id": 1,
+          "category": "Jewelery",
+          "isBorrowed": false,
+          "name": "Hat",
+          "borrowedTimes": 5,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/C16uzuUySl/640/480"
+        },
+        {
+          "id": 2,
+          "category": "Jewelery",
+          "isBorrowed": false,
+          "name": "Tuna",
+          "borrowedTimes": 2,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/OCcjI/640/480"
+        },
+        {
+          "id": 3,
+          "category": "Jewelery",
+          "isBorrowed": true,
+          "name": "Cheese",
+          "borrowedTimes": 11,
+          "borrowedDate": "2023-03-21T03:01:29.401Z",
+          "returnDate": "2025-01-18T19:46:06.864Z",
+          "imgUrl": "https://picsum.photos/seed/0Gp8CkF1aC/640/480"
+        },
+        {
+          "id": 4,
+          "category": "Jewelery",
+          "isBorrowed": false,
+          "name": "Cheese",
+          "borrowedTimes": 11,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/SJ9zsOnwG/640/480"
+        },
+        {
+          "id": 5,
+          "category": "Jewelery",
+          "isBorrowed": true,
+          "name": "Pants",
+          "borrowedTimes": 0,
+          "borrowedDate": "2023-09-14T06:22:35.352Z",
+          "returnDate": "2025-02-22T08:53:29.934Z",
+          "imgUrl": "https://picsum.photos/seed/2w3qY/640/480"
+        },
+        {
+          "id": 6,
+          "category": "Jewelery",
+          "isBorrowed": true,
+          "name": "Chicken",
+          "borrowedTimes": 11,
+          "borrowedDate": "2023-09-06T11:59:02.924Z",
+          "returnDate": "2024-09-12T00:30:24.766Z",
+          "imgUrl": "https://picsum.photos/seed/BegqGWShK5/640/480"
+        },
+        {
+          "id": 7,
+          "category": "Jewelery",
+          "isBorrowed": false,
+          "name": "Chips",
+          "borrowedTimes": 4,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/l0BSu1G3um/640/480"
+        },
+        {
+          "id": 8,
+          "category": "Jewelery",
+          "isBorrowed": true,
+          "name": "Towels",
+          "borrowedTimes": 20,
+          "borrowedDate": "2023-10-31T00:06:57.053Z",
+          "returnDate": "2024-12-30T00:33:39.031Z",
+          "imgUrl": "https://picsum.photos/seed/3hdiOxzmC3/640/480"
+        },
+        {
+          "id": 9,
+          "category": "Jewelery",
+          "isBorrowed": true,
+          "name": "Chair",
+          "borrowedTimes": 13,
+          "borrowedDate": "2023-08-08T18:26:51.013Z",
+          "returnDate": "2024-09-22T20:39:57.461Z",
+          "imgUrl": "https://picsum.photos/seed/L0Cnqt/640/480"
+        },
+        {
+          "id": 10,
+          "category": "Jewelery",
+          "isBorrowed": false,
+          "name": "Ball",
+          "borrowedTimes": 19,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/tKiB3IvrgJ/640/480"
+        },
+        {
+          "id": 11,
+          "category": "Jewelery",
+          "isBorrowed": true,
+          "name": "Pizza",
+          "borrowedTimes": 0,
+          "borrowedDate": "2023-03-15T11:40:59.815Z",
+          "returnDate": "2024-11-16T15:12:53.855Z",
+          "imgUrl": "https://picsum.photos/seed/w5qkL/640/480"
+        },
+        {
+          "id": 12,
+          "category": "Jewelery",
+          "isBorrowed": true,
+          "name": "Cheese",
+          "borrowedTimes": 6,
+          "borrowedDate": "2023-05-16T03:05:23.309Z",
+          "returnDate": "2024-06-06T23:41:49.693Z",
+          "imgUrl": "https://picsum.photos/seed/Zj9BpEV/640/480"
+        },
+        {
+          "id": 13,
+          "category": "Jewelery",
+          "isBorrowed": true,
+          "name": "Tuna",
+          "borrowedTimes": 8,
+          "borrowedDate": "2023-10-08T15:38:58.958Z",
+          "returnDate": "2024-07-09T09:06:55.791Z",
+          "imgUrl": "https://picsum.photos/seed/rq1Odwgh/640/480"
+        },
+        {
+          "id": 14,
+          "category": "Jewelery",
+          "isBorrowed": false,
+          "name": "Chicken",
+          "borrowedTimes": 10,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/ia2xsjaq/640/480"
+        },
+        {
+          "id": 15,
+          "category": "Jewelery",
+          "isBorrowed": false,
+          "name": "Chips",
+          "borrowedTimes": 12,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/0KH5LZ/640/480"
+        },
+        {
+          "id": 16,
+          "category": "Jewelery",
+          "isBorrowed": false,
+          "name": "Bike",
+          "borrowedTimes": 14,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/i0wt28D/640/480"
+        },
+        {
+          "id": 17,
+          "category": "Jewelery",
+          "isBorrowed": false,
+          "name": "Shoes",
+          "borrowedTimes": 15,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/OZPMA1/640/480"
+        },
+        {
+          "id": 18,
+          "category": "Jewelery",
+          "isBorrowed": false,
+          "name": "Bike",
+          "borrowedTimes": 4,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/ljp6hPX/640/480"
+        },
+        {
+          "id": 19,
+          "category": "Jewelery",
+          "isBorrowed": true,
+          "name": "Gloves",
+          "borrowedTimes": 2,
+          "borrowedDate": "2023-05-24T20:54:01.891Z",
+          "returnDate": "2024-09-26T20:13:06.511Z",
+          "imgUrl": "https://picsum.photos/seed/r2YaY/640/480"
+        },
+        {
+          "id": 20,
+          "category": "Jewelery",
+          "isBorrowed": false,
+          "name": "Sausages",
+          "borrowedTimes": 14,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/mG4wTXNT/640/480"
+        },
+        {
+          "id": 21,
+          "category": "Jewelery",
+          "isBorrowed": false,
+          "name": "Bike",
+          "borrowedTimes": 14,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/YHo4Gu/640/480"
+        },
+        {
+          "id": 22,
+          "category": "Jewelery",
+          "isBorrowed": true,
+          "name": "Salad",
+          "borrowedTimes": 16,
+          "borrowedDate": "2023-12-07T11:15:58.417Z",
+          "returnDate": "2024-10-25T22:40:59.665Z",
+          "imgUrl": "https://picsum.photos/seed/SckMEnEEW/640/480"
+        },
+        {
+          "id": 23,
+          "category": "Jewelery",
+          "isBorrowed": true,
+          "name": "Keyboard",
+          "borrowedTimes": 17,
+          "borrowedDate": "2024-02-22T05:19:43.884Z",
+          "returnDate": "2024-05-25T09:30:23.649Z",
+          "imgUrl": "https://picsum.photos/seed/llkM2WJ78/640/480"
+        },
+        {
+          "id": 24,
+          "category": "Jewelery",
+          "isBorrowed": false,
+          "name": "Keyboard",
+          "borrowedTimes": 19,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/oNA8U/640/480"
+        },
+        {
+          "id": 25,
+          "category": "Jewelery",
+          "isBorrowed": true,
+          "name": "Table",
+          "borrowedTimes": 18,
+          "borrowedDate": "2023-05-24T14:34:23.394Z",
+          "returnDate": "2025-01-16T13:43:36.904Z",
+          "imgUrl": "https://picsum.photos/seed/xTSBnX/640/480"
+        },
+        {
+          "id": 26,
+          "category": "Jewelery",
+          "isBorrowed": false,
+          "name": "Pizza",
+          "borrowedTimes": 20,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/2kF5TpBZr/640/480"
+        },
+        {
+          "id": 27,
+          "category": "Jewelery",
+          "isBorrowed": false,
+          "name": "Chips",
+          "borrowedTimes": 5,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/dJ9Ky/640/480"
+        },
+        {
+          "id": 28,
+          "category": "Jewelery",
+          "isBorrowed": false,
+          "name": "Hat",
+          "borrowedTimes": 3,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/SGMtfP9g/640/480"
+        },
+        {
+          "id": 29,
+          "category": "Jewelery",
+          "isBorrowed": true,
+          "name": "Bacon",
+          "borrowedTimes": 13,
+          "borrowedDate": "2024-01-20T12:10:31.103Z",
+          "returnDate": "2024-11-07T20:33:40.173Z",
+          "imgUrl": "https://picsum.photos/seed/J2gqlt/640/480"
+        },
+        {
+          "id": 30,
+          "category": "Jewelery",
+          "isBorrowed": true,
+          "name": "Chips",
+          "borrowedTimes": 9,
+          "borrowedDate": "2023-11-10T17:45:24.793Z",
+          "returnDate": "2024-11-08T18:40:04.174Z",
+          "imgUrl": "https://picsum.photos/seed/ndrR09RO/640/480"
+        },
+        {
+          "id": 31,
+          "category": "Jewelery",
+          "isBorrowed": true,
+          "name": "Shoes",
+          "borrowedTimes": 1,
+          "borrowedDate": "2023-08-18T01:02:43.326Z",
+          "returnDate": "2024-07-30T05:56:20.654Z",
+          "imgUrl": "https://picsum.photos/seed/HROr6m2t/640/480"
+        },
+        {
+          "id": 32,
+          "category": "Jewelery",
+          "isBorrowed": true,
+          "name": "Chicken",
+          "borrowedTimes": 1,
+          "borrowedDate": "2023-08-06T19:01:29.256Z",
+          "returnDate": "2024-10-12T06:26:18.172Z",
+          "imgUrl": "https://picsum.photos/seed/ChrAh3thu/640/480"
+        },
+        {
+          "id": 33,
+          "category": "Jewelery",
+          "isBorrowed": true,
+          "name": "Computer",
+          "borrowedTimes": 11,
+          "borrowedDate": "2023-09-30T20:28:06.859Z",
+          "returnDate": "2024-05-24T22:11:26.604Z",
+          "imgUrl": "https://picsum.photos/seed/8T6pZO0C6/640/480"
+        },
+        {
+          "id": 34,
+          "category": "Jewelery",
+          "isBorrowed": false,
+          "name": "Towels",
+          "borrowedTimes": 7,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/8U4lEvk/640/480"
+        },
+        {
+          "id": 35,
+          "category": "Jewelery",
+          "isBorrowed": false,
+          "name": "Pizza",
+          "borrowedTimes": 1,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/Ssiu26/640/480"
+        },
+        {
+          "id": 36,
+          "category": "Jewelery",
+          "isBorrowed": false,
+          "name": "Computer",
+          "borrowedTimes": 3,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/1tvVWbSYz/640/480"
+        },
+        {
+          "id": 37,
+          "category": "Jewelery",
+          "isBorrowed": true,
+          "name": "Keyboard",
+          "borrowedTimes": 6,
+          "borrowedDate": "2023-09-15T10:55:03.782Z",
+          "returnDate": "2025-01-24T13:52:58.459Z",
+          "imgUrl": "https://picsum.photos/seed/GCP1Z2/640/480"
+        },
+        {
+          "id": 38,
+          "category": "Jewelery",
+          "isBorrowed": false,
+          "name": "Pizza",
+          "borrowedTimes": 6,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/MI7uOJtL/640/480"
+        },
+        {
+          "id": 39,
+          "category": "Jewelery",
+          "isBorrowed": false,
+          "name": "Table",
+          "borrowedTimes": 11,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/yt0eiaB0No/640/480"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Sports",
+      "imgUrl": "https://picsum.photos/seed/k2bphtIyP/640/480",
+      "items": [
+        {
+          "id": 0,
+          "category": "Sports",
+          "isBorrowed": false,
+          "name": "Car",
+          "borrowedTimes": 3,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/yEiiRzzm/640/480"
+        },
+        {
+          "id": 1,
+          "category": "Sports",
+          "isBorrowed": false,
+          "name": "Towels",
+          "borrowedTimes": 2,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/ulyXB/640/480"
+        },
+        {
+          "id": 2,
+          "category": "Sports",
+          "isBorrowed": false,
+          "name": "Ball",
+          "borrowedTimes": 5,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/TCp1N/640/480"
+        },
+        {
+          "id": 3,
+          "category": "Sports",
+          "isBorrowed": false,
+          "name": "Mouse",
+          "borrowedTimes": 7,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/bEWi7Ihy/640/480"
+        },
+        {
+          "id": 4,
+          "category": "Sports",
+          "isBorrowed": false,
+          "name": "Gloves",
+          "borrowedTimes": 11,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/ZDTFzZ/640/480"
+        },
+        {
+          "id": 5,
+          "category": "Sports",
+          "isBorrowed": true,
+          "name": "Shirt",
+          "borrowedTimes": 4,
+          "borrowedDate": "2023-12-23T22:09:26.972Z",
+          "returnDate": "2024-03-27T10:56:30.068Z",
+          "imgUrl": "https://picsum.photos/seed/RUlvju/640/480"
+        },
+        {
+          "id": 6,
+          "category": "Sports",
+          "isBorrowed": true,
+          "name": "Shoes",
+          "borrowedTimes": 8,
+          "borrowedDate": "2023-10-22T05:18:09.601Z",
+          "returnDate": "2024-09-04T08:53:56.854Z",
+          "imgUrl": "https://picsum.photos/seed/EASnSaVOxE/640/480"
+        },
+        {
+          "id": 7,
+          "category": "Sports",
+          "isBorrowed": false,
+          "name": "Bacon",
+          "borrowedTimes": 11,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/Qf4Lq9twR/640/480"
+        },
+        {
+          "id": 8,
+          "category": "Sports",
+          "isBorrowed": false,
+          "name": "Pants",
+          "borrowedTimes": 6,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/QMLvBWfRR/640/480"
+        },
+        {
+          "id": 9,
+          "category": "Sports",
+          "isBorrowed": false,
+          "name": "Car",
+          "borrowedTimes": 19,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/8v88uqdD/640/480"
+        },
+        {
+          "id": 10,
+          "category": "Sports",
+          "isBorrowed": true,
+          "name": "Hat",
+          "borrowedTimes": 8,
+          "borrowedDate": "2023-03-19T20:17:30.383Z",
+          "returnDate": "2024-05-03T04:38:35.238Z",
+          "imgUrl": "https://picsum.photos/seed/nGbyH3Y/640/480"
+        },
+        {
+          "id": 11,
+          "category": "Sports",
+          "isBorrowed": true,
+          "name": "Mouse",
+          "borrowedTimes": 10,
+          "borrowedDate": "2023-11-09T03:34:55.391Z",
+          "returnDate": "2024-07-04T02:10:19.003Z",
+          "imgUrl": "https://picsum.photos/seed/sBGwEm/640/480"
+        },
+        {
+          "id": 12,
+          "category": "Sports",
+          "isBorrowed": false,
+          "name": "Mouse",
+          "borrowedTimes": 15,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/rKzcziY/640/480"
+        },
+        {
+          "id": 13,
+          "category": "Sports",
+          "isBorrowed": false,
+          "name": "Bacon",
+          "borrowedTimes": 5,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/GCGmR2S3/640/480"
+        },
+        {
+          "id": 14,
+          "category": "Sports",
+          "isBorrowed": false,
+          "name": "Mouse",
+          "borrowedTimes": 18,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/YX1b1/640/480"
+        },
+        {
+          "id": 15,
+          "category": "Sports",
+          "isBorrowed": false,
+          "name": "Bacon",
+          "borrowedTimes": 2,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/CzSnxy1JSc/640/480"
+        },
+        {
+          "id": 16,
+          "category": "Sports",
+          "isBorrowed": true,
+          "name": "Ball",
+          "borrowedTimes": 2,
+          "borrowedDate": "2023-11-16T11:49:24.021Z",
+          "returnDate": "2024-04-01T23:16:53.613Z",
+          "imgUrl": "https://picsum.photos/seed/JRTBa/640/480"
+        },
+        {
+          "id": 17,
+          "category": "Sports",
+          "isBorrowed": false,
+          "name": "Towels",
+          "borrowedTimes": 13,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/W0SzR/640/480"
+        },
+        {
+          "id": 18,
+          "category": "Sports",
+          "isBorrowed": false,
+          "name": "Sausages",
+          "borrowedTimes": 3,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/Bz0A7IccxJ/640/480"
+        },
+        {
+          "id": 19,
+          "category": "Sports",
+          "isBorrowed": true,
+          "name": "Tuna",
+          "borrowedTimes": 6,
+          "borrowedDate": "2024-01-07T19:36:26.403Z",
+          "returnDate": "2024-06-08T17:24:12.450Z",
+          "imgUrl": "https://picsum.photos/seed/ZDgBq8fX/640/480"
+        },
+        {
+          "id": 20,
+          "category": "Sports",
+          "isBorrowed": false,
+          "name": "Gloves",
+          "borrowedTimes": 3,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/htxHo9/640/480"
+        },
+        {
+          "id": 21,
+          "category": "Sports",
+          "isBorrowed": false,
+          "name": "Cheese",
+          "borrowedTimes": 5,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/mvMsc8lGgt/640/480"
+        },
+        {
+          "id": 22,
+          "category": "Sports",
+          "isBorrowed": false,
+          "name": "Chips",
+          "borrowedTimes": 20,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/OfdDORtql/640/480"
+        },
+        {
+          "id": 23,
+          "category": "Sports",
+          "isBorrowed": true,
+          "name": "Keyboard",
+          "borrowedTimes": 20,
+          "borrowedDate": "2023-06-03T09:01:38.785Z",
+          "returnDate": "2025-02-11T01:53:19.744Z",
+          "imgUrl": "https://picsum.photos/seed/ckcRNNGsD/640/480"
+        },
+        {
+          "id": 24,
+          "category": "Sports",
+          "isBorrowed": false,
+          "name": "Sausages",
+          "borrowedTimes": 17,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/5eBWgRq/640/480"
+        },
+        {
+          "id": 25,
+          "category": "Sports",
+          "isBorrowed": true,
+          "name": "Keyboard",
+          "borrowedTimes": 20,
+          "borrowedDate": "2023-05-28T00:54:58.315Z",
+          "returnDate": "2024-07-05T05:12:27.326Z",
+          "imgUrl": "https://picsum.photos/seed/GccC4B/640/480"
+        },
+        {
+          "id": 26,
+          "category": "Sports",
+          "isBorrowed": true,
+          "name": "Sausages",
+          "borrowedTimes": 1,
+          "borrowedDate": "2023-08-17T01:12:05.927Z",
+          "returnDate": "2024-11-13T11:17:40.879Z",
+          "imgUrl": "https://picsum.photos/seed/2NIEBJr/640/480"
+        },
+        {
+          "id": 27,
+          "category": "Sports",
+          "isBorrowed": true,
+          "name": "Hat",
+          "borrowedTimes": 20,
+          "borrowedDate": "2023-12-04T00:58:13.175Z",
+          "returnDate": "2024-11-19T20:17:40.541Z",
+          "imgUrl": "https://picsum.photos/seed/SwLTU020/640/480"
+        },
+        {
+          "id": 28,
+          "category": "Sports",
+          "isBorrowed": true,
+          "name": "Car",
+          "borrowedTimes": 0,
+          "borrowedDate": "2024-02-29T17:47:01.100Z",
+          "returnDate": "2024-09-21T02:51:03.390Z",
+          "imgUrl": "https://picsum.photos/seed/poK520DAfG/640/480"
+        },
+        {
+          "id": 29,
+          "category": "Sports",
+          "isBorrowed": false,
+          "name": "Chips",
+          "borrowedTimes": 17,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/wirZjwnh/640/480"
+        },
+        {
+          "id": 30,
+          "category": "Sports",
+          "isBorrowed": true,
+          "name": "Pants",
+          "borrowedTimes": 17,
+          "borrowedDate": "2023-05-05T23:20:26.633Z",
+          "returnDate": "2024-12-03T03:20:29.233Z",
+          "imgUrl": "https://picsum.photos/seed/JgpOJwZjIE/640/480"
+        },
+        {
+          "id": 31,
+          "category": "Sports",
+          "isBorrowed": false,
+          "name": "Mouse",
+          "borrowedTimes": 1,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/CYCH5/640/480"
+        },
+        {
+          "id": 32,
+          "category": "Sports",
+          "isBorrowed": true,
+          "name": "Hat",
+          "borrowedTimes": 3,
+          "borrowedDate": "2023-10-29T21:42:36.805Z",
+          "returnDate": "2024-09-04T20:33:20.097Z",
+          "imgUrl": "https://picsum.photos/seed/K9vXR8NyU4/640/480"
+        },
+        {
+          "id": 33,
+          "category": "Sports",
+          "isBorrowed": false,
+          "name": "Gloves",
+          "borrowedTimes": 12,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/weIi10NMP/640/480"
+        },
+        {
+          "id": 34,
+          "category": "Sports",
+          "isBorrowed": true,
+          "name": "Fish",
+          "borrowedTimes": 19,
+          "borrowedDate": "2024-02-02T16:02:57.399Z",
+          "returnDate": "2024-10-23T08:13:03.739Z",
+          "imgUrl": "https://picsum.photos/seed/bvBeC/640/480"
+        },
+        {
+          "id": 35,
+          "category": "Sports",
+          "isBorrowed": true,
+          "name": "Computer",
+          "borrowedTimes": 17,
+          "borrowedDate": "2023-12-09T06:26:56.091Z",
+          "returnDate": "2024-12-19T23:02:04.953Z",
+          "imgUrl": "https://picsum.photos/seed/DlOzwNZl/640/480"
+        },
+        {
+          "id": 36,
+          "category": "Sports",
+          "isBorrowed": false,
+          "name": "Chicken",
+          "borrowedTimes": 10,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/jmIslVgXd1/640/480"
+        },
+        {
+          "id": 37,
+          "category": "Sports",
+          "isBorrowed": false,
+          "name": "Mouse",
+          "borrowedTimes": 16,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/7oTm4/640/480"
+        },
+        {
+          "id": 38,
+          "category": "Sports",
+          "isBorrowed": false,
+          "name": "Hat",
+          "borrowedTimes": 4,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/qeUK0/640/480"
+        },
+        {
+          "id": 39,
+          "category": "Sports",
+          "isBorrowed": false,
+          "name": "Car",
+          "borrowedTimes": 14,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/OmP1sW/640/480"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Computers",
+      "imgUrl": "https://picsum.photos/seed/yXS0obmm73/640/480",
+      "items": [
+        {
+          "id": 0,
+          "category": "Computers",
+          "isBorrowed": false,
+          "name": "Pants",
+          "borrowedTimes": 12,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/YFuoZrM/640/480"
+        },
+        {
+          "id": 1,
+          "category": "Computers",
+          "isBorrowed": true,
+          "name": "Gloves",
+          "borrowedTimes": 14,
+          "borrowedDate": "2023-11-03T12:56:09.614Z",
+          "returnDate": "2024-03-09T23:00:53.754Z",
+          "imgUrl": "https://picsum.photos/seed/mS5ds842Zn/640/480"
+        },
+        {
+          "id": 2,
+          "category": "Computers",
+          "isBorrowed": true,
+          "name": "Salad",
+          "borrowedTimes": 13,
+          "borrowedDate": "2023-06-08T15:05:47.728Z",
+          "returnDate": "2024-11-10T21:33:13.077Z",
+          "imgUrl": "https://picsum.photos/seed/9Mxy1/640/480"
+        },
+        {
+          "id": 3,
+          "category": "Computers",
+          "isBorrowed": true,
+          "name": "Pizza",
+          "borrowedTimes": 16,
+          "borrowedDate": "2023-10-31T15:19:46.248Z",
+          "returnDate": "2024-05-28T13:03:35.239Z",
+          "imgUrl": "https://picsum.photos/seed/TyAwun7J0i/640/480"
+        },
+        {
+          "id": 4,
+          "category": "Computers",
+          "isBorrowed": false,
+          "name": "Towels",
+          "borrowedTimes": 9,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/ubFrS7q0B/640/480"
+        },
+        {
+          "id": 5,
+          "category": "Computers",
+          "isBorrowed": false,
+          "name": "Gloves",
+          "borrowedTimes": 9,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/ZadgOla/640/480"
+        },
+        {
+          "id": 6,
+          "category": "Computers",
+          "isBorrowed": true,
+          "name": "Gloves",
+          "borrowedTimes": 1,
+          "borrowedDate": "2024-01-18T18:20:35.649Z",
+          "returnDate": "2024-08-28T19:24:50.176Z",
+          "imgUrl": "https://picsum.photos/seed/hhKjh/640/480"
+        },
+        {
+          "id": 7,
+          "category": "Computers",
+          "isBorrowed": true,
+          "name": "Shirt",
+          "borrowedTimes": 4,
+          "borrowedDate": "2023-07-29T04:34:37.029Z",
+          "returnDate": "2024-09-26T05:55:45.707Z",
+          "imgUrl": "https://picsum.photos/seed/v1QDUNR8ZC/640/480"
+        },
+        {
+          "id": 8,
+          "category": "Computers",
+          "isBorrowed": true,
+          "name": "Computer",
+          "borrowedTimes": 12,
+          "borrowedDate": "2023-05-29T08:41:47.561Z",
+          "returnDate": "2024-07-18T19:57:51.455Z",
+          "imgUrl": "https://picsum.photos/seed/X7fpz16S/640/480"
+        },
+        {
+          "id": 9,
+          "category": "Computers",
+          "isBorrowed": true,
+          "name": "Chips",
+          "borrowedTimes": 2,
+          "borrowedDate": "2024-01-12T17:02:07.493Z",
+          "returnDate": "2024-07-01T19:10:35.639Z",
+          "imgUrl": "https://picsum.photos/seed/4jHYhA/640/480"
+        },
+        {
+          "id": 10,
+          "category": "Computers",
+          "isBorrowed": true,
+          "name": "Tuna",
+          "borrowedTimes": 19,
+          "borrowedDate": "2023-05-13T15:21:04.882Z",
+          "returnDate": "2024-04-13T19:39:29.206Z",
+          "imgUrl": "https://picsum.photos/seed/7nPAH/640/480"
+        },
+        {
+          "id": 11,
+          "category": "Computers",
+          "isBorrowed": false,
+          "name": "Fish",
+          "borrowedTimes": 19,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/YA2KbrOn/640/480"
+        },
+        {
+          "id": 12,
+          "category": "Computers",
+          "isBorrowed": true,
+          "name": "Table",
+          "borrowedTimes": 2,
+          "borrowedDate": "2023-09-13T16:39:16.465Z",
+          "returnDate": "2024-04-12T18:52:10.739Z",
+          "imgUrl": "https://picsum.photos/seed/X8NeV3v/640/480"
+        },
+        {
+          "id": 13,
+          "category": "Computers",
+          "isBorrowed": false,
+          "name": "Shirt",
+          "borrowedTimes": 4,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/MMp8hfA/640/480"
+        },
+        {
+          "id": 14,
+          "category": "Computers",
+          "isBorrowed": false,
+          "name": "Sausages",
+          "borrowedTimes": 20,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/ZHcr5qBM/640/480"
+        },
+        {
+          "id": 15,
+          "category": "Computers",
+          "isBorrowed": true,
+          "name": "Bacon",
+          "borrowedTimes": 6,
+          "borrowedDate": "2023-12-11T21:38:31.861Z",
+          "returnDate": "2024-10-07T11:22:58.483Z",
+          "imgUrl": "https://picsum.photos/seed/JvPvN/640/480"
+        },
+        {
+          "id": 16,
+          "category": "Computers",
+          "isBorrowed": true,
+          "name": "Tuna",
+          "borrowedTimes": 9,
+          "borrowedDate": "2023-11-20T11:34:12.853Z",
+          "returnDate": "2024-04-08T11:45:55.791Z",
+          "imgUrl": "https://picsum.photos/seed/YXi2vi6spL/640/480"
+        },
+        {
+          "id": 17,
+          "category": "Computers",
+          "isBorrowed": false,
+          "name": "Sausages",
+          "borrowedTimes": 14,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/il8sH2x/640/480"
+        },
+        {
+          "id": 18,
+          "category": "Computers",
+          "isBorrowed": true,
+          "name": "Chips",
+          "borrowedTimes": 11,
+          "borrowedDate": "2023-07-19T06:05:18.587Z",
+          "returnDate": "2024-11-18T10:21:01.065Z",
+          "imgUrl": "https://picsum.photos/seed/70mY4X3w/640/480"
+        },
+        {
+          "id": 19,
+          "category": "Computers",
+          "isBorrowed": false,
+          "name": "Mouse",
+          "borrowedTimes": 4,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/0BadiW/640/480"
+        },
+        {
+          "id": 20,
+          "category": "Computers",
+          "isBorrowed": false,
+          "name": "Keyboard",
+          "borrowedTimes": 17,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/mvzIXOiE/640/480"
+        },
+        {
+          "id": 21,
+          "category": "Computers",
+          "isBorrowed": false,
+          "name": "Computer",
+          "borrowedTimes": 14,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/f2JOKhG/640/480"
+        },
+        {
+          "id": 22,
+          "category": "Computers",
+          "isBorrowed": false,
+          "name": "Ball",
+          "borrowedTimes": 9,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/tFqNuI/640/480"
+        },
+        {
+          "id": 23,
+          "category": "Computers",
+          "isBorrowed": true,
+          "name": "Cheese",
+          "borrowedTimes": 17,
+          "borrowedDate": "2024-02-03T05:33:19.877Z",
+          "returnDate": "2025-02-14T20:07:42.385Z",
+          "imgUrl": "https://picsum.photos/seed/ZQJHiU1t/640/480"
+        },
+        {
+          "id": 24,
+          "category": "Computers",
+          "isBorrowed": false,
+          "name": "Chair",
+          "borrowedTimes": 16,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/lgUVo/640/480"
+        },
+        {
+          "id": 25,
+          "category": "Computers",
+          "isBorrowed": false,
+          "name": "Soap",
+          "borrowedTimes": 2,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/zISCie/640/480"
+        },
+        {
+          "id": 26,
+          "category": "Computers",
+          "isBorrowed": false,
+          "name": "Salad",
+          "borrowedTimes": 18,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/LA77nyd/640/480"
+        },
+        {
+          "id": 27,
+          "category": "Computers",
+          "isBorrowed": false,
+          "name": "Sausages",
+          "borrowedTimes": 11,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/kZwR9mj/640/480"
+        },
+        {
+          "id": 28,
+          "category": "Computers",
+          "isBorrowed": false,
+          "name": "Sausages",
+          "borrowedTimes": 14,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/ondeNpwS/640/480"
+        },
+        {
+          "id": 29,
+          "category": "Computers",
+          "isBorrowed": true,
+          "name": "Ball",
+          "borrowedTimes": 7,
+          "borrowedDate": "2023-08-12T18:13:23.104Z",
+          "returnDate": "2024-10-24T16:16:12.077Z",
+          "imgUrl": "https://picsum.photos/seed/y3iEbfHAxS/640/480"
+        },
+        {
+          "id": 30,
+          "category": "Computers",
+          "isBorrowed": false,
+          "name": "Gloves",
+          "borrowedTimes": 0,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/59EEeV/640/480"
+        },
+        {
+          "id": 31,
+          "category": "Computers",
+          "isBorrowed": true,
+          "name": "Shoes",
+          "borrowedTimes": 15,
+          "borrowedDate": "2023-04-26T20:01:12.435Z",
+          "returnDate": "2024-11-18T11:39:03.950Z",
+          "imgUrl": "https://picsum.photos/seed/mcZzmFC/640/480"
+        },
+        {
+          "id": 32,
+          "category": "Computers",
+          "isBorrowed": false,
+          "name": "Soap",
+          "borrowedTimes": 0,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/X7Fffru1sb/640/480"
+        },
+        {
+          "id": 33,
+          "category": "Computers",
+          "isBorrowed": true,
+          "name": "Bacon",
+          "borrowedTimes": 13,
+          "borrowedDate": "2023-05-18T21:20:20.013Z",
+          "returnDate": "2024-03-25T10:24:33.297Z",
+          "imgUrl": "https://picsum.photos/seed/HkRm7HVeV/640/480"
+        },
+        {
+          "id": 34,
+          "category": "Computers",
+          "isBorrowed": true,
+          "name": "Table",
+          "borrowedTimes": 12,
+          "borrowedDate": "2023-05-29T07:39:14.756Z",
+          "returnDate": "2024-04-10T00:14:31.053Z",
+          "imgUrl": "https://picsum.photos/seed/dOnGNxFa/640/480"
+        },
+        {
+          "id": 35,
+          "category": "Computers",
+          "isBorrowed": true,
+          "name": "Table",
+          "borrowedTimes": 13,
+          "borrowedDate": "2023-08-17T05:52:34.619Z",
+          "returnDate": "2024-05-07T03:53:53.254Z",
+          "imgUrl": "https://picsum.photos/seed/vBftgVZP/640/480"
+        },
+        {
+          "id": 36,
+          "category": "Computers",
+          "isBorrowed": false,
+          "name": "Keyboard",
+          "borrowedTimes": 11,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/1HDul4/640/480"
+        },
+        {
+          "id": 37,
+          "category": "Computers",
+          "isBorrowed": false,
+          "name": "Bike",
+          "borrowedTimes": 20,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/toYIe4ql8L/640/480"
+        },
+        {
+          "id": 38,
+          "category": "Computers",
+          "isBorrowed": false,
+          "name": "Shirt",
+          "borrowedTimes": 9,
+          "borrowedDate": null,
+          "returnDate": null,
+          "imgUrl": "https://picsum.photos/seed/ehslpvP/640/480"
+        },
+        {
+          "id": 39,
+          "category": "Computers",
+          "isBorrowed": true,
+          "name": "Towels",
+          "borrowedTimes": 15,
+          "borrowedDate": "2023-12-10T11:31:04.934Z",
+          "returnDate": "2024-12-07T02:54:12.918Z",
+          "imgUrl": "https://picsum.photos/seed/LSmcXfwS/640/480"
+        }
+      ]
     }
   ],
-  "categories": []
+  "featured-items": [
+    {
+      "id": 0,
+      "category": "Computers",
+      "isBorrowed": false,
+      "name": "Bike",
+      "borrowedTimes": 20,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/CTCLBg5j/640/480"
+    },
+    {
+      "id": 2,
+      "category": "Computers",
+      "isBorrowed": false,
+      "name": "Cheese",
+      "borrowedTimes": 14,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/5L0IP6eR6d/640/480"
+    },
+    {
+      "id": 8,
+      "category": "Computers",
+      "isBorrowed": true,
+      "name": "Bacon",
+      "borrowedTimes": 20,
+      "borrowedDate": "2023-08-28T21:31:14.377Z",
+      "returnDate": "2024-03-25T05:01:42.833Z",
+      "imgUrl": "https://picsum.photos/seed/ln3w2PJyh/640/480"
+    },
+    {
+      "id": 9,
+      "category": "Computers",
+      "isBorrowed": true,
+      "name": "Fish",
+      "borrowedTimes": 13,
+      "borrowedDate": "2023-09-08T04:47:54.056Z",
+      "returnDate": "2024-04-22T07:27:34.710Z",
+      "imgUrl": "https://picsum.photos/seed/OCDRf/640/480"
+    },
+    {
+      "id": 13,
+      "category": "Computers",
+      "isBorrowed": false,
+      "name": "Shoes",
+      "borrowedTimes": 15,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/i9diePhRZ/640/480"
+    },
+    {
+      "id": 15,
+      "category": "Computers",
+      "isBorrowed": false,
+      "name": "Chips",
+      "borrowedTimes": 20,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/FEdHMqF8/640/480"
+    },
+    {
+      "id": 17,
+      "category": "Computers",
+      "isBorrowed": true,
+      "name": "Shirt",
+      "borrowedTimes": 14,
+      "borrowedDate": "2023-09-21T21:19:30.186Z",
+      "returnDate": "2024-07-17T01:43:40.287Z",
+      "imgUrl": "https://picsum.photos/seed/7QeYeL/640/480"
+    },
+    {
+      "id": 18,
+      "category": "Computers",
+      "isBorrowed": false,
+      "name": "Gloves",
+      "borrowedTimes": 15,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/zjIzE3yN/640/480"
+    },
+    {
+      "id": 22,
+      "category": "Computers",
+      "isBorrowed": true,
+      "name": "Sausages",
+      "borrowedTimes": 14,
+      "borrowedDate": "2023-03-07T19:19:24.416Z",
+      "returnDate": "2024-05-30T02:32:15.042Z",
+      "imgUrl": "https://picsum.photos/seed/uiGjhCVzg5/640/480"
+    },
+    {
+      "id": 23,
+      "category": "Computers",
+      "isBorrowed": true,
+      "name": "Chips",
+      "borrowedTimes": 18,
+      "borrowedDate": "2023-07-05T08:19:56.928Z",
+      "returnDate": "2024-03-09T02:18:04.835Z",
+      "imgUrl": "https://picsum.photos/seed/9XeP8hETZ9/640/480"
+    },
+    {
+      "id": 27,
+      "category": "Computers",
+      "isBorrowed": true,
+      "name": "Hat",
+      "borrowedTimes": 11,
+      "borrowedDate": "2023-06-01T04:42:25.485Z",
+      "returnDate": "2024-08-06T08:26:58.847Z",
+      "imgUrl": "https://picsum.photos/seed/kqgwSW/640/480"
+    },
+    {
+      "id": 28,
+      "category": "Computers",
+      "isBorrowed": true,
+      "name": "Soap",
+      "borrowedTimes": 17,
+      "borrowedDate": "2023-10-20T03:24:45.534Z",
+      "returnDate": "2024-11-22T23:20:44.084Z",
+      "imgUrl": "https://picsum.photos/seed/4yhILNA/640/480"
+    },
+    {
+      "id": 32,
+      "category": "Computers",
+      "isBorrowed": false,
+      "name": "Tuna",
+      "borrowedTimes": 17,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/fmizd9Zw/640/480"
+    },
+    {
+      "id": 35,
+      "category": "Computers",
+      "isBorrowed": true,
+      "name": "Tuna",
+      "borrowedTimes": 14,
+      "borrowedDate": "2023-12-28T23:25:36.984Z",
+      "returnDate": "2024-09-02T06:07:23.125Z",
+      "imgUrl": "https://picsum.photos/seed/FFsP8MJ4ZP/640/480"
+    },
+    {
+      "id": 38,
+      "category": "Computers",
+      "isBorrowed": true,
+      "name": "Bike",
+      "borrowedTimes": 11,
+      "borrowedDate": "2023-12-18T17:45:12.666Z",
+      "returnDate": "2024-07-04T22:40:11.642Z",
+      "imgUrl": "https://picsum.photos/seed/IjVeoU3K/640/480"
+    },
+    {
+      "id": 39,
+      "category": "Computers",
+      "isBorrowed": false,
+      "name": "Tuna",
+      "borrowedTimes": 17,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/qcFEa/640/480"
+    },
+    {
+      "id": 4,
+      "category": "Outdoors",
+      "isBorrowed": false,
+      "name": "Chicken",
+      "borrowedTimes": 11,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/cCAn82/640/480"
+    },
+    {
+      "id": 5,
+      "category": "Outdoors",
+      "isBorrowed": true,
+      "name": "Salad",
+      "borrowedTimes": 11,
+      "borrowedDate": "2023-08-06T11:48:26.895Z",
+      "returnDate": "2024-05-26T17:53:43.564Z",
+      "imgUrl": "https://picsum.photos/seed/DV6MKx0OC/640/480"
+    },
+    {
+      "id": 9,
+      "category": "Outdoors",
+      "isBorrowed": true,
+      "name": "Soap",
+      "borrowedTimes": 11,
+      "borrowedDate": "2024-01-26T01:52:58.844Z",
+      "returnDate": "2024-08-24T06:10:26.987Z",
+      "imgUrl": "https://picsum.photos/seed/8Qj1o/640/480"
+    },
+    {
+      "id": 11,
+      "category": "Outdoors",
+      "isBorrowed": false,
+      "name": "Chicken",
+      "borrowedTimes": 15,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/QoXdAyY/640/480"
+    },
+    {
+      "id": 13,
+      "category": "Outdoors",
+      "isBorrowed": false,
+      "name": "Sausages",
+      "borrowedTimes": 14,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/FAMwjiN87m/640/480"
+    },
+    {
+      "id": 14,
+      "category": "Outdoors",
+      "isBorrowed": true,
+      "name": "Chips",
+      "borrowedTimes": 11,
+      "borrowedDate": "2024-01-31T12:30:11.579Z",
+      "returnDate": "2024-09-28T00:40:51.737Z",
+      "imgUrl": "https://picsum.photos/seed/M3Xs1bjhZ0/640/480"
+    },
+    {
+      "id": 18,
+      "category": "Outdoors",
+      "isBorrowed": false,
+      "name": "Soap",
+      "borrowedTimes": 20,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/h5ExZS4/640/480"
+    },
+    {
+      "id": 19,
+      "category": "Outdoors",
+      "isBorrowed": false,
+      "name": "Sausages",
+      "borrowedTimes": 11,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/DvhXmyg1ZT/640/480"
+    },
+    {
+      "id": 20,
+      "category": "Outdoors",
+      "isBorrowed": false,
+      "name": "Ball",
+      "borrowedTimes": 16,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/ou1uNM/640/480"
+    },
+    {
+      "id": 22,
+      "category": "Outdoors",
+      "isBorrowed": false,
+      "name": "Salad",
+      "borrowedTimes": 13,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/xfE82iV/640/480"
+    },
+    {
+      "id": 25,
+      "category": "Outdoors",
+      "isBorrowed": false,
+      "name": "Gloves",
+      "borrowedTimes": 12,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/FmWzBFZIal/640/480"
+    },
+    {
+      "id": 27,
+      "category": "Outdoors",
+      "isBorrowed": true,
+      "name": "Mouse",
+      "borrowedTimes": 15,
+      "borrowedDate": "2024-02-09T20:15:22.190Z",
+      "returnDate": "2024-04-22T01:34:50.253Z",
+      "imgUrl": "https://picsum.photos/seed/reWC2OMn/640/480"
+    },
+    {
+      "id": 28,
+      "category": "Outdoors",
+      "isBorrowed": true,
+      "name": "Hat",
+      "borrowedTimes": 18,
+      "borrowedDate": "2024-02-20T16:33:04.786Z",
+      "returnDate": "2024-06-09T14:26:00.444Z",
+      "imgUrl": "https://picsum.photos/seed/KyeAzgEAu/640/480"
+    },
+    {
+      "id": 31,
+      "category": "Outdoors",
+      "isBorrowed": true,
+      "name": "Mouse",
+      "borrowedTimes": 15,
+      "borrowedDate": "2024-01-05T21:52:35.484Z",
+      "returnDate": "2024-05-10T10:08:25.615Z",
+      "imgUrl": "https://picsum.photos/seed/ZbzspNeDI6/640/480"
+    },
+    {
+      "id": 32,
+      "category": "Outdoors",
+      "isBorrowed": true,
+      "name": "Chair",
+      "borrowedTimes": 17,
+      "borrowedDate": "2023-12-21T02:41:11.669Z",
+      "returnDate": "2024-05-17T02:30:38.891Z",
+      "imgUrl": "https://picsum.photos/seed/C47sJy/640/480"
+    },
+    {
+      "id": 36,
+      "category": "Outdoors",
+      "isBorrowed": true,
+      "name": "Pants",
+      "borrowedTimes": 18,
+      "borrowedDate": "2023-04-18T00:26:51.814Z",
+      "returnDate": "2024-07-11T01:13:05.821Z",
+      "imgUrl": "https://picsum.photos/seed/aXI0Q/640/480"
+    },
+    {
+      "id": 37,
+      "category": "Outdoors",
+      "isBorrowed": true,
+      "name": "Mouse",
+      "borrowedTimes": 18,
+      "borrowedDate": "2023-10-21T05:18:29.814Z",
+      "returnDate": "2024-04-24T01:06:58.670Z",
+      "imgUrl": "https://picsum.photos/seed/55xAMoLKF/640/480"
+    },
+    {
+      "id": 0,
+      "category": "Kids",
+      "isBorrowed": true,
+      "name": "Bacon",
+      "borrowedTimes": 12,
+      "borrowedDate": "2024-01-04T17:20:22.687Z",
+      "returnDate": "2025-01-10T11:20:21.169Z",
+      "imgUrl": "https://picsum.photos/seed/qPtF4Sn0Qk/640/480"
+    },
+    {
+      "id": 2,
+      "category": "Kids",
+      "isBorrowed": false,
+      "name": "Chips",
+      "borrowedTimes": 12,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/AetuIHU/640/480"
+    },
+    {
+      "id": 6,
+      "category": "Kids",
+      "isBorrowed": false,
+      "name": "Hat",
+      "borrowedTimes": 19,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/cIAN7/640/480"
+    },
+    {
+      "id": 8,
+      "category": "Kids",
+      "isBorrowed": true,
+      "name": "Hat",
+      "borrowedTimes": 11,
+      "borrowedDate": "2023-08-21T20:48:42.354Z",
+      "returnDate": "2024-10-31T09:54:56.198Z",
+      "imgUrl": "https://picsum.photos/seed/N7jDbt/640/480"
+    },
+    {
+      "id": 10,
+      "category": "Kids",
+      "isBorrowed": true,
+      "name": "Cheese",
+      "borrowedTimes": 20,
+      "borrowedDate": "2023-10-16T13:19:57.620Z",
+      "returnDate": "2024-07-04T04:09:54.270Z",
+      "imgUrl": "https://picsum.photos/seed/zkO48x/640/480"
+    },
+    {
+      "id": 11,
+      "category": "Kids",
+      "isBorrowed": false,
+      "name": "Car",
+      "borrowedTimes": 11,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/38qnyD/640/480"
+    },
+    {
+      "id": 13,
+      "category": "Kids",
+      "isBorrowed": false,
+      "name": "Tuna",
+      "borrowedTimes": 13,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/OJIxW/640/480"
+    },
+    {
+      "id": 19,
+      "category": "Kids",
+      "isBorrowed": false,
+      "name": "Table",
+      "borrowedTimes": 14,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/z8hAPj2J/640/480"
+    },
+    {
+      "id": 22,
+      "category": "Kids",
+      "isBorrowed": true,
+      "name": "Mouse",
+      "borrowedTimes": 14,
+      "borrowedDate": "2023-04-24T10:52:37.396Z",
+      "returnDate": "2024-08-03T01:37:42.059Z",
+      "imgUrl": "https://picsum.photos/seed/bscNlg1ouF/640/480"
+    },
+    {
+      "id": 23,
+      "category": "Kids",
+      "isBorrowed": true,
+      "name": "Pants",
+      "borrowedTimes": 18,
+      "borrowedDate": "2024-03-03T14:05:34.185Z",
+      "returnDate": "2024-10-16T04:36:34.451Z",
+      "imgUrl": "https://picsum.photos/seed/xpNFX2/640/480"
+    },
+    {
+      "id": 30,
+      "category": "Kids",
+      "isBorrowed": true,
+      "name": "Chicken",
+      "borrowedTimes": 15,
+      "borrowedDate": "2023-05-04T12:23:22.772Z",
+      "returnDate": "2025-02-07T11:24:12.961Z",
+      "imgUrl": "https://picsum.photos/seed/IrntBZeiIM/640/480"
+    },
+    {
+      "id": 37,
+      "category": "Kids",
+      "isBorrowed": true,
+      "name": "Bacon",
+      "borrowedTimes": 14,
+      "borrowedDate": "2023-11-16T08:29:06.502Z",
+      "returnDate": "2024-07-10T10:59:58.246Z",
+      "imgUrl": "https://picsum.photos/seed/TmmPIwF1/640/480"
+    },
+    {
+      "id": 39,
+      "category": "Kids",
+      "isBorrowed": true,
+      "name": "Soap",
+      "borrowedTimes": 19,
+      "borrowedDate": "2024-02-08T04:23:25.913Z",
+      "returnDate": "2024-09-26T19:49:24.823Z",
+      "imgUrl": "https://picsum.photos/seed/myM0206C/640/480"
+    },
+    {
+      "id": 4,
+      "category": "Toys",
+      "isBorrowed": true,
+      "name": "Cheese",
+      "borrowedTimes": 17,
+      "borrowedDate": "2023-08-01T16:04:38.248Z",
+      "returnDate": "2024-09-12T12:38:37.060Z",
+      "imgUrl": "https://picsum.photos/seed/3vHHtI0di/640/480"
+    },
+    {
+      "id": 13,
+      "category": "Toys",
+      "isBorrowed": false,
+      "name": "Tuna",
+      "borrowedTimes": 19,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/gyfuuGdTm/640/480"
+    },
+    {
+      "id": 17,
+      "category": "Toys",
+      "isBorrowed": false,
+      "name": "Sausages",
+      "borrowedTimes": 12,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/Iz3RG/640/480"
+    },
+    {
+      "id": 18,
+      "category": "Toys",
+      "isBorrowed": true,
+      "name": "Mouse",
+      "borrowedTimes": 11,
+      "borrowedDate": "2023-05-12T11:16:12.092Z",
+      "returnDate": "2024-12-09T17:56:34.881Z",
+      "imgUrl": "https://picsum.photos/seed/tUrhk6aSRu/640/480"
+    },
+    {
+      "id": 20,
+      "category": "Toys",
+      "isBorrowed": true,
+      "name": "Salad",
+      "borrowedTimes": 14,
+      "borrowedDate": "2023-09-11T08:21:03.619Z",
+      "returnDate": "2024-04-22T14:40:11.033Z",
+      "imgUrl": "https://picsum.photos/seed/DHdDRgNt12/640/480"
+    },
+    {
+      "id": 21,
+      "category": "Toys",
+      "isBorrowed": false,
+      "name": "Salad",
+      "borrowedTimes": 18,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/sni7Qiwr/640/480"
+    },
+    {
+      "id": 22,
+      "category": "Toys",
+      "isBorrowed": true,
+      "name": "Pants",
+      "borrowedTimes": 18,
+      "borrowedDate": "2023-05-18T18:48:13.534Z",
+      "returnDate": "2024-11-28T21:46:37.656Z",
+      "imgUrl": "https://picsum.photos/seed/9A8WZMNA/640/480"
+    },
+    {
+      "id": 23,
+      "category": "Toys",
+      "isBorrowed": true,
+      "name": "Shirt",
+      "borrowedTimes": 19,
+      "borrowedDate": "2023-03-25T12:33:01.449Z",
+      "returnDate": "2025-01-10T09:35:33.534Z",
+      "imgUrl": "https://picsum.photos/seed/P1w36/640/480"
+    },
+    {
+      "id": 24,
+      "category": "Toys",
+      "isBorrowed": false,
+      "name": "Computer",
+      "borrowedTimes": 11,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/hLm5g/640/480"
+    },
+    {
+      "id": 26,
+      "category": "Toys",
+      "isBorrowed": false,
+      "name": "Salad",
+      "borrowedTimes": 18,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/GiENI7/640/480"
+    },
+    {
+      "id": 29,
+      "category": "Toys",
+      "isBorrowed": true,
+      "name": "Keyboard",
+      "borrowedTimes": 19,
+      "borrowedDate": "2023-07-18T11:21:14.987Z",
+      "returnDate": "2024-08-06T06:31:43.512Z",
+      "imgUrl": "https://picsum.photos/seed/Dh7FIYs/640/480"
+    },
+    {
+      "id": 34,
+      "category": "Toys",
+      "isBorrowed": true,
+      "name": "Chicken",
+      "borrowedTimes": 18,
+      "borrowedDate": "2024-01-09T09:39:40.757Z",
+      "returnDate": "2024-11-05T10:38:11.684Z",
+      "imgUrl": "https://picsum.photos/seed/0EO5KMi2rG/640/480"
+    },
+    {
+      "id": 0,
+      "category": "Outdoors",
+      "isBorrowed": false,
+      "name": "Pizza",
+      "borrowedTimes": 13,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/DcN4H5/640/480"
+    },
+    {
+      "id": 2,
+      "category": "Outdoors",
+      "isBorrowed": true,
+      "name": "Chicken",
+      "borrowedTimes": 14,
+      "borrowedDate": "2023-08-16T23:25:23.203Z",
+      "returnDate": "2024-07-11T16:26:00.738Z",
+      "imgUrl": "https://picsum.photos/seed/IvY63sf8q/640/480"
+    },
+    {
+      "id": 6,
+      "category": "Outdoors",
+      "isBorrowed": true,
+      "name": "Ball",
+      "borrowedTimes": 14,
+      "borrowedDate": "2024-01-19T17:07:50.804Z",
+      "returnDate": "2024-06-01T20:42:17.326Z",
+      "imgUrl": "https://picsum.photos/seed/LXcAJuxT9/640/480"
+    },
+    {
+      "id": 7,
+      "category": "Outdoors",
+      "isBorrowed": true,
+      "name": "Sausages",
+      "borrowedTimes": 12,
+      "borrowedDate": "2023-09-15T17:50:34.826Z",
+      "returnDate": "2024-11-15T12:34:35.140Z",
+      "imgUrl": "https://picsum.photos/seed/QFY7m5pvB/640/480"
+    },
+    {
+      "id": 12,
+      "category": "Outdoors",
+      "isBorrowed": false,
+      "name": "Shoes",
+      "borrowedTimes": 19,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/N5buosWp1/640/480"
+    },
+    {
+      "id": 14,
+      "category": "Outdoors",
+      "isBorrowed": false,
+      "name": "Shirt",
+      "borrowedTimes": 14,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/xDnt9/640/480"
+    },
+    {
+      "id": 18,
+      "category": "Outdoors",
+      "isBorrowed": false,
+      "name": "Cheese",
+      "borrowedTimes": 11,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/iXEl1aWM5/640/480"
+    },
+    {
+      "id": 19,
+      "category": "Outdoors",
+      "isBorrowed": false,
+      "name": "Ball",
+      "borrowedTimes": 17,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/VwbMl/640/480"
+    },
+    {
+      "id": 21,
+      "category": "Outdoors",
+      "isBorrowed": false,
+      "name": "Tuna",
+      "borrowedTimes": 20,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/ZCbxWpj/640/480"
+    },
+    {
+      "id": 22,
+      "category": "Outdoors",
+      "isBorrowed": true,
+      "name": "Fish",
+      "borrowedTimes": 15,
+      "borrowedDate": "2023-08-08T17:30:37.677Z",
+      "returnDate": "2024-05-30T00:46:09.342Z",
+      "imgUrl": "https://picsum.photos/seed/DlMnhe/640/480"
+    },
+    {
+      "id": 26,
+      "category": "Outdoors",
+      "isBorrowed": false,
+      "name": "Pizza",
+      "borrowedTimes": 15,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/eejvwmK/640/480"
+    },
+    {
+      "id": 27,
+      "category": "Outdoors",
+      "isBorrowed": true,
+      "name": "Tuna",
+      "borrowedTimes": 17,
+      "borrowedDate": "2023-07-19T16:40:11.397Z",
+      "returnDate": "2024-05-05T23:16:46.717Z",
+      "imgUrl": "https://picsum.photos/seed/AYAeC/640/480"
+    },
+    {
+      "id": 31,
+      "category": "Outdoors",
+      "isBorrowed": true,
+      "name": "Computer",
+      "borrowedTimes": 13,
+      "borrowedDate": "2023-08-18T12:41:28.431Z",
+      "returnDate": "2024-10-05T16:12:01.836Z",
+      "imgUrl": "https://picsum.photos/seed/QP7wSqtd6o/640/480"
+    },
+    {
+      "id": 33,
+      "category": "Outdoors",
+      "isBorrowed": false,
+      "name": "Car",
+      "borrowedTimes": 14,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/uBA7XT/640/480"
+    },
+    {
+      "id": 34,
+      "category": "Outdoors",
+      "isBorrowed": false,
+      "name": "Ball",
+      "borrowedTimes": 18,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/MjDiTW/640/480"
+    },
+    {
+      "id": 36,
+      "category": "Outdoors",
+      "isBorrowed": true,
+      "name": "Bacon",
+      "borrowedTimes": 13,
+      "borrowedDate": "2024-01-16T00:30:45.209Z",
+      "returnDate": "2024-06-13T19:14:13.757Z",
+      "imgUrl": "https://picsum.photos/seed/PwABa/640/480"
+    },
+    {
+      "id": 37,
+      "category": "Outdoors",
+      "isBorrowed": true,
+      "name": "Mouse",
+      "borrowedTimes": 12,
+      "borrowedDate": "2023-06-13T05:04:41.442Z",
+      "returnDate": "2024-11-25T21:36:09.782Z",
+      "imgUrl": "https://picsum.photos/seed/MPynX5Ce/640/480"
+    },
+    {
+      "id": 38,
+      "category": "Outdoors",
+      "isBorrowed": true,
+      "name": "Keyboard",
+      "borrowedTimes": 20,
+      "borrowedDate": "2023-05-24T00:23:52.957Z",
+      "returnDate": "2024-08-18T23:45:02.358Z",
+      "imgUrl": "https://picsum.photos/seed/ix7oke0/640/480"
+    },
+    {
+      "id": 0,
+      "category": "Garden",
+      "isBorrowed": false,
+      "name": "Shoes",
+      "borrowedTimes": 17,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/W8QQHCDI/640/480"
+    },
+    {
+      "id": 1,
+      "category": "Garden",
+      "isBorrowed": true,
+      "name": "Shirt",
+      "borrowedTimes": 14,
+      "borrowedDate": "2024-02-03T04:11:52.265Z",
+      "returnDate": "2024-05-04T08:05:24.303Z",
+      "imgUrl": "https://picsum.photos/seed/a03nj/640/480"
+    },
+    {
+      "id": 2,
+      "category": "Garden",
+      "isBorrowed": false,
+      "name": "Mouse",
+      "borrowedTimes": 19,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/WzNd1T/640/480"
+    },
+    {
+      "id": 5,
+      "category": "Garden",
+      "isBorrowed": false,
+      "name": "Bacon",
+      "borrowedTimes": 20,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/SLoRnu8Na/640/480"
+    },
+    {
+      "id": 8,
+      "category": "Garden",
+      "isBorrowed": false,
+      "name": "Ball",
+      "borrowedTimes": 19,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/oP2wFKO/640/480"
+    },
+    {
+      "id": 9,
+      "category": "Garden",
+      "isBorrowed": false,
+      "name": "Chair",
+      "borrowedTimes": 17,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/9Aj27e2O/640/480"
+    },
+    {
+      "id": 10,
+      "category": "Garden",
+      "isBorrowed": true,
+      "name": "Tuna",
+      "borrowedTimes": 15,
+      "borrowedDate": "2023-12-30T13:23:12.232Z",
+      "returnDate": "2024-10-31T03:24:53.328Z",
+      "imgUrl": "https://picsum.photos/seed/XtwbuPfkR/640/480"
+    },
+    {
+      "id": 13,
+      "category": "Garden",
+      "isBorrowed": false,
+      "name": "Chicken",
+      "borrowedTimes": 19,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/6Gt5gq4r/640/480"
+    },
+    {
+      "id": 15,
+      "category": "Garden",
+      "isBorrowed": false,
+      "name": "Ball",
+      "borrowedTimes": 16,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/kuYs7JJJ/640/480"
+    },
+    {
+      "id": 17,
+      "category": "Garden",
+      "isBorrowed": true,
+      "name": "Ball",
+      "borrowedTimes": 20,
+      "borrowedDate": "2024-01-31T08:01:27.171Z",
+      "returnDate": "2024-03-06T18:55:19.707Z",
+      "imgUrl": "https://picsum.photos/seed/8k2r1dS/640/480"
+    },
+    {
+      "id": 18,
+      "category": "Garden",
+      "isBorrowed": false,
+      "name": "Gloves",
+      "borrowedTimes": 16,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/6xSLDzR/640/480"
+    },
+    {
+      "id": 21,
+      "category": "Garden",
+      "isBorrowed": true,
+      "name": "Towels",
+      "borrowedTimes": 15,
+      "borrowedDate": "2023-09-03T23:26:59.992Z",
+      "returnDate": "2025-01-02T01:13:19.556Z",
+      "imgUrl": "https://picsum.photos/seed/gZNlqabpH/640/480"
+    },
+    {
+      "id": 23,
+      "category": "Garden",
+      "isBorrowed": true,
+      "name": "Chicken",
+      "borrowedTimes": 19,
+      "borrowedDate": "2023-07-29T04:35:27.978Z",
+      "returnDate": "2024-07-07T05:34:55.343Z",
+      "imgUrl": "https://picsum.photos/seed/rOCB0fmf/640/480"
+    },
+    {
+      "id": 24,
+      "category": "Garden",
+      "isBorrowed": true,
+      "name": "Chicken",
+      "borrowedTimes": 18,
+      "borrowedDate": "2023-11-08T00:47:40.618Z",
+      "returnDate": "2025-01-03T07:45:44.556Z",
+      "imgUrl": "https://picsum.photos/seed/jGrSTW/640/480"
+    },
+    {
+      "id": 25,
+      "category": "Garden",
+      "isBorrowed": true,
+      "name": "Car",
+      "borrowedTimes": 11,
+      "borrowedDate": "2024-01-25T17:58:55.537Z",
+      "returnDate": "2024-10-12T19:50:27.993Z",
+      "imgUrl": "https://picsum.photos/seed/iTPSvj8BM/640/480"
+    },
+    {
+      "id": 26,
+      "category": "Garden",
+      "isBorrowed": false,
+      "name": "Shoes",
+      "borrowedTimes": 11,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/c4fRP78k/640/480"
+    },
+    {
+      "id": 27,
+      "category": "Garden",
+      "isBorrowed": false,
+      "name": "Bike",
+      "borrowedTimes": 13,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/Qr16kAaEMa/640/480"
+    },
+    {
+      "id": 29,
+      "category": "Garden",
+      "isBorrowed": true,
+      "name": "Fish",
+      "borrowedTimes": 13,
+      "borrowedDate": "2023-06-08T16:59:43.366Z",
+      "returnDate": "2025-03-01T10:00:46.818Z",
+      "imgUrl": "https://picsum.photos/seed/p9hx6n/640/480"
+    },
+    {
+      "id": 30,
+      "category": "Garden",
+      "isBorrowed": false,
+      "name": "Fish",
+      "borrowedTimes": 18,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/JGxGu0B950/640/480"
+    },
+    {
+      "id": 31,
+      "category": "Garden",
+      "isBorrowed": false,
+      "name": "Car",
+      "borrowedTimes": 17,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/u4ZTg38k/640/480"
+    },
+    {
+      "id": 32,
+      "category": "Garden",
+      "isBorrowed": true,
+      "name": "Chips",
+      "borrowedTimes": 20,
+      "borrowedDate": "2024-01-27T09:58:31.075Z",
+      "returnDate": "2024-06-04T15:53:34.179Z",
+      "imgUrl": "https://picsum.photos/seed/3VkWrO/640/480"
+    },
+    {
+      "id": 33,
+      "category": "Garden",
+      "isBorrowed": true,
+      "name": "Bike",
+      "borrowedTimes": 12,
+      "borrowedDate": "2023-12-04T17:32:48.631Z",
+      "returnDate": "2024-08-03T17:36:00.143Z",
+      "imgUrl": "https://picsum.photos/seed/gKgkoTfe/640/480"
+    },
+    {
+      "id": 35,
+      "category": "Garden",
+      "isBorrowed": false,
+      "name": "Cheese",
+      "borrowedTimes": 12,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/gnBwJO/640/480"
+    },
+    {
+      "id": 38,
+      "category": "Garden",
+      "isBorrowed": false,
+      "name": "Salad",
+      "borrowedTimes": 18,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/OnvoL/640/480"
+    },
+    {
+      "id": 39,
+      "category": "Garden",
+      "isBorrowed": false,
+      "name": "Towels",
+      "borrowedTimes": 16,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/pkHnSH4/640/480"
+    },
+    {
+      "id": 1,
+      "category": "Music",
+      "isBorrowed": true,
+      "name": "Bacon",
+      "borrowedTimes": 11,
+      "borrowedDate": "2023-08-04T11:49:13.141Z",
+      "returnDate": "2024-11-03T02:21:38.794Z",
+      "imgUrl": "https://picsum.photos/seed/IvTYhlU/640/480"
+    },
+    {
+      "id": 5,
+      "category": "Music",
+      "isBorrowed": true,
+      "name": "Gloves",
+      "borrowedTimes": 12,
+      "borrowedDate": "2024-01-07T03:58:58.556Z",
+      "returnDate": "2025-02-22T21:06:38.728Z",
+      "imgUrl": "https://picsum.photos/seed/TruzZEw/640/480"
+    },
+    {
+      "id": 6,
+      "category": "Music",
+      "isBorrowed": true,
+      "name": "Towels",
+      "borrowedTimes": 20,
+      "borrowedDate": "2023-08-22T09:55:23.639Z",
+      "returnDate": "2024-06-15T19:02:17.028Z",
+      "imgUrl": "https://picsum.photos/seed/MafZkJFUt4/640/480"
+    },
+    {
+      "id": 7,
+      "category": "Music",
+      "isBorrowed": true,
+      "name": "Ball",
+      "borrowedTimes": 18,
+      "borrowedDate": "2024-02-27T17:30:53.403Z",
+      "returnDate": "2024-07-09T15:08:11.775Z",
+      "imgUrl": "https://picsum.photos/seed/qh4kBHneF/640/480"
+    },
+    {
+      "id": 8,
+      "category": "Music",
+      "isBorrowed": true,
+      "name": "Bike",
+      "borrowedTimes": 15,
+      "borrowedDate": "2023-08-03T17:38:34.284Z",
+      "returnDate": "2024-07-21T21:33:12.266Z",
+      "imgUrl": "https://picsum.photos/seed/1yRzTtLKR/640/480"
+    },
+    {
+      "id": 9,
+      "category": "Music",
+      "isBorrowed": true,
+      "name": "Shoes",
+      "borrowedTimes": 16,
+      "borrowedDate": "2023-08-01T00:16:19.487Z",
+      "returnDate": "2024-10-19T13:09:31.838Z",
+      "imgUrl": "https://picsum.photos/seed/GvB3qlX/640/480"
+    },
+    {
+      "id": 11,
+      "category": "Music",
+      "isBorrowed": true,
+      "name": "Shoes",
+      "borrowedTimes": 17,
+      "borrowedDate": "2023-11-01T13:00:38.373Z",
+      "returnDate": "2024-12-15T10:28:40.167Z",
+      "imgUrl": "https://picsum.photos/seed/8AeH8coit6/640/480"
+    },
+    {
+      "id": 14,
+      "category": "Music",
+      "isBorrowed": false,
+      "name": "Keyboard",
+      "borrowedTimes": 16,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/6wyEUk/640/480"
+    },
+    {
+      "id": 16,
+      "category": "Music",
+      "isBorrowed": false,
+      "name": "Fish",
+      "borrowedTimes": 15,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/AGvwsO4M/640/480"
+    },
+    {
+      "id": 18,
+      "category": "Music",
+      "isBorrowed": true,
+      "name": "Shirt",
+      "borrowedTimes": 15,
+      "borrowedDate": "2023-11-23T22:33:26.190Z",
+      "returnDate": "2025-03-05T12:34:17.571Z",
+      "imgUrl": "https://picsum.photos/seed/sDYsN8S0/640/480"
+    },
+    {
+      "id": 19,
+      "category": "Music",
+      "isBorrowed": false,
+      "name": "Table",
+      "borrowedTimes": 19,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/vaHPI/640/480"
+    },
+    {
+      "id": 20,
+      "category": "Music",
+      "isBorrowed": true,
+      "name": "Chair",
+      "borrowedTimes": 16,
+      "borrowedDate": "2024-03-03T16:41:26.637Z",
+      "returnDate": "2024-10-30T18:06:03.022Z",
+      "imgUrl": "https://picsum.photos/seed/JHKKCaT5/640/480"
+    },
+    {
+      "id": 22,
+      "category": "Music",
+      "isBorrowed": true,
+      "name": "Soap",
+      "borrowedTimes": 18,
+      "borrowedDate": "2023-07-14T23:26:31.731Z",
+      "returnDate": "2024-04-24T19:24:25.751Z",
+      "imgUrl": "https://picsum.photos/seed/RmqPmc/640/480"
+    },
+    {
+      "id": 23,
+      "category": "Music",
+      "isBorrowed": false,
+      "name": "Towels",
+      "borrowedTimes": 13,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/8KQgpi/640/480"
+    },
+    {
+      "id": 24,
+      "category": "Music",
+      "isBorrowed": false,
+      "name": "Car",
+      "borrowedTimes": 11,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/9zv5A/640/480"
+    },
+    {
+      "id": 26,
+      "category": "Music",
+      "isBorrowed": true,
+      "name": "Ball",
+      "borrowedTimes": 20,
+      "borrowedDate": "2023-12-17T12:28:48.079Z",
+      "returnDate": "2025-03-05T16:08:10.493Z",
+      "imgUrl": "https://picsum.photos/seed/ZRF1p2/640/480"
+    },
+    {
+      "id": 27,
+      "category": "Music",
+      "isBorrowed": true,
+      "name": "Shirt",
+      "borrowedTimes": 11,
+      "borrowedDate": "2023-12-21T02:30:29.330Z",
+      "returnDate": "2024-03-20T03:50:32.221Z",
+      "imgUrl": "https://picsum.photos/seed/XEVLP/640/480"
+    },
+    {
+      "id": 32,
+      "category": "Music",
+      "isBorrowed": true,
+      "name": "Chair",
+      "borrowedTimes": 18,
+      "borrowedDate": "2023-05-30T21:07:32.887Z",
+      "returnDate": "2025-01-02T08:32:13.204Z",
+      "imgUrl": "https://picsum.photos/seed/nCQGQpi5y/640/480"
+    },
+    {
+      "id": 36,
+      "category": "Music",
+      "isBorrowed": true,
+      "name": "Gloves",
+      "borrowedTimes": 17,
+      "borrowedDate": "2023-10-05T06:25:34.037Z",
+      "returnDate": "2024-12-24T16:12:10.369Z",
+      "imgUrl": "https://picsum.photos/seed/OTBqD/640/480"
+    },
+    {
+      "id": 39,
+      "category": "Music",
+      "isBorrowed": true,
+      "name": "Keyboard",
+      "borrowedTimes": 16,
+      "borrowedDate": "2023-03-28T21:11:11.759Z",
+      "returnDate": "2024-03-21T18:17:37.690Z",
+      "imgUrl": "https://picsum.photos/seed/8ypa4f5aF/640/480"
+    },
+    {
+      "id": 0,
+      "category": "Jewelery",
+      "isBorrowed": true,
+      "name": "Chips",
+      "borrowedTimes": 17,
+      "borrowedDate": "2023-06-22T17:18:56.272Z",
+      "returnDate": "2024-06-12T12:40:31.315Z",
+      "imgUrl": "https://picsum.photos/seed/nasyZ/640/480"
+    },
+    {
+      "id": 3,
+      "category": "Jewelery",
+      "isBorrowed": true,
+      "name": "Cheese",
+      "borrowedTimes": 11,
+      "borrowedDate": "2023-03-21T03:01:29.401Z",
+      "returnDate": "2025-01-18T19:46:06.864Z",
+      "imgUrl": "https://picsum.photos/seed/0Gp8CkF1aC/640/480"
+    },
+    {
+      "id": 4,
+      "category": "Jewelery",
+      "isBorrowed": false,
+      "name": "Cheese",
+      "borrowedTimes": 11,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/SJ9zsOnwG/640/480"
+    },
+    {
+      "id": 6,
+      "category": "Jewelery",
+      "isBorrowed": true,
+      "name": "Chicken",
+      "borrowedTimes": 11,
+      "borrowedDate": "2023-09-06T11:59:02.924Z",
+      "returnDate": "2024-09-12T00:30:24.766Z",
+      "imgUrl": "https://picsum.photos/seed/BegqGWShK5/640/480"
+    },
+    {
+      "id": 8,
+      "category": "Jewelery",
+      "isBorrowed": true,
+      "name": "Towels",
+      "borrowedTimes": 20,
+      "borrowedDate": "2023-10-31T00:06:57.053Z",
+      "returnDate": "2024-12-30T00:33:39.031Z",
+      "imgUrl": "https://picsum.photos/seed/3hdiOxzmC3/640/480"
+    },
+    {
+      "id": 9,
+      "category": "Jewelery",
+      "isBorrowed": true,
+      "name": "Chair",
+      "borrowedTimes": 13,
+      "borrowedDate": "2023-08-08T18:26:51.013Z",
+      "returnDate": "2024-09-22T20:39:57.461Z",
+      "imgUrl": "https://picsum.photos/seed/L0Cnqt/640/480"
+    },
+    {
+      "id": 10,
+      "category": "Jewelery",
+      "isBorrowed": false,
+      "name": "Ball",
+      "borrowedTimes": 19,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/tKiB3IvrgJ/640/480"
+    },
+    {
+      "id": 15,
+      "category": "Jewelery",
+      "isBorrowed": false,
+      "name": "Chips",
+      "borrowedTimes": 12,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/0KH5LZ/640/480"
+    },
+    {
+      "id": 16,
+      "category": "Jewelery",
+      "isBorrowed": false,
+      "name": "Bike",
+      "borrowedTimes": 14,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/i0wt28D/640/480"
+    },
+    {
+      "id": 17,
+      "category": "Jewelery",
+      "isBorrowed": false,
+      "name": "Shoes",
+      "borrowedTimes": 15,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/OZPMA1/640/480"
+    },
+    {
+      "id": 20,
+      "category": "Jewelery",
+      "isBorrowed": false,
+      "name": "Sausages",
+      "borrowedTimes": 14,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/mG4wTXNT/640/480"
+    },
+    {
+      "id": 21,
+      "category": "Jewelery",
+      "isBorrowed": false,
+      "name": "Bike",
+      "borrowedTimes": 14,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/YHo4Gu/640/480"
+    },
+    {
+      "id": 22,
+      "category": "Jewelery",
+      "isBorrowed": true,
+      "name": "Salad",
+      "borrowedTimes": 16,
+      "borrowedDate": "2023-12-07T11:15:58.417Z",
+      "returnDate": "2024-10-25T22:40:59.665Z",
+      "imgUrl": "https://picsum.photos/seed/SckMEnEEW/640/480"
+    },
+    {
+      "id": 23,
+      "category": "Jewelery",
+      "isBorrowed": true,
+      "name": "Keyboard",
+      "borrowedTimes": 17,
+      "borrowedDate": "2024-02-22T05:19:43.884Z",
+      "returnDate": "2024-05-25T09:30:23.649Z",
+      "imgUrl": "https://picsum.photos/seed/llkM2WJ78/640/480"
+    },
+    {
+      "id": 24,
+      "category": "Jewelery",
+      "isBorrowed": false,
+      "name": "Keyboard",
+      "borrowedTimes": 19,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/oNA8U/640/480"
+    },
+    {
+      "id": 25,
+      "category": "Jewelery",
+      "isBorrowed": true,
+      "name": "Table",
+      "borrowedTimes": 18,
+      "borrowedDate": "2023-05-24T14:34:23.394Z",
+      "returnDate": "2025-01-16T13:43:36.904Z",
+      "imgUrl": "https://picsum.photos/seed/xTSBnX/640/480"
+    },
+    {
+      "id": 26,
+      "category": "Jewelery",
+      "isBorrowed": false,
+      "name": "Pizza",
+      "borrowedTimes": 20,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/2kF5TpBZr/640/480"
+    },
+    {
+      "id": 29,
+      "category": "Jewelery",
+      "isBorrowed": true,
+      "name": "Bacon",
+      "borrowedTimes": 13,
+      "borrowedDate": "2024-01-20T12:10:31.103Z",
+      "returnDate": "2024-11-07T20:33:40.173Z",
+      "imgUrl": "https://picsum.photos/seed/J2gqlt/640/480"
+    },
+    {
+      "id": 33,
+      "category": "Jewelery",
+      "isBorrowed": true,
+      "name": "Computer",
+      "borrowedTimes": 11,
+      "borrowedDate": "2023-09-30T20:28:06.859Z",
+      "returnDate": "2024-05-24T22:11:26.604Z",
+      "imgUrl": "https://picsum.photos/seed/8T6pZO0C6/640/480"
+    },
+    {
+      "id": 39,
+      "category": "Jewelery",
+      "isBorrowed": false,
+      "name": "Table",
+      "borrowedTimes": 11,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/yt0eiaB0No/640/480"
+    },
+    {
+      "id": 4,
+      "category": "Sports",
+      "isBorrowed": false,
+      "name": "Gloves",
+      "borrowedTimes": 11,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/ZDTFzZ/640/480"
+    },
+    {
+      "id": 7,
+      "category": "Sports",
+      "isBorrowed": false,
+      "name": "Bacon",
+      "borrowedTimes": 11,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/Qf4Lq9twR/640/480"
+    },
+    {
+      "id": 9,
+      "category": "Sports",
+      "isBorrowed": false,
+      "name": "Car",
+      "borrowedTimes": 19,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/8v88uqdD/640/480"
+    },
+    {
+      "id": 12,
+      "category": "Sports",
+      "isBorrowed": false,
+      "name": "Mouse",
+      "borrowedTimes": 15,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/rKzcziY/640/480"
+    },
+    {
+      "id": 14,
+      "category": "Sports",
+      "isBorrowed": false,
+      "name": "Mouse",
+      "borrowedTimes": 18,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/YX1b1/640/480"
+    },
+    {
+      "id": 17,
+      "category": "Sports",
+      "isBorrowed": false,
+      "name": "Towels",
+      "borrowedTimes": 13,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/W0SzR/640/480"
+    },
+    {
+      "id": 22,
+      "category": "Sports",
+      "isBorrowed": false,
+      "name": "Chips",
+      "borrowedTimes": 20,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/OfdDORtql/640/480"
+    },
+    {
+      "id": 23,
+      "category": "Sports",
+      "isBorrowed": true,
+      "name": "Keyboard",
+      "borrowedTimes": 20,
+      "borrowedDate": "2023-06-03T09:01:38.785Z",
+      "returnDate": "2025-02-11T01:53:19.744Z",
+      "imgUrl": "https://picsum.photos/seed/ckcRNNGsD/640/480"
+    },
+    {
+      "id": 24,
+      "category": "Sports",
+      "isBorrowed": false,
+      "name": "Sausages",
+      "borrowedTimes": 17,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/5eBWgRq/640/480"
+    },
+    {
+      "id": 25,
+      "category": "Sports",
+      "isBorrowed": true,
+      "name": "Keyboard",
+      "borrowedTimes": 20,
+      "borrowedDate": "2023-05-28T00:54:58.315Z",
+      "returnDate": "2024-07-05T05:12:27.326Z",
+      "imgUrl": "https://picsum.photos/seed/GccC4B/640/480"
+    },
+    {
+      "id": 27,
+      "category": "Sports",
+      "isBorrowed": true,
+      "name": "Hat",
+      "borrowedTimes": 20,
+      "borrowedDate": "2023-12-04T00:58:13.175Z",
+      "returnDate": "2024-11-19T20:17:40.541Z",
+      "imgUrl": "https://picsum.photos/seed/SwLTU020/640/480"
+    },
+    {
+      "id": 29,
+      "category": "Sports",
+      "isBorrowed": false,
+      "name": "Chips",
+      "borrowedTimes": 17,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/wirZjwnh/640/480"
+    },
+    {
+      "id": 30,
+      "category": "Sports",
+      "isBorrowed": true,
+      "name": "Pants",
+      "borrowedTimes": 17,
+      "borrowedDate": "2023-05-05T23:20:26.633Z",
+      "returnDate": "2024-12-03T03:20:29.233Z",
+      "imgUrl": "https://picsum.photos/seed/JgpOJwZjIE/640/480"
+    },
+    {
+      "id": 33,
+      "category": "Sports",
+      "isBorrowed": false,
+      "name": "Gloves",
+      "borrowedTimes": 12,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/weIi10NMP/640/480"
+    },
+    {
+      "id": 34,
+      "category": "Sports",
+      "isBorrowed": true,
+      "name": "Fish",
+      "borrowedTimes": 19,
+      "borrowedDate": "2024-02-02T16:02:57.399Z",
+      "returnDate": "2024-10-23T08:13:03.739Z",
+      "imgUrl": "https://picsum.photos/seed/bvBeC/640/480"
+    },
+    {
+      "id": 35,
+      "category": "Sports",
+      "isBorrowed": true,
+      "name": "Computer",
+      "borrowedTimes": 17,
+      "borrowedDate": "2023-12-09T06:26:56.091Z",
+      "returnDate": "2024-12-19T23:02:04.953Z",
+      "imgUrl": "https://picsum.photos/seed/DlOzwNZl/640/480"
+    },
+    {
+      "id": 37,
+      "category": "Sports",
+      "isBorrowed": false,
+      "name": "Mouse",
+      "borrowedTimes": 16,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/7oTm4/640/480"
+    },
+    {
+      "id": 39,
+      "category": "Sports",
+      "isBorrowed": false,
+      "name": "Car",
+      "borrowedTimes": 14,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/OmP1sW/640/480"
+    },
+    {
+      "id": 0,
+      "category": "Computers",
+      "isBorrowed": false,
+      "name": "Pants",
+      "borrowedTimes": 12,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/YFuoZrM/640/480"
+    },
+    {
+      "id": 1,
+      "category": "Computers",
+      "isBorrowed": true,
+      "name": "Gloves",
+      "borrowedTimes": 14,
+      "borrowedDate": "2023-11-03T12:56:09.614Z",
+      "returnDate": "2024-03-09T23:00:53.754Z",
+      "imgUrl": "https://picsum.photos/seed/mS5ds842Zn/640/480"
+    },
+    {
+      "id": 2,
+      "category": "Computers",
+      "isBorrowed": true,
+      "name": "Salad",
+      "borrowedTimes": 13,
+      "borrowedDate": "2023-06-08T15:05:47.728Z",
+      "returnDate": "2024-11-10T21:33:13.077Z",
+      "imgUrl": "https://picsum.photos/seed/9Mxy1/640/480"
+    },
+    {
+      "id": 3,
+      "category": "Computers",
+      "isBorrowed": true,
+      "name": "Pizza",
+      "borrowedTimes": 16,
+      "borrowedDate": "2023-10-31T15:19:46.248Z",
+      "returnDate": "2024-05-28T13:03:35.239Z",
+      "imgUrl": "https://picsum.photos/seed/TyAwun7J0i/640/480"
+    },
+    {
+      "id": 8,
+      "category": "Computers",
+      "isBorrowed": true,
+      "name": "Computer",
+      "borrowedTimes": 12,
+      "borrowedDate": "2023-05-29T08:41:47.561Z",
+      "returnDate": "2024-07-18T19:57:51.455Z",
+      "imgUrl": "https://picsum.photos/seed/X7fpz16S/640/480"
+    },
+    {
+      "id": 10,
+      "category": "Computers",
+      "isBorrowed": true,
+      "name": "Tuna",
+      "borrowedTimes": 19,
+      "borrowedDate": "2023-05-13T15:21:04.882Z",
+      "returnDate": "2024-04-13T19:39:29.206Z",
+      "imgUrl": "https://picsum.photos/seed/7nPAH/640/480"
+    },
+    {
+      "id": 11,
+      "category": "Computers",
+      "isBorrowed": false,
+      "name": "Fish",
+      "borrowedTimes": 19,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/YA2KbrOn/640/480"
+    },
+    {
+      "id": 14,
+      "category": "Computers",
+      "isBorrowed": false,
+      "name": "Sausages",
+      "borrowedTimes": 20,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/ZHcr5qBM/640/480"
+    },
+    {
+      "id": 17,
+      "category": "Computers",
+      "isBorrowed": false,
+      "name": "Sausages",
+      "borrowedTimes": 14,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/il8sH2x/640/480"
+    },
+    {
+      "id": 18,
+      "category": "Computers",
+      "isBorrowed": true,
+      "name": "Chips",
+      "borrowedTimes": 11,
+      "borrowedDate": "2023-07-19T06:05:18.587Z",
+      "returnDate": "2024-11-18T10:21:01.065Z",
+      "imgUrl": "https://picsum.photos/seed/70mY4X3w/640/480"
+    },
+    {
+      "id": 20,
+      "category": "Computers",
+      "isBorrowed": false,
+      "name": "Keyboard",
+      "borrowedTimes": 17,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/mvzIXOiE/640/480"
+    },
+    {
+      "id": 21,
+      "category": "Computers",
+      "isBorrowed": false,
+      "name": "Computer",
+      "borrowedTimes": 14,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/f2JOKhG/640/480"
+    },
+    {
+      "id": 23,
+      "category": "Computers",
+      "isBorrowed": true,
+      "name": "Cheese",
+      "borrowedTimes": 17,
+      "borrowedDate": "2024-02-03T05:33:19.877Z",
+      "returnDate": "2025-02-14T20:07:42.385Z",
+      "imgUrl": "https://picsum.photos/seed/ZQJHiU1t/640/480"
+    },
+    {
+      "id": 24,
+      "category": "Computers",
+      "isBorrowed": false,
+      "name": "Chair",
+      "borrowedTimes": 16,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/lgUVo/640/480"
+    },
+    {
+      "id": 26,
+      "category": "Computers",
+      "isBorrowed": false,
+      "name": "Salad",
+      "borrowedTimes": 18,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/LA77nyd/640/480"
+    },
+    {
+      "id": 27,
+      "category": "Computers",
+      "isBorrowed": false,
+      "name": "Sausages",
+      "borrowedTimes": 11,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/kZwR9mj/640/480"
+    },
+    {
+      "id": 28,
+      "category": "Computers",
+      "isBorrowed": false,
+      "name": "Sausages",
+      "borrowedTimes": 14,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/ondeNpwS/640/480"
+    },
+    {
+      "id": 31,
+      "category": "Computers",
+      "isBorrowed": true,
+      "name": "Shoes",
+      "borrowedTimes": 15,
+      "borrowedDate": "2023-04-26T20:01:12.435Z",
+      "returnDate": "2024-11-18T11:39:03.950Z",
+      "imgUrl": "https://picsum.photos/seed/mcZzmFC/640/480"
+    },
+    {
+      "id": 33,
+      "category": "Computers",
+      "isBorrowed": true,
+      "name": "Bacon",
+      "borrowedTimes": 13,
+      "borrowedDate": "2023-05-18T21:20:20.013Z",
+      "returnDate": "2024-03-25T10:24:33.297Z",
+      "imgUrl": "https://picsum.photos/seed/HkRm7HVeV/640/480"
+    },
+    {
+      "id": 34,
+      "category": "Computers",
+      "isBorrowed": true,
+      "name": "Table",
+      "borrowedTimes": 12,
+      "borrowedDate": "2023-05-29T07:39:14.756Z",
+      "returnDate": "2024-04-10T00:14:31.053Z",
+      "imgUrl": "https://picsum.photos/seed/dOnGNxFa/640/480"
+    },
+    {
+      "id": 35,
+      "category": "Computers",
+      "isBorrowed": true,
+      "name": "Table",
+      "borrowedTimes": 13,
+      "borrowedDate": "2023-08-17T05:52:34.619Z",
+      "returnDate": "2024-05-07T03:53:53.254Z",
+      "imgUrl": "https://picsum.photos/seed/vBftgVZP/640/480"
+    },
+    {
+      "id": 36,
+      "category": "Computers",
+      "isBorrowed": false,
+      "name": "Keyboard",
+      "borrowedTimes": 11,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/1HDul4/640/480"
+    },
+    {
+      "id": 37,
+      "category": "Computers",
+      "isBorrowed": false,
+      "name": "Bike",
+      "borrowedTimes": 20,
+      "borrowedDate": null,
+      "returnDate": null,
+      "imgUrl": "https://picsum.photos/seed/toYIe4ql8L/640/480"
+    },
+    {
+      "id": 39,
+      "category": "Computers",
+      "isBorrowed": true,
+      "name": "Towels",
+      "borrowedTimes": 15,
+      "borrowedDate": "2023-12-10T11:31:04.934Z",
+      "returnDate": "2024-12-07T02:54:12.918Z",
+      "imgUrl": "https://picsum.photos/seed/LSmcXfwS/640/480"
+    }
+  ],
+  "users": [
+    {
+      "email": "powder@arcane.com",
+      "password": "$2a$10$2WwIIqWtUP1oRwW26uLy.u3AOe19qnORfAAfV3W6VJUv0S/DbxsJe",
+      "id": "0",
+      "firstname": "Powder",
+      "lastname": "Jinx",
+      "imgUrl": "https://i.pinimg.com/474x/b4/44/06/b44406b163f1e54aa7408fb86d31bfb1.jpg"
+    }
+  ]
 }

@@ -1,7 +1,7 @@
 export default {
   expo: {
-    name: 'react-native-test-app',
-    slug: 'react-native-test-app',
+    name: 'avocadoapp',
+    slug: 'avocadoapp',
     version: '1.0.0',
     orientation: 'portrait',
     icon: './assets/images/icon.png',
@@ -17,6 +17,7 @@ export default {
       supportsTablet: true,
     },
     android: {
+      package: 'com.emigdio.avocadoapp',
       adaptiveIcon: {
         foregroundImage: './assets/images/adaptive-icon.png',
         backgroundColor: '#ffffff',
@@ -27,7 +28,15 @@ export default {
       output: 'static',
       favicon: './assets/images/favicon.png',
     },
-    plugins: ['expo-router'],
+    plugins: [
+      'expo-router',
+      [
+        'expo-secure-store',
+        {
+          faceIDPermission: 'Allow $(PRODUCT_NAME) to access your Face ID biometric data.',
+        },
+      ],
+    ],
     experiments: {
       typedRoutes: true,
     },

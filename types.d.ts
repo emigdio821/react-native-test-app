@@ -24,3 +24,16 @@ export interface CategoyData {
 export interface MostBorrowedItem extends CategoryItem {
   category: string
 }
+
+export interface UserResponse {
+  accessToken: string
+  user: User
+}
+
+export interface User {
+  email: string
+  id: string
+  firstname: string
+  lastname: string
+  imgUrl: string
+}
