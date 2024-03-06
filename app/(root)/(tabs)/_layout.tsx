@@ -12,6 +12,9 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
+        headerTitleStyle: {
+          fontFamily: 'InterBold',
+        },
         // tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
         headerShown: useClientOnlyValue(false, true),
       }}
@@ -36,7 +39,7 @@ export default function TabLayout() {
           title: 'Profile',
           tabBarIcon: ({ color }) => <UserIcon color={color} />,
           headerRight: () => (
-            <Link href="/(modals)/edit-profile" asChild>
+            <Link href="/(root)/(modals)/edit-profile" asChild>
               <Pressable>
                 <Text mr={16}>Edit</Text>
               </Pressable>

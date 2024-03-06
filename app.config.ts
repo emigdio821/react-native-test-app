@@ -15,6 +15,7 @@ export default {
     assetBundlePatterns: ['**/*'],
     ios: {
       supportsTablet: true,
+      bundleIdentifier: 'com.emigdio.avocadoapp',
     },
     android: {
       package: 'com.emigdio.avocadoapp',

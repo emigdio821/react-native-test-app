@@ -4,7 +4,7 @@ import { tamaguiConfig } from '@/tamagui.config'
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { useFonts } from 'expo-font'
-import { Stack } from 'expo-router'
+import { Slot } from 'expo-router'
 import * as SplashScreen from 'expo-splash-screen'
 import { useColorScheme } from 'react-native'
 import { DevToolsBubble } from 'react-native-react-query-devtools'
@@ -40,13 +40,7 @@ export default function Root() {
     <QueryClientProvider client={queryClient}>
       <TamaguiProvider config={tamaguiConfig} defaultTheme={theme}>
         <ThemeProvider value={theme === 'dark' ? DarkTheme : DefaultTheme}>
-          <Stack
-            screenOptions={{
-              headerTitleStyle: {
-                fontFamily: 'InterBold',
-              },
-            }}
-          />
+          <Slot />
         </ThemeProvider>
       </TamaguiProvider>
       <DevToolsBubble />

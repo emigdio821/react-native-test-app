@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { ACCESS_TKN } from '@/constants/auth'
 import type { User } from '@/types'
 import * as SecureStore from 'expo-secure-store'
 
@@ -11,7 +12,7 @@ const useSession = () => {
   useEffect(() => {
     async function getAccessToken() {
       try {
-        const accessToken = await SecureStore.getItemAsync('accessToken')
+        const accessToken = await SecureStore.getItemAsync(ACCESS_TKN)
         if (!accessToken) throw new Error('Invalid/expired access token')
 
         const user = storage.getString('user')
