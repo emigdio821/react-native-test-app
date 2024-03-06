@@ -12,7 +12,7 @@ export default function RootLayout() {
   }
 
   if (!user) {
-    return <Redirect href="/login/" />
+    return <Redirect href="/(auth)/log-in" />
   }
 
   return (
@@ -36,12 +36,5 @@ export default function RootLayout() {
         options={{ headerTitle: 'Borrow', presentation: 'modal' }}
       />
     </Stack>
-    // <Stack
-    //   screenOptions={{
-    //     headerTitleStyle: {
-    //       fontFamily: 'InterBold',
-    //     },
-    //   }}
-    // />
   )
 }

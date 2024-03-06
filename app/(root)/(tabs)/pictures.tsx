@@ -23,7 +23,7 @@ const PicturesTab = () => {
 
   const getImages = async () => {
     const page = Math.floor(Math.random() * 10) + 1
-    const EP_URL = `https://picsum.photos/v2/list?page=${page}&limit=100`
+    const EP_URL = `https://picsum.photos/v2/list?page=${page}&limit=20`
     try {
       const response = await fetch(EP_URL)
       const images = await response.json()

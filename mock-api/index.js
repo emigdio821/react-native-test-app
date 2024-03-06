@@ -41,7 +41,7 @@ function generateCategoryItem(category) {
 function generateMostBorrowedItems() {
   data.categories.forEach((cat) => {
     cat.items.forEach((catItem) => {
-      if (catItem.borrowedTimes > 10) {
+      if (catItem.borrowedTimes > 18) {
         data['featured-items'].push(catItem)
       }
     })

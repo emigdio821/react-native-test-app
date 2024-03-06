@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import type { CategoryItem } from '@/types'
 import { router, Stack, useLocalSearchParams } from 'expo-router'
-import { ChevronRight, RabbitIcon as RabbitIc, RotateCwIcon, SearchIcon } from 'lucide-react-native'
+import { ChevronRight, RabbitIcon, RotateCwIcon, SearchIcon } from 'lucide-react-native'
 import { ActivityIndicator } from 'react-native'
 import {
   Button,
@@ -38,7 +38,7 @@ const NotFoundCard = ({
   return (
     <Card bordered m={withSpacing ? '$2' : 'unset'}>
       <Card.Header alignItems="center">
-        <RabbitIcon size={60} />
+        <StyledRabbitIcon size={60} />
         <Paragraph>{message}</Paragraph>
       </Card.Header>
       {withAction && (
@@ -134,19 +134,19 @@ const CategoryPage = () => {
         <XStack w="100%" alignItems="center" justifyContent="flex-end">
           <Input
             flexGrow={1}
-            placeholder="Search"
             paddingEnd="$8"
+            placeholder="Search"
             onChangeText={(value) => {
               setFilters({ ...filters, byName: value })
             }}
           />
           <XStack paddingEnd="$3" position="absolute">
-            <SearchIcon />
+            <StyledSearchIcon />
           </XStack>
         </XStack>
 
         <ToggleGroup
-          size="$2"
+          // size="$1"
           type="single"
           alignSelf="flex-end"
           onValueChange={(value) => {
@@ -154,16 +154,16 @@ const CategoryPage = () => {
           }}
         >
           <ToggleGroup.Item value="available">
-            <Text fontSize="$1">Available</Text>
+            <Text>Available</Text>
           </ToggleGroup.Item>
           <ToggleGroup.Item value="unavailable">
-            <Text fontSize="$1">Unavailable</Text>
+            <Text>Unavailable</Text>
           </ToggleGroup.Item>
         </ToggleGroup>
 
         {filteredItems.length > 0 ? (
           <ScrollView>
-            <YGroup mb="$6">
+            <YGroup mb="$2">
               {filteredItems.map((item) => (
                 <YGroup.Item key={item.id}>
                   <ListItem
@@ -215,9 +215,13 @@ const CategoryPage = () => {
   )
 }
 
-const RabbitIcon = styled(RabbitIc, {
-  name: 'RabbitIcon',
-  color: '$color',
+const StyledRabbitIcon = styled(RabbitIcon, {
+  name: 'StyledRabbitIcon',
+  color: '$accentColor',
+})
+const StyledSearchIcon = styled(SearchIcon, {
+  name: 'StyledSearchIcon',
+  color: '$accentColor',
 })
 
 export default CategoryPage

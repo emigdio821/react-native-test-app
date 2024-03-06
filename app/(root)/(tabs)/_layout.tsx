@@ -41,7 +41,9 @@ export default function TabLayout() {
           headerRight: () => (
             <Link href="/(root)/(modals)/edit-profile" asChild>
               <Pressable>
-                <Text mr={16}>Edit</Text>
+                <Text mr="$2" col="$accentColor">
+                  Edit
+                </Text>
               </Pressable>
             </Link>
           ),

@@ -20,7 +20,7 @@ export default {
     android: {
       package: 'com.emigdio.avocadoapp',
       adaptiveIcon: {
-        foregroundImage: './assets/images/adaptive-icon.png',
+        foregroundImage: './assets/images/icon.png',
         backgroundColor: '#ffffff',
       },
     },

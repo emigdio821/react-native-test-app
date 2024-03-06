@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
+import { API_URL } from '@/constants/api'
 import { ACCESS_TKN } from '@/constants/auth'
 import type { UserResponse } from '@/types'
 import { zodResolver } from '@hookform/resolvers/zod'
 import axios, { isAxiosError } from 'axios'
 import { router } from 'expo-router'
 import * as SecureStore from 'expo-secure-store'
-import { LogInIcon } from 'lucide-react-native'
 import { Controller, useForm } from 'react-hook-form'
 import { ActivityIndicator } from 'react-native'
 import { Button, Card, Input, Label, Text, View, YStack } from 'tamagui'
@@ -15,9 +15,9 @@ import { loginSchema } from '@/lib/schemas/form'
 import { storage } from '@/lib/storage'
 import { Avocado } from '@/components/icons'
 
-const LOGIN_EP = 'http://localhost:3000/login'
+const LOGIN_EP = `${API_URL}/login`
 
-const Login = () => {
+const LogIn = () => {
   const [error, setError] = useState('')
   const form = useForm<z.infer<typeof loginSchema>>({
     defaultValues: {
@@ -28,6 +28,7 @@ const Login = () => {
   })
 
   const onSubmit = form.handleSubmit(async (values: z.infer<typeof loginSchema>) => {
+    setError('')
     form.clearErrors()
     try {
       const { data } = await axios.post<UserResponse>(LOGIN_EP, values)
@@ -95,7 +96,7 @@ const Login = () => {
           <Button
             flexGrow={1}
             disabled={form.formState.isSubmitting}
-            icon={form.formState.isSubmitting ? <ActivityIndicator /> : <LogInIcon />}
+            icon={form.formState.isSubmitting ? <ActivityIndicator /> : undefined}
             onPress={() => {
               void onSubmit()
             }}
@@ -108,4 +109,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default LogIn

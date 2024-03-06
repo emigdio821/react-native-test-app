@@ -1,7 +1,7 @@
 // // import '@tamagui/core/reset.css'
 import React, { useEffect } from 'react'
 import { tamaguiConfig } from '@/tamagui.config'
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native'
+import { DarkTheme, DefaultTheme, ThemeProvider, type Theme } from '@react-navigation/native'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { useFonts } from 'expo-font'
 import { Slot } from 'expo-router'
@@ -15,6 +15,22 @@ export { ErrorBoundary } from 'expo-router'
 void SplashScreen.preventAutoHideAsync()
 
 const queryClient = new QueryClient()
+
+const CustomDarkTheme: Theme = {
+  ...DarkTheme,
+  colors: {
+    ...DarkTheme.colors,
+    primary: tamaguiConfig.themes.dark.accentColor.val,
+  },
+}
+
+const CustomLightTheme: Theme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: tamaguiConfig.themes.light.accentColor.val,
+  },
+}
 
 export default function Root() {
   const colorScheme = useColorScheme()
@@ -39,7 +55,7 @@ export default function Root() {
   return (
     <QueryClientProvider client={queryClient}>
       <TamaguiProvider config={tamaguiConfig} defaultTheme={theme}>
-        <ThemeProvider value={theme === 'dark' ? DarkTheme : DefaultTheme}>
+        <ThemeProvider value={theme === 'dark' ? CustomDarkTheme : CustomLightTheme}>
           <Slot />
         </ThemeProvider>
       </TamaguiProvider>

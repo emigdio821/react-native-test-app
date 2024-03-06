@@ -1,10 +1,11 @@
+import { API_URL } from '@/constants/api'
 import { ACCESS_TKN } from '@/constants/auth'
 import type { Category } from '@/types'
 import { useQuery } from '@tanstack/react-query'
 import axios, { isAxiosError } from 'axios'
 import * as SecureStore from 'expo-secure-store'
 
-const EP = 'http://localhost:3000/categories'
+const EP = `${API_URL}/categories`
 
 export const useCategories = () => {
   const getCategories = async () => {
