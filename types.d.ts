@@ -21,8 +21,8 @@ export interface CategoyData {
   items: CategoryItem[]
 }
 
-export interface MostBorrowedItem extends CategoryItem {
-  category: string
+export interface FullUser extends User {
+  password: string
 }
 
 export interface UserResponse {
@@ -35,5 +35,5 @@ export interface User {
   id: string
   firstname: string
   lastname: string
-  imgUrl: string
+  avatarUrl: string
 }

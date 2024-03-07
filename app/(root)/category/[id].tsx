@@ -1,12 +1,15 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useLayoutEffect, useState } from 'react'
 import type { CategoryItem } from '@/types'
-import { router, Stack, useLocalSearchParams } from 'expo-router'
-import { ChevronRight, RabbitIcon, RotateCwIcon, SearchIcon } from 'lucide-react-native'
-import { ActivityIndicator } from 'react-native'
+import { router, useLocalSearchParams, useNavigation } from 'expo-router'
+import { ArrowDownAZ, ArrowUpAZ, ChevronRight, GhostIcon, RotateCwIcon } from 'lucide-react-native'
+import {
+  ActivityIndicator,
+  type NativeSyntheticEvent,
+  type TextInputFocusEventData,
+} from 'react-native'
 import {
   Button,
   Card,
-  Input,
   ListItem,
   Paragraph,
   ScrollView,
@@ -36,9 +39,9 @@ const NotFoundCard = ({
   message = 'No items found for this category',
 }: NotFoundCardProps) => {
   return (
-    <Card bordered m={withSpacing ? '$2' : 'unset'}>
+    <Card m={withSpacing ? '$2' : 'unset'}>
       <Card.Header alignItems="center">
-        <StyledRabbitIcon size={60} />
+        <StyledGhostIcon size={32} />
         <Paragraph>{message}</Paragraph>
       </Card.Header>
       {withAction && (
@@ -54,12 +57,15 @@ const NotFoundCard = ({
 }
 
 const CategoryPage = () => {
+  const navigation = useNavigation()
   const { id, category } = useLocalSearchParams()
-  const { data, error, isLoading, refetch, isFetching } = useCategoryById(id as string)
+  const { data, error, refetch, isLoading } = useCategoryById(id as string)
   const [filteredItems, setFilteredItems] = useState<CategoryItem[]>([])
   const [filters, setFilters] = useState({
+    hasFilter: false,
     byName: '',
     byStatus: '',
+    asc: false,
   })
 
   const handleFilters = useCallback(() => {
@@ -103,124 +109,137 @@ const CategoryPage = () => {
     handleFilters()
   }, [handleFilters])
 
-  if (isLoading || isFetching) {
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerTitle: (category as string) ?? '',
+      headerSearchBarOptions: {
+        autoFocus: false,
+        placeholder: 'Search',
+        onChangeText: (e: NativeSyntheticEvent<TextInputFocusEventData>) => {
+          const inputVal = e.nativeEvent.text
+          setFilters({ ...filters, byName: inputVal, hasFilter: !!inputVal })
+        },
+      },
+    })
+  }, [navigation, category, filters])
+
+  if (isLoading) {
     return (
-      <View flex={1} pt={16}>
-        <Stack.Screen options={{ headerTitle: (category as string) ?? '' }} />
-        <ActivityIndicator />
-      </View>
+      <ScrollView contentInsetAdjustmentBehavior="automatic">
+        <View m="$2">
+          <ActivityIndicator />
+        </View>
+      </ScrollView>
     )
   }
 
   if (error) {
     return (
-      <ErrorCard
-        msg={error.message}
-        action={() => {
-          void refetch()
-        }}
-      />
+      <ScrollView contentInsetAdjustmentBehavior="automatic">
+        <ErrorCard
+          msg={error.message}
+          action={() => {
+            void refetch()
+          }}
+        />
+      </ScrollView>
     )
   }
 
   if (!data) {
-    return <NotFoundCard withSpacing />
+    return (
+      <ScrollView contentInsetAdjustmentBehavior="automatic">
+        <NotFoundCard withSpacing />
+      </ScrollView>
+    )
   }
 
   return (
-    <>
-      <Stack.Screen options={{ headerTitle: (category as string) ?? '' }} />
-      <View px="$2" pt="$2" gap="$2" flex={1}>
-        <XStack w="100%" alignItems="center" justifyContent="flex-end">
-          <Input
-            flexGrow={1}
-            paddingEnd="$8"
-            placeholder="Search"
-            onChangeText={(value) => {
-              setFilters({ ...filters, byName: value })
+    <ScrollView contentInsetAdjustmentBehavior="automatic">
+      <View m="$2" gap="$2">
+        <XStack justifyContent="flex-end" gap="$2">
+          <ToggleGroup
+            type="single"
+            onValueChange={(value) => {
+              setFilters({ ...filters, byStatus: value, hasFilter: !!value })
+            }}
+          >
+            <ToggleGroup.Item value="available">
+              <Text>Available</Text>
+            </ToggleGroup.Item>
+            <ToggleGroup.Item value="unavailable">
+              <Text>Unavailable</Text>
+            </ToggleGroup.Item>
+          </ToggleGroup>
+          <Button
+            icon={filters.asc ? <ArrowUpAZ size={18} /> : <ArrowDownAZ size={18} />}
+            onPress={() => {
+              setFilters((prev) => ({ ...filters, asc: !prev.asc }))
             }}
           />
-          <XStack paddingEnd="$3" position="absolute">
-            <StyledSearchIcon />
-          </XStack>
         </XStack>
 
-        <ToggleGroup
-          // size="$1"
-          type="single"
-          alignSelf="flex-end"
-          onValueChange={(value) => {
-            setFilters({ ...filters, byStatus: value })
-          }}
-        >
-          <ToggleGroup.Item value="available">
-            <Text>Available</Text>
-          </ToggleGroup.Item>
-          <ToggleGroup.Item value="unavailable">
-            <Text>Unavailable</Text>
-          </ToggleGroup.Item>
-        </ToggleGroup>
-
         {filteredItems.length > 0 ? (
-          <ScrollView>
-            <YGroup mb="$2">
-              {filteredItems.map((item) => (
-                <YGroup.Item key={item.id}>
-                  <ListItem
-                    onPress={() => {
-                      router.navigate({
-                        pathname: '/category/item/[id]',
-                        params: {
-                          category,
-                          id: item.id,
-                          imgUrl: item.imgUrl,
-                          itemName: item.name,
-                        },
-                      })
-                    }}
-                    pressTheme
-                    title={item.name}
-                    disabled={item.isBorrowed}
-                    iconAfter={<ChevronRight />}
-                    subTitle={
-                      <>
-                        {item.isBorrowed ? (
-                          <>
-                            <Text fontSize={12} color="$color05">
-                              Unavailable
-                            </Text>
-                            {item.returnDate != null && (
-                              <Text fontSize={12} color="$color05">
-                                Returning on {formatDate(new Date(item.returnDate))}
-                              </Text>
-                            )}
-                          </>
-                        ) : (
+          <YGroup mb="$2">
+            {filteredItems.map((item) => (
+              <YGroup.Item key={item.id}>
+                <ListItem
+                  onPress={() => {
+                    router.navigate({
+                      pathname: '/category/item/[id]',
+                      params: {
+                        category,
+                        id: item.id,
+                        imgUrl: item.imgUrl,
+                        itemName: item.name,
+                      },
+                    })
+                  }}
+                  pressTheme
+                  title={item.name}
+                  disabled={item.isBorrowed}
+                  iconAfter={<ChevronRight />}
+                  subTitle={
+                    <>
+                      {item.isBorrowed ? (
+                        <>
                           <Text fontSize={12} color="$color05">
-                            Available
+                            Unavailable
                           </Text>
-                        )}
-                      </>
-                    }
-                  />
-                </YGroup.Item>
-              ))}
-            </YGroup>
-          </ScrollView>
+                          {item.returnDate != null && (
+                            <Text fontSize={12} color="$color05">
+                              Returning on {formatDate(new Date(item.returnDate))}
+                            </Text>
+                          )}
+                        </>
+                      ) : (
+                        <Text fontSize={12} color="$color05">
+                          Available
+                        </Text>
+                      )}
+                    </>
+                  }
+                />
+              </YGroup.Item>
+            ))}
+          </YGroup>
         ) : (
-          <NotFoundCard message="No items found" />
+          <>
+            {data && (
+              <View m="$2">
+                <ActivityIndicator />
+              </View>
+            )}
+            {filters.hasFilter && <NotFoundCard message="No items found" />}
+          </>
         )}
       </View>
-    </>
+    </ScrollView>
   )
 }
 
-const StyledRabbitIcon = styled(RabbitIcon, {
-  name: 'StyledRabbitIcon',
-  color: '$accentColor',
-})
-const StyledSearchIcon = styled(SearchIcon, {
-  name: 'StyledSearchIcon',
+const StyledGhostIcon = styled(GhostIcon, {
+  name: 'StyledGhostIcon',
   color: '$accentColor',
 })
 

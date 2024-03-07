@@ -17,7 +17,7 @@ export default function ProfileTab() {
     try {
       setLoading(true)
       await SecureStore.deleteItemAsync(ACCESS_TKN)
-      router.navigate('/(auth)/log-in2')
+      router.navigate('/(auth)/log-in')
     } catch (err) {
       Alert.alert('', 'Something went wrong while trying to log you out, try again', undefined, {
         userInterfaceStyle: scheme ?? undefined,
@@ -59,10 +59,10 @@ export default function ProfileTab() {
   }
 
   return (
-    <Card m="$2" bordered>
+    <Card m="$2">
       <Card.Header alignItems="center">
         <Avatar circular size="$12">
-          <Avatar.Image accessibilityLabel="Powder" src={user?.imgUrl} />
+          <Avatar.Image accessibilityLabel={user?.firstname} src={user?.avatarUrl} />
           <Avatar.Fallback bc="$accentColor" />
         </Avatar>
         <H2>

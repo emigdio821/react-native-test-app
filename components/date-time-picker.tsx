@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
+import tamaguiConfig from '@/tamagui.config'
 import { CalendarClockIcon, CalendarIcon, ClockIcon } from 'lucide-react-native'
 import { Pressable } from 'react-native'
 import DateTimePickerModal, { type DateTimePickerProps } from 'react-native-modal-datetime-picker'
-import { Input, XStack } from 'tamagui'
+import { Input, styled, XStack } from 'tamagui'
 
 import { formatDate, formatDateTime, formatTime } from '@/lib/utils'
 
@@ -32,15 +33,15 @@ const DateTimePicker = (props: PickerProps) => {
   }
 
   const handleModeIcon = () => {
-    const defaultIcon = <CalendarIcon />
+    const defaultIcon = <StyledCalendarIcon />
 
     switch (mode) {
       case 'date':
         return defaultIcon
       case 'time':
-        return <ClockIcon />
+        return <StyledClockIcon />
       case 'datetime':
-        return <CalendarClockIcon />
+        return <StyledCalendarClockIcon />
       default:
         return defaultIcon
     }
@@ -89,6 +90,7 @@ const DateTimePicker = (props: PickerProps) => {
       <DateTimePickerModal
         mode={mode}
         date={value}
+        buttonTextColorIOS={tamaguiConfig.themes.dark.accentColor.val}
         isVisible={show}
         onChange={props.onChange}
         onConfirm={handleConfirm}
@@ -98,5 +100,18 @@ const DateTimePicker = (props: PickerProps) => {
     </Pressable>
   )
 }
+
+const StyledCalendarIcon = styled(CalendarIcon, {
+  name: 'StyledCalendarIcon',
+  color: '$accentColor',
+})
+const StyledClockIcon = styled(ClockIcon, {
+  name: 'StyledClockIcon',
+  color: '$accentColor',
+})
+const StyledCalendarClockIcon = styled(CalendarClockIcon, {
+  name: 'StyledCalendarClockIcon',
+  color: '$accentColor',
+})
 
 export default DateTimePicker

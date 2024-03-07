@@ -18,6 +18,12 @@ export default function RootLayout() {
   return (
     <Stack
       screenOptions={{
+        headerLargeTitle: true,
+        headerTransparent: true,
+        headerBlurEffect: 'regular',
+        headerLargeTitleStyle: {
+          fontFamily: 'InterBold',
+        },
         headerTitleStyle: {
           fontFamily: 'InterBold',
         },
@@ -27,14 +33,11 @@ export default function RootLayout() {
       <Stack.Screen name="test-view" options={{ headerTitle: 'Test page' }} />
       <Stack.Screen
         name="(modals)/edit-profile"
-        options={{ presentation: 'modal', headerTitle: 'Edit profile' }}
+        options={{ headerTitle: 'Edit profile', headerBackTitle: 'Profile' }}
       />
       <Stack.Screen name="category/[id]" options={{ headerTitle: '' }} />
       <Stack.Screen name="category/item/[id]" options={{ headerTitle: 'Item details' }} />
-      <Stack.Screen
-        name="(modals)/borrow-form"
-        options={{ headerTitle: 'Borrow', presentation: 'modal' }}
-      />
+      <Stack.Screen name="(modals)/borrow-form" options={{ headerTitle: 'Borrow' }} />
     </Stack>
   )
 }

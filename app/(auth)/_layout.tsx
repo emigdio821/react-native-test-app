@@ -7,8 +7,12 @@ const LoginLayout = () => {
   return (
     <Stack
       screenOptions={{
-        headerTitleAlign: 'center',
-        // headerLargeTitle: true,
+        headerLargeTitle: true,
+        headerTransparent: true,
+        headerBlurEffect: 'regular',
+        headerLargeTitleStyle: {
+          fontFamily: 'InterBold',
+        },
         headerTitleStyle: {
           fontFamily: 'InterBold',
         },
@@ -18,10 +22,10 @@ const LoginLayout = () => {
         name="log-in"
         options={{
           headerTitle: 'Log in',
-          headerRight: () => (
+          headerRight: ({ tintColor }) => (
             <Link href="/sign-up" asChild>
               <Pressable>
-                <Text mr="$2" col="$accentColor">
+                <Text mr="$2" col={tintColor}>
                   Sign up
                 </Text>
               </Pressable>
@@ -29,7 +33,12 @@ const LoginLayout = () => {
           ),
         }}
       />
-      <Stack.Screen name="sign-up" options={{ headerTitle: 'Sign up', presentation: 'modal' }} />
+      <Stack.Screen
+        name="sign-up"
+        options={{
+          headerTitle: 'Sign up',
+        }}
+      />
     </Stack>
   )
 }

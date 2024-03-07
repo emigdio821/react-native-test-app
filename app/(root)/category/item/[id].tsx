@@ -2,7 +2,7 @@ import React from 'react'
 import { Image } from 'expo-image'
 import { router, useLocalSearchParams } from 'expo-router'
 import { BanIcon, ImageOffIcon as ImageOffIc, SmilePlusIcon } from 'lucide-react-native'
-import { Button, Card, H3, styled, Text, View, YStack } from 'tamagui'
+import { Button, Card, H3, ScrollView, styled, Text, View, YStack } from 'tamagui'
 
 import { formatDate } from '@/lib/utils'
 
@@ -24,31 +24,33 @@ const CategoryItemPage = () => {
   }
 
   return (
-    <Card m="$2" bordered>
-      <Card.Header gap="$2">
-        {imgUrl ? (
-          <ImageContainer>
-            <ItemImg source={imgUrl} transition={300} contentFit="cover" />
-          </ImageContainer>
-        ) : (
-          <ImageContainer alignItems="center" justifyContent="center" bg="$color4">
-            <ImageOffIcon />
-          </ImageContainer>
-        )}
-        <YStack>
-          <H3>{itemName}</H3>
-          <Text color="$color05">{category}</Text>
-          {returningDate && <Text color="$color05">Returning on {returningDate}</Text>}
-        </YStack>
-        <Button
-          disabled={borrowed}
-          onPress={handleBorrowingProcess}
-          icon={borrowed ? <BanIcon /> : <SmilePlusIcon />}
-        >
-          {borrowed ? 'Unavailable' : 'I want to take it'}
-        </Button>
-      </Card.Header>
-    </Card>
+    <ScrollView contentInsetAdjustmentBehavior="automatic">
+      <Card m="$2">
+        <Card.Header gap="$2">
+          {imgUrl ? (
+            <ImageContainer>
+              <ItemImg source={imgUrl} transition={300} contentFit="cover" />
+            </ImageContainer>
+          ) : (
+            <ImageContainer alignItems="center" justifyContent="center" bg="$color4">
+              <ImageOffIcon />
+            </ImageContainer>
+          )}
+          <YStack>
+            <H3>{itemName}</H3>
+            <Text color="$color05">{category}</Text>
+            {returningDate && <Text color="$color05">Returning on {returningDate}</Text>}
+          </YStack>
+          <Button
+            disabled={borrowed}
+            onPress={handleBorrowingProcess}
+            icon={borrowed ? <BanIcon /> : <SmilePlusIcon />}
+          >
+            {borrowed ? 'Unavailable' : 'I want to take it'}
+          </Button>
+        </Card.Header>
+      </Card>
+    </ScrollView>
   )
 }
 

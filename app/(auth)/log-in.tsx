@@ -8,7 +8,7 @@ import { router } from 'expo-router'
 import * as SecureStore from 'expo-secure-store'
 import { Controller, useForm } from 'react-hook-form'
 import { ActivityIndicator } from 'react-native'
-import { Button, Card, Input, Label, Text, View, YStack } from 'tamagui'
+import { Button, Card, Input, Label, ScrollView, Text, View, YStack } from 'tamagui'
 import type { z } from 'zod'
 
 import { loginSchema } from '@/lib/schemas/form'
@@ -45,8 +45,8 @@ const LogIn = () => {
   })
 
   return (
-    <View flex={1}>
-      <Card m="$2" bordered>
+    <ScrollView contentInsetAdjustmentBehavior="automatic">
+      <Card m="$2">
         <Card.Header gap="$2">
           <View alignSelf="center">
             <Avocado width={48} height={48} />
@@ -105,7 +105,7 @@ const LogIn = () => {
           </Button>
         </Card.Header>
       </Card>
-    </View>
+    </ScrollView>
   )
 }
 

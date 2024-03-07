@@ -7,7 +7,7 @@ const defaultUser = {
   password: '$2a$10$2WwIIqWtUP1oRwW26uLy.u3AOe19qnORfAAfV3W6VJUv0S/DbxsJe',
   firstname: 'Powder',
   lastname: 'Jinx',
-  imgUrl: 'https://i.pinimg.com/474x/b4/44/06/b44406b163f1e54aa7408fb86d31bfb1.jpg',
+  avatarUrl: 'https://i.pinimg.com/474x/b4/44/06/b44406b163f1e54aa7408fb86d31bfb1.jpg',
 }
 
 const data = {

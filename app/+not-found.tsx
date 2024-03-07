@@ -1,15 +1,15 @@
 import React from 'react'
 import { Link, Stack } from 'expo-router'
-import { RabbitIcon as RabbitIc } from 'lucide-react-native'
+import { GhostIcon } from 'lucide-react-native'
 import { Button, Card, Paragraph, styled, View } from 'tamagui'
 
 const NotFoundScreen = () => {
   return (
     <View flex={1} bg="$background" justifyContent="center">
       <Stack.Screen options={{ title: 'Oops!' }} />
-      <Card m="$2" bordered>
+      <Card m="$2">
         <Card.Header alignItems="center">
-          <RabbitIcon size={60} />
+          <StyledGhostIcon size={32} />
           <Paragraph>Seems like this screen does not exist</Paragraph>
         </Card.Header>
         <Card.Footer p="$2">
@@ -23,9 +23,9 @@ const NotFoundScreen = () => {
   )
 }
 
-const RabbitIcon = styled(RabbitIc, {
-  name: 'RabbitIcon',
-  color: '$color',
+const StyledGhostIcon = styled(GhostIcon, {
+  name: 'StyledGhostIcon',
+  color: '$accentColor',
 })
 
 export default NotFoundScreen
