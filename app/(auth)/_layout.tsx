@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, Stack } from 'expo-router'
-import { Pressable } from 'react-native'
+import { Platform, Pressable } from 'react-native'
 import { Text } from 'tamagui'
 
 const LoginLayout = () => {
@@ -8,7 +8,7 @@ const LoginLayout = () => {
     <Stack
       screenOptions={{
         headerLargeTitle: true,
-        headerTransparent: true,
+        headerTransparent: Platform.OS === 'ios',
         headerBlurEffect: 'regular',
         headerLargeTitleStyle: {
           fontFamily: 'InterBold',

@@ -59,7 +59,7 @@ const NotFoundCard = ({
 const CategoryPage = () => {
   const navigation = useNavigation()
   const { id, category } = useLocalSearchParams()
-  const { data, error, refetch, isLoading } = useCategoryById(id as string)
+  const { data, error, refetch, isLoading, isFetching } = useCategoryById(id as string)
   const [filteredItems, setFilteredItems] = useState<CategoryItem[]>([])
   const [filters, setFilters] = useState({
     hasFilter: false,
@@ -115,6 +115,7 @@ const CategoryPage = () => {
       headerSearchBarOptions: {
         autoFocus: false,
         placeholder: 'Search',
+        hideWhenScrolling: false,
         onChangeText: (e: NativeSyntheticEvent<TextInputFocusEventData>) => {
           const inputVal = e.nativeEvent.text
           setFilters({ ...filters, byName: inputVal, hasFilter: !!inputVal })
@@ -123,7 +124,7 @@ const CategoryPage = () => {
     })
   }, [navigation, category, filters])
 
-  if (isLoading) {
+  if (isLoading || isFetching) {
     return (
       <ScrollView contentInsetAdjustmentBehavior="automatic">
         <View m="$2">
@@ -154,6 +155,8 @@ const CategoryPage = () => {
     )
   }
 
+  const categories = filteredItems.length > 0 ? filteredItems : data.items
+
   return (
     <ScrollView contentInsetAdjustmentBehavior="automatic">
       <View m="$2" gap="$2">
@@ -179,9 +182,9 @@ const CategoryPage = () => {
           />
         </XStack>
 
-        {filteredItems.length > 0 ? (
+        {categories.length > 0 ? (
           <YGroup mb="$2">
-            {filteredItems.map((item) => (
+            {categories.map((item) => (
               <YGroup.Item key={item.id}>
                 <ListItem
                   onPress={() => {
@@ -224,14 +227,7 @@ const CategoryPage = () => {
             ))}
           </YGroup>
         ) : (
-          <>
-            {data && (
-              <View m="$2">
-                <ActivityIndicator />
-              </View>
-            )}
-            {filters.hasFilter && <NotFoundCard message="No items found" />}
-          </>
+          <>{filters.hasFilter && <NotFoundCard message="No items found" />}</>
         )}
       </View>
     </ScrollView>

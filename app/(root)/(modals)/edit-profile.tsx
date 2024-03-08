@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { API_URL } from '@/constants/api'
 import { ACCESS_TKN } from '@/constants/auth'
-import type { FullUser } from '@/types'
+import type { FullUser, User } from '@/types'
 import { zodResolver } from '@hookform/resolvers/zod'
 import axios, { isAxiosError } from 'axios'
 import * as ImagePicker from 'expo-image-picker'
@@ -14,7 +14,6 @@ import type { z } from 'zod'
 
 import { updateProfileSchema } from '@/lib/schemas/form'
 import { storage } from '@/lib/storage'
-import useSession from '@/hooks/use-session'
 
 const USERS_EP = `${API_URL}/users`
 
@@ -27,15 +26,17 @@ interface EditPayload {
 }
 
 const EditProfileModal = () => {
-  const { user } = useSession()
+  const userFromStorage = storage.getString('user')
+  const user: User | null = userFromStorage ? JSON.parse(userFromStorage) : null
+
   const [error, setError] = useState('')
   const form = useForm<z.infer<typeof updateProfileSchema>>({
     defaultValues: {
-      firstname: '',
-      lastname: '',
-      email: '',
+      firstname: user?.firstname ?? '',
+      lastname: user?.lastname ?? '',
+      avatarUrl: user?.avatarUrl ?? '',
+      email: user?.email ?? '',
       password: '',
-      avatarUrl: '',
     },
     resolver: zodResolver(updateProfileSchema),
   })
@@ -92,17 +93,6 @@ const EditProfileModal = () => {
       setError(errorMsg)
     }
   })
-
-  useEffect(() => {
-    if (user) {
-      form.reset({
-        firstname: user.firstname,
-        lastname: user.lastname,
-        avatarUrl: user.avatarUrl,
-        email: user.email,
-      })
-    }
-  }, [user, form])
 
   return (
     <ScrollView contentInsetAdjustmentBehavior="automatic">
