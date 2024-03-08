@@ -1,10 +1,8 @@
 import React from 'react'
-import { Link, Tabs } from 'expo-router'
-import { HomeIcon, ImageIcon, UserIcon } from 'lucide-react-native'
-import { Pressable } from 'react-native'
-import { Text } from 'tamagui'
+import { Tabs } from 'expo-router'
+import { HomeIcon, ImageIcon, ShoppingBasketIcon, UserIcon } from 'lucide-react-native'
 
-import { useClientOnlyValue } from '@/hooks/useClientOnlyValue'
+// import { useClientOnlyValue } from '@/hooks/useClientOnlyValue'
 
 export default function TabLayout() {
   // const colorScheme = useColorScheme()
@@ -16,11 +14,20 @@ export default function TabLayout() {
           fontFamily: 'InterBold',
         },
         // tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: useClientOnlyValue(false, true),
+        // headerShown: useClientOnlyValue(false, true),
+        headerShown: false,
       }}
     >
       <Tabs.Screen
         name="index"
+        options={{
+          href: null,
+          title: 'Home',
+          tabBarIcon: ({ color }) => <HomeIcon color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="home"
         options={{
           title: 'Home',
           tabBarIcon: ({ color }) => <HomeIcon color={color} />,
@@ -29,8 +36,16 @@ export default function TabLayout() {
       <Tabs.Screen
         name="pictures"
         options={{
+          href: null,
           title: 'Pictures',
           tabBarIcon: ({ color }) => <ImageIcon color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="my-items"
+        options={{
+          title: 'My items',
+          tabBarIcon: ({ color }) => <ShoppingBasketIcon color={color} />,
         }}
       />
       <Tabs.Screen
@@ -38,15 +53,6 @@ export default function TabLayout() {
         options={{
           title: 'Profile',
           tabBarIcon: ({ color }) => <UserIcon color={color} />,
-          headerRight: () => (
-            <Link href="/(root)/(modals)/edit-profile" asChild>
-              <Pressable>
-                <Text mr="$2" col="$accentColor">
-                  Edit
-                </Text>
-              </Pressable>
-            </Link>
-          ),
         }}
       />
     </Tabs>

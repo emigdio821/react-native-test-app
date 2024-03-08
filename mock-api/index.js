@@ -10,10 +10,16 @@ const defaultUser = {
   avatarUrl: 'https://i.pinimg.com/474x/b4/44/06/b44406b163f1e54aa7408fb86d31bfb1.jpg',
 }
 
+const defaultMyItems = {
+  id: defaultUser.id,
+  items: [],
+}
+
 const data = {
   categories: [],
   'featured-items': [],
   users: [defaultUser],
+  'my-items': [defaultMyItems],
 }
 
 function generateCategoryItem(category) {
@@ -41,8 +47,20 @@ function generateCategoryItem(category) {
 function generateMostBorrowedItems() {
   data.categories.forEach((cat) => {
     cat.items.forEach((catItem) => {
-      if (catItem.borrowedTimes > 18) {
+      if (data['featured-items'].length >= 10) return
+      if (catItem.borrowedTimes > 15) {
         data['featured-items'].push(catItem)
+      }
+    })
+  })
+}
+
+function generateMyItems() {
+  data.categories.forEach((cat) => {
+    cat.items.forEach((catItem) => {
+      if (data['my-items'][0].items.length >= 5) return
+      if (catItem.isBorrowed) {
+        data['my-items'][0].items.push(catItem)
       }
     })
   })
@@ -71,6 +89,7 @@ function generateData() {
   }
 
   generateMostBorrowedItems()
+  generateMyItems()
 
   fs.writeFileSync('db.json', JSON.stringify(data), (err) => {
     if (err) throw err

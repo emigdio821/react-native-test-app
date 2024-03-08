@@ -40,13 +40,13 @@ const FeaturedItemsCarousel = () => {
 
   return (
     <View gap="$2">
-      <H3 px="$2">Featured items</H3>
+      <H3 px="$2">Featured</H3>
       {data && data.length > 0 && (
         <FlatList
           horizontal
           data={data}
-          decelerationRate="fast"
-          snapToInterval={cardW + BASE_SPACING}
+          // decelerationRate="fast"
+          // snapToInterval={cardW + BASE_SPACING}
           showsHorizontalScrollIndicator={false}
           keyExtractor={(item) => `${item.id}-${item.imgUrl}`}
           renderItem={({ item, index }) => {

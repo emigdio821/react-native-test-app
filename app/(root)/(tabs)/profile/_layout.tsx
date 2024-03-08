@@ -3,7 +3,7 @@ import { Link, Stack } from 'expo-router'
 import { Platform, Pressable } from 'react-native'
 import { Text } from 'tamagui'
 
-const LoginLayout = () => {
+const ProfileLayout = () => {
   const isiOS = Platform.OS === 'ios'
 
   return (
@@ -21,14 +21,14 @@ const LoginLayout = () => {
       }}
     >
       <Stack.Screen
-        name="log-in"
+        name="index"
         options={{
-          headerTitle: 'Log in',
-          headerRight: ({ tintColor }) => (
-            <Link href="/sign-up" asChild>
+          headerTitle: 'Profile',
+          headerRight: () => (
+            <Link href="/(root)/(tabs)/profile/edit-profile" asChild>
               <Pressable>
-                <Text mr="$2" col={tintColor}>
-                  Sign up
+                <Text mr="$2" col="$accentColor">
+                  Edit
                 </Text>
               </Pressable>
             </Link>
@@ -36,13 +36,14 @@ const LoginLayout = () => {
         }}
       />
       <Stack.Screen
-        name="sign-up"
+        name="edit-profile"
         options={{
-          headerTitle: 'Sign up',
+          headerTitle: 'Edit profile',
+          headerLargeTitle: false,
         }}
       />
     </Stack>
   )
 }
 
-export default LoginLayout
+export default ProfileLayout

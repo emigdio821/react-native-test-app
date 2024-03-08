@@ -1,4 +1,5 @@
 import React from 'react'
+import type { User } from '@/types'
 import { router, useLocalSearchParams } from 'expo-router'
 import { CheckIcon } from 'lucide-react-native'
 import {
@@ -15,9 +16,12 @@ import {
   YStack,
 } from 'tamagui'
 
+import { storage } from '@/lib/storage'
 import DateTimePicker from '@/components/date-time-picker'
 
 const BorrowFormModal = () => {
+  const userFromStorage = storage.getString('user')
+  const user: User | null = userFromStorage ? JSON.parse(userFromStorage) : null
   const { itemName, category } = useLocalSearchParams()
   // const navigation = useNavigation()
 
@@ -41,9 +45,9 @@ const BorrowFormModal = () => {
             <YStack>
               <YStack>
                 <Label htmlFor="name">Name</Label>
-                <Input id="name" defaultValue="Jinx" />
+                <Input id="name" defaultValue={user?.firstname} />
                 <Label htmlFor="lastName">Last name</Label>
-                <Input id="lastName" defaultValue="Powder" />
+                <Input id="lastName" defaultValue={user?.lastname} />
                 <Label>Return date</Label>
                 <DateTimePicker />
                 <XStack alignItems="center" gap="$2">

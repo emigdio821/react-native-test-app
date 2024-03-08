@@ -37,3 +37,8 @@ export interface User {
   lastname: string
   avatarUrl: string
 }
+
+export interface MyItems {
+  id: string
+  items: CategoryItem[]
+}

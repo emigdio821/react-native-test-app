@@ -1,45 +1,92 @@
 import React, { useState } from 'react'
 import { API_URL } from '@/constants/api'
 import { ACCESS_TKN } from '@/constants/auth'
-import type { UserResponse } from '@/types'
+import type { FullUser, User } from '@/types'
 import { zodResolver } from '@hookform/resolvers/zod'
 import axios, { isAxiosError } from 'axios'
-import { router } from 'expo-router'
+import * as ImagePicker from 'expo-image-picker'
 import * as SecureStore from 'expo-secure-store'
+// import { router } from 'expo-router'
 import { Controller, useForm } from 'react-hook-form'
-import { ActivityIndicator, KeyboardAvoidingView } from 'react-native'
-import { Button, Card, Input, Label, ScrollView, styled, Text, View, YStack } from 'tamagui'
+import { ActivityIndicator, Alert, KeyboardAvoidingView, Pressable } from 'react-native'
+import { Avatar, Button, Card, Input, Label, ScrollView, styled, Text, YStack } from 'tamagui'
 import type { z } from 'zod'
 
-import { signupSchema } from '@/lib/schemas/form'
+import { updateProfileSchema } from '@/lib/schemas/form'
 import { storage } from '@/lib/storage'
-import { Avocado } from '@/components/icons'
 
-const LOGIN_EP = `${API_URL}/login`
+const USERS_EP = `${API_URL}/users`
 
-const SignUp = () => {
+interface EditPayload {
+  firstname: string
+  lastname: string
+  email: string
+  avatarUrl: string
+  password?: string
+}
+
+const EditProfileModal = () => {
+  const userFromStorage = storage.getString('user')
+  const user: User | null = userFromStorage ? JSON.parse(userFromStorage) : null
+
   const [error, setError] = useState('')
-  const form = useForm<z.infer<typeof signupSchema>>({
+  const form = useForm<z.infer<typeof updateProfileSchema>>({
     defaultValues: {
-      firstName: '',
-      lastName: '',
-      email: '',
+      firstname: user?.firstname ?? '',
+      lastname: user?.lastname ?? '',
+      avatarUrl: user?.avatarUrl ?? '',
+      email: user?.email ?? '',
       password: '',
-      avatarUrl: '',
     },
-    resolver: zodResolver(signupSchema),
+    resolver: zodResolver(updateProfileSchema),
   })
 
-  const onSubmit = form.handleSubmit(async (values: z.infer<typeof signupSchema>) => {
+  const onCaptureImage = async () => {
+    const result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.Images,
+      allowsEditing: true,
+      quality: 0.75,
+      base64: true,
+    })
+
+    if (!result.canceled) {
+      const base64 = `data:image/png;base64,${result.assets[0].base64}`
+      form.setValue('avatarUrl', base64)
+    }
+  }
+
+  const onSubmit = form.handleSubmit(async (values: z.infer<typeof updateProfileSchema>) => {
     setError('')
     form.clearErrors()
     try {
-      const { data } = await axios.post<UserResponse>(LOGIN_EP, values)
-      await SecureStore.setItemAsync(ACCESS_TKN, data.accessToken)
-      storage.set('user', JSON.stringify(data.user))
-      router.navigate('/')
+      const AT = await SecureStore.getItemAsync(ACCESS_TKN)
+      const { data: userData } = await axios.get<FullUser>(`${USERS_EP}/${user?.id}`, {
+        headers: {
+          Authorization: `Bearer ${AT}`,
+        },
+      })
+
+      const payload: EditPayload = {
+        firstname: values.firstname || userData.firstname,
+        lastname: values.lastname || userData.lastname,
+        email: values.email || userData.email,
+        avatarUrl: values.avatarUrl || userData.avatarUrl,
+      }
+
+      if (values.password) {
+        payload.password = values.password
+      }
+
+      const { data } = await axios.patch(`${USERS_EP}/${user?.id}`, payload, {
+        headers: {
+          Authorization: `Bearer ${AT}`,
+        },
+      })
+
+      storage.set('user', JSON.stringify(data))
+      Alert.alert('', 'Your profile has been updated')
     } catch (err) {
-      let errorMsg = 'Something went wrong while loggin in, try again'
+      let errorMsg = 'Something went wrong while updating your profile, try again'
       if (isAxiosError(err)) {
         errorMsg = err.response?.data ?? err.message
       }
@@ -50,50 +97,58 @@ const SignUp = () => {
   return (
     <StyledKeyboardAvoidingView flex={1} behavior="padding" keyboardVerticalOffset={0}>
       <ScrollView contentInsetAdjustmentBehavior="automatic">
-        <Card m="$2">
+        <Card my="$2">
           <Card.Header gap="$2">
-            <View alignSelf="center">
-              <Avocado width={48} height={48} />
-            </View>
+            <Pressable
+              onPress={() => {
+                void onCaptureImage()
+              }}
+            >
+              <Avatar circular size="$10" alignSelf="center">
+                <Avatar.Image accessibilityLabel="Powder" src={user?.avatarUrl} />
+                <Avatar.Fallback bc="$accentColor" />
+              </Avatar>
+            </Pressable>
+
             <YStack>
               <YStack gap="$2">
                 <Controller
-                  name="firstName"
+                  name="firstname"
                   control={form.control}
                   render={({ field }) => (
                     <YStack>
-                      <Label htmlFor={`${field.name}-signup`}>First name</Label>
+                      <Label htmlFor={`${field.name}-update-profile`}>First name</Label>
                       <Input
                         value={field.value}
                         onBlur={field.onBlur}
-                        id={`${field.name}-signup`}
+                        id={`${field.name}-update-profile`}
                         onChangeText={field.onChange}
                       />
                     </YStack>
                   )}
                 />
-                {form.formState.errors.firstName && (
-                  <Text col="$red10">{form.formState.errors.firstName.message}</Text>
+                {form.formState.errors.firstname && (
+                  <Text col="$red10">{form.formState.errors.firstname.message}</Text>
                 )}
               </YStack>
               <YStack gap="$2">
                 <Controller
-                  name="lastName"
+                  name="lastname"
                   control={form.control}
                   render={({ field }) => (
                     <YStack>
-                      <Label htmlFor={`${field.name}-signup`}>Last name</Label>
+                      <Label htmlFor={`${field.name}-update-profile`}>Last name</Label>
                       <Input
                         value={field.value}
                         onBlur={field.onBlur}
-                        id={`${field.name}-signup`}
+                        id={`${field.name}-update-profile`}
                         onChangeText={field.onChange}
                       />
                     </YStack>
                   )}
                 />
-                {form.formState.errors.lastName && (
-                  <Text col="$red10">{form.formState.errors.lastName.message}</Text>
+                {form.formState.errors.lastname && (
+                  <Text col="$red10">{form.formState.errors.lastname.message}</Text>
                 )}
               </YStack>
               <YStack gap="$2">
@@ -102,11 +157,11 @@ const SignUp = () => {
                   control={form.control}
                   render={({ field }) => (
                     <YStack>
-                      <Label htmlFor={`${field.name}-signup`}>Email</Label>
+                      <Label htmlFor={`${field.name}-update-profile`}>Email</Label>
                       <Input
                         value={field.value}
                         onBlur={field.onBlur}
-                        id={`${field.name}-signup`}
+                        id={`${field.name}-update-profile`}
                         onChangeText={field.onChange}
                       />
                     </YStack>
@@ -122,12 +177,12 @@ const SignUp = () => {
                   control={form.control}
                   render={({ field }) => (
                     <YStack>
-                      <Label htmlFor={`${field.name}-signup`}>Password</Label>
+                      <Label htmlFor={`${field.name}-update-profile`}>Password</Label>
                       <Input
                         secureTextEntry
                         value={field.value}
                         onBlur={field.onBlur}
-                        id={`${field.name}-signup`}
+                        id={`${field.name}-update-profile`}
                         onChangeText={field.onChange}
                       />
                     </YStack>
@@ -143,11 +198,11 @@ const SignUp = () => {
                   control={form.control}
                   render={({ field }) => (
                     <YStack>
-                      <Label htmlFor={`${field.name}-signup`}>Avatar URL</Label>
+                      <Label htmlFor={`${field.name}-update-profile`}>Avatar URL</Label>
                       <Input
                         value={field.value}
                         onBlur={field.onBlur}
-                        id={`${field.name}-signup`}
+                        id={`${field.name}-update-profile`}
                         onChangeText={field.onChange}
                       />
                     </YStack>
@@ -169,9 +224,10 @@ const SignUp = () => {
                 void onSubmit()
               }}
             >
-              Sign up
+              Update
             </Button>
           </Card.Header>
+          <Card.Background />
         </Card>
       </ScrollView>
     </StyledKeyboardAvoidingView>
@@ -182,4 +238,4 @@ const StyledKeyboardAvoidingView = styled(KeyboardAvoidingView, {
   name: 'StyledKeyboardAvoidingView',
 })
 
-export default SignUp
+export default EditProfileModal

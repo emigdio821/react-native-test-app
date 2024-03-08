@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useLayoutEffect, useState } from 'react'
 import type { CategoryItem } from '@/types'
 import { router, useLocalSearchParams, useNavigation } from 'expo-router'
-import { ArrowDownAZ, ArrowUpAZ, ChevronRight, GhostIcon, RotateCwIcon } from 'lucide-react-native'
+import { ChevronRight, GhostIcon, RotateCwIcon } from 'lucide-react-native'
 import {
   ActivityIndicator,
   type NativeSyntheticEvent,
@@ -32,6 +32,12 @@ interface NotFoundCardProps {
   withSpacing?: boolean
 }
 
+// eslint-disable-next-line @typescript-eslint/consistent-type-definitions
+type CategoryParams = {
+  id: string
+  category: string
+}
+
 const NotFoundCard = ({
   callback,
   withSpacing = false,
@@ -58,8 +64,8 @@ const NotFoundCard = ({
 
 const CategoryPage = () => {
   const navigation = useNavigation()
-  const { id, category } = useLocalSearchParams()
-  const { data, error, refetch, isLoading, isFetching } = useCategoryById(id as string)
+  const { id, category } = useLocalSearchParams<CategoryParams>()
+  const { data, error, refetch, isLoading } = useCategoryById(id)
   const [filteredItems, setFilteredItems] = useState<CategoryItem[]>([])
   const [filters, setFilters] = useState({
     hasFilter: false,
@@ -99,32 +105,32 @@ const CategoryPage = () => {
     }
   }, [data, filters.byName, filters.byStatus])
 
-  useEffect(() => {
-    if (data) {
-      setFilteredItems(data.items)
-    }
-  }, [data])
+  const handleTextFilter = useCallback(
+    (value: string) => {
+      setFilters({ ...filters, byName: value, hasFilter: !!value })
+    },
+    [filters],
+  )
+
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerTitle: category,
+      headerSearchBarOptions: {
+        autoFocus: false,
+        placeholder: 'Search',
+        onChangeText: (e: NativeSyntheticEvent<TextInputFocusEventData>) => {
+          const inputVal = e.nativeEvent.text
+          handleTextFilter(inputVal)
+        },
+      },
+    })
+  }, [navigation, category, filters, handleTextFilter])
 
   useEffect(() => {
     handleFilters()
   }, [handleFilters])
 
-  useLayoutEffect(() => {
-    navigation.setOptions({
-      headerTitle: (category as string) ?? '',
-      headerSearchBarOptions: {
-        autoFocus: false,
-        placeholder: 'Search',
-        hideWhenScrolling: false,
-        onChangeText: (e: NativeSyntheticEvent<TextInputFocusEventData>) => {
-          const inputVal = e.nativeEvent.text
-          setFilters({ ...filters, byName: inputVal, hasFilter: !!inputVal })
-        },
-      },
-    })
-  }, [navigation, category, filters])
-
-  if (isLoading || isFetching) {
+  if (isLoading) {
     return (
       <ScrollView contentInsetAdjustmentBehavior="automatic">
         <View m="$2">
@@ -174,12 +180,6 @@ const CategoryPage = () => {
               <Text>Unavailable</Text>
             </ToggleGroup.Item>
           </ToggleGroup>
-          <Button
-            icon={filters.asc ? <ArrowUpAZ size={18} /> : <ArrowDownAZ size={18} />}
-            onPress={() => {
-              setFilters((prev) => ({ ...filters, asc: !prev.asc }))
-            }}
-          />
         </XStack>
 
         {categories.length > 0 ? (

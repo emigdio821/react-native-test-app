@@ -45,8 +45,8 @@ const CategoriesCarousel = () => {
         <FlatList
           horizontal
           data={data}
-          decelerationRate="fast"
-          snapToInterval={cardW + BASE_SPACING}
+          // decelerationRate="fast"
+          // snapToInterval={cardW + BASE_SPACING}
           showsHorizontalScrollIndicator={false}
           keyExtractor={(item) => `${item.id}-${item.imgUrl}`}
           renderItem={({ item, index }) => {

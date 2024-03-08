@@ -6,6 +6,7 @@ import { Text } from 'tamagui'
 import useSession from '@/hooks/use-session'
 
 export default function RootLayout() {
+  const isiOS = Platform.OS === 'ios'
   const { user, isLoading } = useSession()
 
   if (isLoading) {
@@ -19,9 +20,9 @@ export default function RootLayout() {
   return (
     <Stack
       screenOptions={{
-        headerLargeTitle: true,
-        headerTransparent: Platform.OS === 'ios',
-        headerBlurEffect: 'regular',
+        headerLargeTitle: isiOS,
+        headerTransparent: isiOS,
+        headerBlurEffect: isiOS ? 'regular' : undefined,
         headerLargeTitleStyle: {
           fontFamily: 'InterBold',
         },
@@ -32,10 +33,6 @@ export default function RootLayout() {
     >
       <Stack.Screen name="(tabs)" options={{ headerShown: false, headerTitle: 'Home' }} />
       <Stack.Screen name="test-view" options={{ headerTitle: 'Test page' }} />
-      <Stack.Screen
-        name="(modals)/edit-profile"
-        options={{ headerTitle: 'Edit profile', headerBackTitle: 'Profile' }}
-      />
       <Stack.Screen name="category/[id]" options={{ headerTitle: '' }} />
       <Stack.Screen name="category/item/[id]" options={{ headerTitle: 'Item details' }} />
       <Stack.Screen name="(modals)/borrow-form" options={{ headerTitle: 'Borrow' }} />
