@@ -1,5 +1,5 @@
-import { API_URL } from '@/constants/api'
-import { ACCESS_TKN } from '@/constants/auth'
+import { API_URL } from '@/lib/constants'
+import { ACCESS_TKN } from '@/lib/constants'
 import type { MyItems } from '@/types'
 import { useQuery } from '@tanstack/react-query'
 import axios, { isAxiosError } from 'axios'

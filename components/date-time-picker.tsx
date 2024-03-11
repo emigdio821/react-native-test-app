@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import tamaguiConfig from '@/tamagui.config'
-import { CalendarClockIcon, CalendarIcon, ClockIcon } from 'lucide-react-native'
-import { Pressable } from 'react-native'
+import { Pressable, View } from 'react-native'
 import DateTimePickerModal, { type DateTimePickerProps } from 'react-native-modal-datetime-picker'
-import { Input, styled, XStack } from 'tamagui'
 
+import { NAV_THEME } from '@/lib/constants'
 import { formatDate, formatDateTime, formatTime } from '@/lib/utils'
+import { useColorScheme } from '@/hooks/use-color-scheme'
+import { Input } from '@/components/ui/input'
+import { CalendarClockIcon, CalendarIcon, ClockIcon } from '@/components/icons'
 
 type PickerProps = {
   trigger?: React.ReactNode
@@ -13,10 +14,11 @@ type PickerProps = {
   onCancel?: () => void
 } & Omit<DateTimePickerProps, 'onCancel' | 'onConfirm'>
 
-const DateTimePicker = (props: PickerProps) => {
+export function DateTimePicker(props: PickerProps) {
   const { mode, trigger, onConfirm } = props
   const [show, setShow] = useState(false)
   const [value, setValue] = useState(props.date)
+  const { isDarkColorScheme } = useColorScheme()
 
   useEffect(() => {
     setValue(props.date)
@@ -33,15 +35,15 @@ const DateTimePicker = (props: PickerProps) => {
   }
 
   const handleModeIcon = () => {
-    const defaultIcon = <StyledCalendarIcon />
+    const defaultIcon = <CalendarIcon size={16} className="text-primary" />
 
     switch (mode) {
       case 'date':
         return defaultIcon
       case 'time':
-        return <StyledClockIcon />
+        return <ClockIcon size={16} className="text-primary" />
       case 'datetime':
-        return <StyledCalendarClockIcon />
+        return <CalendarClockIcon size={16} className="text-primary" />
       default:
         return defaultIcon
     }
@@ -72,46 +74,22 @@ const DateTimePicker = (props: PickerProps) => {
       })}
     >
       {trigger ?? (
-        <XStack alignItems="center" justifyContent="flex-end">
-          <Input
-            readOnly
-            flexGrow={1}
-            paddingEnd="$8"
-            editable={false}
-            pointerEvents="none"
-            value={handleValue()}
-          />
-          <XStack paddingEnd="$3" position="absolute">
-            {handleModeIcon()}
-          </XStack>
-        </XStack>
+        <View className="relative items-center justify-center">
+          <Input pointerEvents="none" value={handleValue()} className="w-full pr-9" />
+          <View className="absolute right-0 pr-3">{handleModeIcon()}</View>
+        </View>
       )}
 
       <DateTimePickerModal
         mode={mode}
         date={value}
-        buttonTextColorIOS={tamaguiConfig.themes.dark.accentColor.val}
         isVisible={show}
         onChange={props.onChange}
         onConfirm={handleConfirm}
         onCancel={hideDatePicker}
+        buttonTextColorIOS={isDarkColorScheme ? NAV_THEME.dark.primary : NAV_THEME.light.primary}
         {...props}
       />
     </Pressable>
   )
 }
-
-const StyledCalendarIcon = styled(CalendarIcon, {
-  name: 'StyledCalendarIcon',
-  color: '$accentColor',
-})
-const StyledClockIcon = styled(ClockIcon, {
-  name: 'StyledClockIcon',
-  color: '$accentColor',
-})
-const StyledCalendarClockIcon = styled(CalendarClockIcon, {
-  name: 'StyledCalendarClockIcon',
-  color: '$accentColor',
-})
-
-export default DateTimePicker

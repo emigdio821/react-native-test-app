@@ -1,19 +1,22 @@
 import React, { useState } from 'react'
-import { API_URL } from '@/constants/api'
-import { ACCESS_TKN } from '@/constants/auth'
 import type { FullUser, User } from '@/types'
 import { zodResolver } from '@hookform/resolvers/zod'
 import axios, { isAxiosError } from 'axios'
 import * as ImagePicker from 'expo-image-picker'
 import * as SecureStore from 'expo-secure-store'
-// import { router } from 'expo-router'
 import { Controller, useForm } from 'react-hook-form'
-import { ActivityIndicator, Alert, KeyboardAvoidingView, Pressable } from 'react-native'
-import { Avatar, Button, Card, Input, Label, ScrollView, styled, Text, YStack } from 'tamagui'
+import { ActivityIndicator, Alert, Pressable, ScrollView, View } from 'react-native'
 import type { z } from 'zod'
 
+import { ACCESS_TKN, API_URL } from '@/lib/constants'
 import { updateProfileSchema } from '@/lib/schemas/form'
 import { storage } from '@/lib/storage'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
+import { Text } from '@/components/ui/text'
 
 const USERS_EP = `${API_URL}/users`
 
@@ -95,147 +98,146 @@ const EditProfileModal = () => {
   })
 
   return (
-    <StyledKeyboardAvoidingView flex={1} behavior="padding" keyboardVerticalOffset={0}>
-      <ScrollView contentInsetAdjustmentBehavior="automatic">
-        <Card my="$2">
-          <Card.Header gap="$2">
-            <Pressable
-              onPress={() => {
-                void onCaptureImage()
-              }}
-            >
-              <Avatar circular size="$10" alignSelf="center">
-                <Avatar.Image accessibilityLabel="Powder" src={user?.avatarUrl} />
-                <Avatar.Fallback bc="$accentColor" />
-              </Avatar>
-            </Pressable>
+    <ScrollView contentInsetAdjustmentBehavior="automatic" automaticallyAdjustKeyboardInsets>
+      <Card className="m-2">
+        <CardHeader>
+          <Pressable
+            onPress={() => {
+              void onCaptureImage()
+            }}
+          >
+            <Avatar alt="User avatar" className="h-24 w-24">
+              <AvatarImage source={{ uri: user?.avatarUrl }} />
+              <AvatarFallback>
+                <Text>User</Text>
+              </AvatarFallback>
+            </Avatar>
+          </Pressable>
+        </CardHeader>
+        <CardContent>
+          <View className="gap-2">
+            <View className="gap-1">
+              <Controller
+                name="firstname"
+                control={form.control}
+                render={({ field }) => (
+                  <>
+                    <Label nativeID={`${field.name}-update-profile`}>First name</Label>
+                    <Input
+                      value={field.value}
+                      onBlur={field.onBlur}
+                      id={`${field.name}-update-profile`}
+                      onChangeText={field.onChange}
+                    />
+                  </>
+                )}
+              />
+              {form.formState.errors.firstname && (
+                <Text className="text-destructive">{form.formState.errors.firstname.message}</Text>
+              )}
+            </View>
+            <View className="gap-1">
+              <Controller
+                name="lastname"
+                control={form.control}
+                render={({ field }) => (
+                  <>
+                    <Label nativeID={`${field.name}-update-profile`}>Last name</Label>
+                    <Input
+                      value={field.value}
+                      onBlur={field.onBlur}
+                      id={`${field.name}-update-profile`}
+                      onChangeText={field.onChange}
+                    />
+                  </>
+                )}
+              />
+              {form.formState.errors.lastname && (
+                <Text className="text-destructive">{form.formState.errors.lastname.message}</Text>
+              )}
+            </View>
+            <View className="gap-1">
+              <Controller
+                name="email"
+                control={form.control}
+                render={({ field }) => (
+                  <>
+                    <Label nativeID={`${field.name}-update-profile`}>Email</Label>
+                    <Input
+                      value={field.value}
+                      onBlur={field.onBlur}
+                      id={`${field.name}-update-profile`}
+                      onChangeText={field.onChange}
+                    />
+                  </>
+                )}
+              />
+              {form.formState.errors.email && (
+                <Text className="text-destructive">{form.formState.errors.email.message}</Text>
+              )}
+            </View>
 
-            <YStack>
-              <YStack gap="$2">
-                <Controller
-                  name="firstname"
-                  control={form.control}
-                  render={({ field }) => (
-                    <YStack>
-                      <Label htmlFor={`${field.name}-update-profile`}>First name</Label>
-                      <Input
-                        value={field.value}
-                        onBlur={field.onBlur}
-                        id={`${field.name}-update-profile`}
-                        onChangeText={field.onChange}
-                      />
-                    </YStack>
-                  )}
-                />
-                {form.formState.errors.firstname && (
-                  <Text col="$red10">{form.formState.errors.firstname.message}</Text>
+            <View className="gap-1">
+              <Controller
+                name="password"
+                control={form.control}
+                render={({ field }) => (
+                  <>
+                    <Label nativeID={`${field.name}-update-profile`}>Password</Label>
+                    <Input
+                      secureTextEntry
+                      value={field.value}
+                      onBlur={field.onBlur}
+                      id={`${field.name}-update-profile`}
+                      onChangeText={field.onChange}
+                    />
+                  </>
                 )}
-              </YStack>
-              <YStack gap="$2">
-                <Controller
-                  name="lastname"
-                  control={form.control}
-                  render={({ field }) => (
-                    <YStack>
-                      <Label htmlFor={`${field.name}-update-profile`}>Last name</Label>
-                      <Input
-                        value={field.value}
-                        onBlur={field.onBlur}
-                        id={`${field.name}-update-profile`}
-                        onChangeText={field.onChange}
-                      />
-                    </YStack>
-                  )}
-                />
-                {form.formState.errors.lastname && (
-                  <Text col="$red10">{form.formState.errors.lastname.message}</Text>
-                )}
-              </YStack>
-              <YStack gap="$2">
-                <Controller
-                  name="email"
-                  control={form.control}
-                  render={({ field }) => (
-                    <YStack>
-                      <Label htmlFor={`${field.name}-update-profile`}>Email</Label>
-                      <Input
-                        value={field.value}
-                        onBlur={field.onBlur}
-                        id={`${field.name}-update-profile`}
-                        onChangeText={field.onChange}
-                      />
-                    </YStack>
-                  )}
-                />
-                {form.formState.errors.email && (
-                  <Text col="$red10">{form.formState.errors.email.message}</Text>
-                )}
-              </YStack>
-              <YStack gap="$2">
-                <Controller
-                  name="password"
-                  control={form.control}
-                  render={({ field }) => (
-                    <YStack>
-                      <Label htmlFor={`${field.name}-update-profile`}>Password</Label>
-                      <Input
-                        secureTextEntry
-                        value={field.value}
-                        onBlur={field.onBlur}
-                        id={`${field.name}-update-profile`}
-                        onChangeText={field.onChange}
-                      />
-                    </YStack>
-                  )}
-                />
-                {form.formState.errors.password && (
-                  <Text col="$red10">{form.formState.errors.password.message}</Text>
-                )}
-              </YStack>
-              <YStack gap="$2">
-                <Controller
-                  name="avatarUrl"
-                  control={form.control}
-                  render={({ field }) => (
-                    <YStack>
-                      <Label htmlFor={`${field.name}-update-profile`}>Avatar URL</Label>
-                      <Input
-                        value={field.value}
-                        onBlur={field.onBlur}
-                        id={`${field.name}-update-profile`}
-                        onChangeText={field.onChange}
-                      />
-                    </YStack>
-                  )}
-                />
-                {form.formState.errors.avatarUrl && (
-                  <Text col="$red10">{form.formState.errors.avatarUrl.message}</Text>
-                )}
-              </YStack>
-            </YStack>
+              />
+              {form.formState.errors.password && (
+                <Text className="text-destructive">{form.formState.errors.password.message}</Text>
+              )}
+            </View>
 
-            {error && <Text col="$red10">{error}</Text>}
+            <View className="gap-1">
+              <Controller
+                name="avatarUrl"
+                control={form.control}
+                render={({ field }) => (
+                  <>
+                    <Label nativeID={`${field.name}-update-profile`}>Avatar URL</Label>
+                    <Input
+                      value={field.value}
+                      onBlur={field.onBlur}
+                      id={`${field.name}-update-profile`}
+                      onChangeText={field.onChange}
+                    />
+                  </>
+                )}
+              />
+              {form.formState.errors.avatarUrl && (
+                <Text className="text-destructive">{form.formState.errors.avatarUrl.message}</Text>
+              )}
+            </View>
+          </View>
 
-            <Button
-              flexGrow={1}
-              disabled={form.formState.isSubmitting}
-              icon={form.formState.isSubmitting ? <ActivityIndicator /> : undefined}
-              onPress={() => {
-                void onSubmit()
-              }}
-            >
-              Update
-            </Button>
-          </Card.Header>
-          <Card.Background />
-        </Card>
-      </ScrollView>
-    </StyledKeyboardAvoidingView>
+          {error && <Text className="text-destructive">{error}</Text>}
+        </CardContent>
+        <CardFooter>
+          <Button
+            className="grow"
+            disabled={form.formState.isSubmitting}
+            onPress={() => {
+              void onSubmit()
+            }}
+          >
+            <Text>Update</Text>
+            {form.formState.isSubmitting && <ActivityIndicator className="ml-2" />}
+          </Button>
+        </CardFooter>
+      </Card>
+    </ScrollView>
   )
 }
-
-const StyledKeyboardAvoidingView = styled(KeyboardAvoidingView, {
-  name: 'StyledKeyboardAvoidingView',
-})
 
 export default EditProfileModal

@@ -1,25 +1,29 @@
 import React from 'react'
 import { Link } from 'expo-router'
-import { QrCodeIcon } from 'lucide-react-native'
-import { Button, ScrollView, View, YStack } from 'tamagui'
+import { ScrollView, View } from 'react-native'
 
-import CategoriesCarousel from '@/components/categories-carousel'
-import FeaturedItemsCarousel from '@/components/featured-items-carousel'
+import { Button } from '@/components/ui/button'
+import { Text } from '@/components/ui/text'
+import { CategoriesCarousel } from '@/components/categories-carousel'
+import { FeaturedItemsCarousel } from '@/components/featured-items-carousel'
+import { QrCodeIcon } from '@/components/icons'
 
 export default function Home() {
   return (
-    <ScrollView contentInsetAdjustmentBehavior="automatic">
-      <View gap="$2" justifyContent="space-between">
-        <YStack gap="$2">
+    <View className="flex-1">
+      <ScrollView contentInsetAdjustmentBehavior="automatic">
+        <View className="my-2 gap-2">
           <CategoriesCarousel />
           <FeaturedItemsCarousel />
-        </YStack>
-        <Link href={'/test-view'} asChild>
-          <Button mx="$2" icon={<QrCodeIcon />}>
-            Scan QR code
-          </Button>
-        </Link>
-      </View>
-    </ScrollView>
+        </View>
+      </ScrollView>
+
+      <Link href={'/test-view'} asChild>
+        <Button className="mx-2 mb-2 flex-row">
+          <Text>Scan QR code</Text>
+          <QrCodeIcon className="ml-2 text-primary-foreground" size={16} />
+        </Button>
+      </Link>
+    </View>
   )
 }

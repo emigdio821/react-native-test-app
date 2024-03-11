@@ -1,65 +1,68 @@
-// // import '@tamagui/core/reset.css'
-import React, { useEffect } from 'react'
-import { tamaguiConfig } from '@/tamagui.config'
-import { DarkTheme, DefaultTheme, ThemeProvider, type Theme } from '@react-navigation/native'
+import '@/styles/global.css'
+
+import * as React from 'react'
+import { ThemeProvider, type Theme } from '@react-navigation/native'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { useFonts } from 'expo-font'
 import { Slot } from 'expo-router'
-import * as SplashScreen from 'expo-splash-screen'
+import { StatusBar } from 'expo-status-bar'
 import { useColorScheme } from 'react-native'
+// import { Platform } from 'react-native'
 import { DevToolsBubble } from 'react-native-react-query-devtools'
-import { TamaguiProvider } from 'tamagui'
 
-export { ErrorBoundary } from 'expo-router'
+import { NAV_THEME } from '@/lib/constants'
+// import { storage } from '@/lib/storage'
+// import { useColorScheme } from '@/hooks/use-color-scheme'
+import { PortalHost } from '@/components/primitives/portal'
 
-void SplashScreen.preventAutoHideAsync()
+// import { ThemeToggle } from '@/components/ThemeToggle'
+
+const LIGHT_THEME: Theme = {
+  dark: false,
+  colors: NAV_THEME.light,
+}
+const DARK_THEME: Theme = {
+  dark: true,
+  colors: NAV_THEME.dark,
+}
 
 const queryClient = new QueryClient()
+export { ErrorBoundary } from 'expo-router'
 
-const CustomDarkTheme: Theme = {
-  ...DarkTheme,
-  colors: {
-    ...DarkTheme.colors,
-    primary: tamaguiConfig.themes.dark.accentColor.val,
-  },
-}
+// void SplashScreen.preventAutoHideAsync()
 
-const CustomLightTheme: Theme = {
-  ...DefaultTheme,
-  colors: {
-    ...DefaultTheme.colors,
-    primary: tamaguiConfig.themes.light.accentColor.val,
-  },
-}
-
-export default function Root() {
+export default function RootLayout() {
   const colorScheme = useColorScheme()
-  const theme = colorScheme ?? undefined
+  const isDarkColorScheme = colorScheme === 'dark'
 
-  const [loaded] = useFonts({
-    // Inter: require('@tamagui/font-inter/otf/Inter-Medium.otf'),
-    // InterBold: require('@tamagui/font-inter/otf/Inter-Bold.otf'),
+  // const [isColorSchemeLoaded, setIsColorSchemeLoaded] = React.useState(false)
 
-    Inter: require('@/assets/fonts/Figtree-Medium.ttf'),
-    InterBold: require('@/assets/fonts/Figtree-Bold.ttf'),
-  })
+  // React.useEffect(() => {
+  //   async function handleAssets() {
+  //     try {
+  //       setColorScheme('system')
+  //     } catch (err) {
+  //       console.log('Handle assets error:', err)
+  //     } finally {
+  //       setIsColorSchemeLoaded(true)
+  //       await SplashScreen.hideAsync()
+  //     }
+  //   }
 
-  useEffect(() => {
-    if (loaded) {
-      void SplashScreen.hideAsync()
-    }
-  }, [loaded])
+  //   void handleAssets()
+  // }, [setColorScheme])
 
-  if (!loaded) return null
+  // if (!isColorSchemeLoaded) {
+  //   return null
+  // }
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <TamaguiProvider config={tamaguiConfig} defaultTheme={theme}>
-        <ThemeProvider value={theme === 'dark' ? CustomDarkTheme : CustomLightTheme}>
-          <Slot />
-        </ThemeProvider>
-      </TamaguiProvider>
-      <DevToolsBubble />
-    </QueryClientProvider>
+    <ThemeProvider value={isDarkColorScheme ? DARK_THEME : LIGHT_THEME}>
+      <QueryClientProvider client={queryClient}>
+        <StatusBar style={isDarkColorScheme ? 'light' : 'dark'} />
+        <Slot />
+        <PortalHost />
+        <DevToolsBubble />
+      </QueryClientProvider>
+    </ThemeProvider>
   )
 }

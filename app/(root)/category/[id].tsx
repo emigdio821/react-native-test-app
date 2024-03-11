@@ -1,36 +1,22 @@
 import React, { useCallback, useEffect, useLayoutEffect, useState } from 'react'
 import type { CategoryItem } from '@/types'
 import { router, useLocalSearchParams, useNavigation } from 'expo-router'
-import { ChevronRight, GhostIcon, RotateCwIcon } from 'lucide-react-native'
 import {
-  ActivityIndicator,
+  FlatList,
+  ScrollView,
+  TouchableOpacity,
+  View,
   type NativeSyntheticEvent,
   type TextInputFocusEventData,
 } from 'react-native'
-import {
-  Button,
-  Card,
-  ListItem,
-  Paragraph,
-  ScrollView,
-  styled,
-  Text,
-  ToggleGroup,
-  View,
-  XStack,
-  YGroup,
-} from 'tamagui'
 
 import { formatDate } from '@/lib/utils'
 import { useCategoryById } from '@/hooks/use-category-byid'
+import { Text } from '@/components/ui/text'
+import { Small } from '@/components/ui/typography'
 import ErrorCard from '@/components/error-card'
-
-interface NotFoundCardProps {
-  message?: string
-  callback?: () => void
-  withAction?: boolean
-  withSpacing?: boolean
-}
+import { ChevronRightIcon } from '@/components/icons'
+import { Spinner } from '@/components/spinner'
 
 // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
 type CategoryParams = {
@@ -38,31 +24,7 @@ type CategoryParams = {
   category: string
 }
 
-const NotFoundCard = ({
-  callback,
-  withSpacing = false,
-  withAction = false,
-  message = 'No items found for this category',
-}: NotFoundCardProps) => {
-  return (
-    <Card m={withSpacing ? '$2' : 'unset'}>
-      <Card.Header alignItems="center">
-        <StyledGhostIcon size={32} />
-        <Paragraph>{message}</Paragraph>
-      </Card.Header>
-      {withAction && (
-        <Card.Footer p="$2">
-          <Button w="100%" icon={<RotateCwIcon />} onPress={callback}>
-            Reload
-          </Button>
-        </Card.Footer>
-      )}
-      <Card.Background />
-    </Card>
-  )
-}
-
-const CategoryPage = () => {
+export default function CategoryPage() {
   const navigation = useNavigation()
   const { id, category } = useLocalSearchParams<CategoryParams>()
   const { data, error, refetch, isLoading } = useCategoryById(id)
@@ -133,9 +95,7 @@ const CategoryPage = () => {
   if (isLoading) {
     return (
       <ScrollView contentInsetAdjustmentBehavior="automatic">
-        <View m="$2">
-          <ActivityIndicator />
-        </View>
+        <Spinner className="m-2" />
       </ScrollView>
     )
   }
@@ -156,7 +116,7 @@ const CategoryPage = () => {
   if (!data) {
     return (
       <ScrollView contentInsetAdjustmentBehavior="automatic">
-        <NotFoundCard withSpacing />
+        <ErrorCard msg="No items found for this category" />
       </ScrollView>
     )
   }
@@ -164,79 +124,45 @@ const CategoryPage = () => {
   const categories = filteredItems.length > 0 ? filteredItems : data.items
 
   return (
-    <ScrollView contentInsetAdjustmentBehavior="automatic">
-      <View m="$2" gap="$2">
-        <XStack justifyContent="flex-end" gap="$2">
-          <ToggleGroup
-            type="single"
-            onValueChange={(value) => {
-              setFilters({ ...filters, byStatus: value, hasFilter: !!value })
-            }}
-          >
-            <ToggleGroup.Item value="available">
-              <Text>Available</Text>
-            </ToggleGroup.Item>
-            <ToggleGroup.Item value="unavailable">
-              <Text>Unavailable</Text>
-            </ToggleGroup.Item>
-          </ToggleGroup>
-        </XStack>
-
-        {categories.length > 0 ? (
-          <YGroup mb="$2">
-            {categories.map((item) => (
-              <YGroup.Item key={item.id}>
-                <ListItem
-                  onPress={() => {
-                    router.navigate({
-                      pathname: '/category/item/[id]',
-                      params: {
-                        category,
-                        id: item.id,
-                        imgUrl: item.imgUrl,
-                        itemName: item.name,
-                      },
-                    })
-                  }}
-                  pressTheme
-                  title={item.name}
-                  disabled={item.isBorrowed}
-                  iconAfter={<ChevronRight />}
-                  subTitle={
-                    <>
-                      {item.isBorrowed ? (
-                        <>
-                          <Text fontSize={12} color="$color05">
-                            Unavailable
-                          </Text>
-                          {item.returnDate != null && (
-                            <Text fontSize={12} color="$color05">
-                              Returning on {formatDate(new Date(item.returnDate))}
-                            </Text>
-                          )}
-                        </>
-                      ) : (
-                        <Text fontSize={12} color="$color05">
-                          Available
-                        </Text>
-                      )}
-                    </>
-                  }
-                />
-              </YGroup.Item>
-            ))}
-          </YGroup>
-        ) : (
-          <>{filters.hasFilter && <NotFoundCard message="No items found" />}</>
-        )}
-      </View>
-    </ScrollView>
+    <FlatList
+      data={categories}
+      contentInsetAdjustmentBehavior="automatic"
+      keyExtractor={(item) => `${item.id}-${item.imgUrl}`}
+      renderItem={({ item }) => (
+        <TouchableOpacity
+          activeOpacity={0.5}
+          onPress={() => {
+            router.navigate({
+              pathname: '/category/item/[id]',
+              params: {
+                category: item.category,
+                id: item.id,
+                imgUrl: item.imgUrl,
+                itemName: item.name,
+                isBorrowed: item.isBorrowed,
+                returnDate: item.returnDate,
+              },
+            })
+          }}
+        >
+          <View className="flex-row items-center justify-between px-3 py-3">
+            <View>
+              <Text className="font-semibold">{item.name}</Text>
+              {item.isBorrowed ? (
+                <View className="gap-1 opacity-80">
+                  <Small>Unavailable</Small>
+                  {item.returnDate && (
+                    <Small>Returning on {formatDate(new Date(item.returnDate))}</Small>
+                  )}
+                </View>
+              ) : (
+                <Small>Available</Small>
+              )}
+            </View>
+            <ChevronRightIcon size={16} className="text-foreground" />
+          </View>
+        </TouchableOpacity>
+      )}
+    />
   )
 }
-
-const StyledGhostIcon = styled(GhostIcon, {
-  name: 'StyledGhostIcon',
-  color: '$accentColor',
-})
-
-export default CategoryPage

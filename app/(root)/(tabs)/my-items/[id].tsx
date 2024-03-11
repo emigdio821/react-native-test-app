@@ -1,10 +1,14 @@
 import React from 'react'
 import { Image } from 'expo-image'
 import { useLocalSearchParams } from 'expo-router'
-import { ImageOffIcon, TriangleAlertIcon } from 'lucide-react-native'
-import { Button, Card, H3, ScrollView, styled, Text, View, YStack } from 'tamagui'
+import { ScrollView, StyleSheet, View } from 'react-native'
 
 import { formatDate } from '@/lib/utils'
+import { Button } from '@/components/ui/button'
+import { Card, CardFooter, CardHeader } from '@/components/ui/card'
+import { Text } from '@/components/ui/text'
+import { H4, Muted } from '@/components/ui/typography'
+import { ImageOffIcon } from '@/components/icons'
 
 // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
 type MyItemsParams = {
@@ -26,52 +30,47 @@ const MyItemPage = () => {
 
   return (
     <ScrollView contentInsetAdjustmentBehavior="automatic">
-      <Card m="$2">
-        <Card.Header gap="$2">
+      <Card className="m-2">
+        <CardHeader className="gap-2">
           {imgUrl ? (
-            <ImageContainer>
-              <ItemImg source={imgUrl} transition={300} contentFit="cover" />
-            </ImageContainer>
+            <View className="h-48 overflow-hidden rounded-lg">
+              <Image source={imgUrl} transition={300} contentFit="cover" style={styles.image} />
+            </View>
           ) : (
-            <ImageContainer alignItems="center" justifyContent="center" bg="$color4">
-              <StyledImageOffIcon />
-            </ImageContainer>
+            <View className="h-48 items-center justify-center rounded-lg bg-muted px-4 py-10">
+              <ImageOffIcon size={16} className="text-foreground" />
+            </View>
           )}
-          <YStack>
-            <H3>{itemName}</H3>
-            <Text color="$color05" mb="$2">
-              {category}
-            </Text>
-            <Text>
-              Borrowed on <Text fontWeight="800">{_borrowedDate}</Text>
-            </Text>
-            <Text>
-              Expected return on <Text fontWeight="800">{_returnDate}</Text>
-            </Text>
-          </YStack>
-          <Button>Return it</Button>
-          <Button icon={<TriangleAlertIcon />}>Report a problem</Button>
-        </Card.Header>
+          <View>
+            <Muted>{category}</Muted>
+            <H4>{itemName}</H4>
+            {_borrowedDate && (
+              <Text>
+                Borrowed on <Text className="font-semibold">{_borrowedDate}</Text>
+              </Text>
+            )}
+            {_returnDate && (
+              <Text>
+                Expected return on <Text className="font-semibold">{_returnDate}</Text>
+              </Text>
+            )}
+          </View>
+        </CardHeader>
+        <CardFooter>
+          <Button className="grow">
+            <Text>Report a problem</Text>
+          </Button>
+        </CardFooter>
       </Card>
     </ScrollView>
   )
 }
 
-const ItemImg = styled(Image, {
-  br: '$true',
-  h: '100%',
-  w: '100%',
-})
-
-const ImageContainer = styled(View, {
-  br: '$true',
-  h: 200,
-  w: '100%',
-})
-
-const StyledImageOffIcon = styled(ImageOffIcon, {
-  name: 'StyledImageOffIcon',
-  color: '$color',
+const styles = StyleSheet.create({
+  image: {
+    height: '100%',
+    width: '100%',
+  },
 })
 
 export default MyItemPage
