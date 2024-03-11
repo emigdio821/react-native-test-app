@@ -1,20 +1,28 @@
 import React, { useState } from 'react'
-import { ACCESS_TKN } from '@/constants/auth'
 import { router } from 'expo-router'
 import * as SecureStore from 'expo-secure-store'
-import { LogOutIcon } from 'lucide-react-native'
-import { ActivityIndicator, Alert, useColorScheme } from 'react-native'
-import { Avatar, Button, Card, H2, ScrollView, Text, View } from 'tamagui'
+import { ActivityIndicator, Alert, ScrollView, Switch, View } from 'react-native'
 
+import { ACCESS_TKN } from '@/lib/constants'
 import { storage } from '@/lib/storage'
+import { useColorScheme } from '@/hooks/use-color-scheme'
 import useSession from '@/hooks/use-session'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
+import { Label } from '@/components/ui/label'
+import { Text } from '@/components/ui/text'
+import { H2, H3, Muted } from '@/components/ui/typography'
+import { Edit2Icon, LogOutIcon } from '@/components/icons'
 
 const ProfileTab = () => {
   const { user, isLoading } = useSession()
+  const { colorScheme, isDarkColorScheme } = useColorScheme()
   const [loading, setLoading] = useState(false)
-  const scheme = useColorScheme()
+  const [darkMode, setDarkMode] = useState(isDarkColorScheme)
+  const [allowNotif, setAllowNotif] = useState(true)
 
-  const handleLogOut = async () => {
+  async function handleLogOut() {
     try {
       setLoading(true)
       await SecureStore.deleteItemAsync(ACCESS_TKN)
@@ -22,14 +30,18 @@ const ProfileTab = () => {
       router.navigate('/(auth)/log-in')
     } catch (err) {
       Alert.alert('', 'Something went wrong while trying to log you out, try again', undefined, {
-        userInterfaceStyle: scheme ?? undefined,
+        userInterfaceStyle: colorScheme ?? undefined,
       })
     } finally {
       setLoading(false)
     }
   }
 
-  const handleLogOutPress = () => {
+  function handleEditPress() {
+    router.navigate('/(root)/(tabs)/profile/edit-profile')
+  }
+
+  function handleLogOutPress() {
     Alert.alert(
       'Log out',
       'Are you sure you want to perform this action?',
@@ -47,14 +59,14 @@ const ProfileTab = () => {
         },
       ],
       {
-        userInterfaceStyle: scheme ?? undefined,
+        userInterfaceStyle: colorScheme,
       },
     )
   }
 
   if (isLoading) {
     return (
-      <View flex={1} pt={16}>
+      <View>
         <ActivityIndicator />
       </View>
     )
@@ -62,29 +74,64 @@ const ProfileTab = () => {
 
   return (
     <ScrollView contentInsetAdjustmentBehavior="automatic">
-      <Card m="$2">
-        <Card.Header alignItems="center">
-          <Avatar circular size="$12">
-            <Avatar.Image accessibilityLabel={user?.firstname} src={user?.avatarUrl} />
-            <Avatar.Fallback bc="$accentColor" />
-          </Avatar>
-          <H2>
-            {user?.firstname} {user?.lastname}
-          </H2>
-          <Text fontSize="$5">{user?.email}</Text>
-        </Card.Header>
-        <Card.Footer p="$2">
-          <Button
-            flexGrow={1}
-            disabled={loading}
-            onPress={handleLogOutPress}
-            icon={loading ? <ActivityIndicator /> : <LogOutIcon />}
-          >
-            Log out
-          </Button>
-        </Card.Footer>
-        <Card.Background />
-      </Card>
+      <View className="w-full gap-2 p-4">
+        <Card>
+          <CardHeader>
+            <Avatar alt="User avatar" className="h-24 w-24">
+              <AvatarImage source={{ uri: user?.avatarUrl }} />
+              <AvatarFallback>
+                <Text>User</Text>
+              </AvatarFallback>
+            </Avatar>
+          </CardHeader>
+          <CardContent>
+            <H2>
+              {user?.firstname} {user?.lastname}
+            </H2>
+            <Muted className="text-base">{user?.email}</Muted>
+          </CardContent>
+          <CardFooter className="gap-2">
+            <Button variant="outline" size="icon" disabled={loading} onPress={handleEditPress}>
+              <Edit2Icon className="text-foreground" size={16} />
+            </Button>
+            <Button variant="outline" size="icon" disabled={loading} onPress={handleLogOutPress}>
+              <LogOutIcon className="text-foreground" size={16} />
+            </Button>
+          </CardFooter>
+        </Card>
+        <Card>
+          <CardHeader>
+            <H3>Settings</H3>
+          </CardHeader>
+          <CardContent className="gap-2">
+            <View className="flex-row items-center justify-between gap-2">
+              <Label
+                nativeID="airplane-mode"
+                onPress={() => {
+                  setDarkMode((prev) => !prev)
+                }}
+              >
+                Dark mode
+              </Label>
+              <Switch onValueChange={setDarkMode} value={darkMode} />
+            </View>
+            <View className="flex-row items-center justify-between gap-2">
+              <Label
+                nativeID="notifications"
+                onPress={() => {
+                  setAllowNotif((prev) => !prev)
+                }}
+              >
+                Allow notifications
+              </Label>
+              <Switch onValueChange={setAllowNotif} value={allowNotif} id="notifications" />
+            </View>
+            <Button variant="destructive">
+              <Text>Delete my account</Text>
+            </Button>
+          </CardContent>
+        </Card>
+      </View>
     </ScrollView>
   )
 }

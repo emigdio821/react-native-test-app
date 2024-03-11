@@ -10,9 +10,6 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        headerTitleStyle: {
-          fontFamily: 'InterBold',
-        },
         // tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
         // headerShown: useClientOnlyValue(false, true),
         headerShown: false,

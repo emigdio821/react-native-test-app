@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { ACCESS_TKN } from '@/constants/auth'
+import { ACCESS_TKN } from '@/lib/constants'
 import type { User } from '@/types'
 import * as SecureStore from 'expo-secure-store'
 

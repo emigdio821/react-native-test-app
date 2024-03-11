@@ -1,18 +1,28 @@
 import React, { useState } from 'react'
-import { API_URL } from '@/constants/api'
-import { ACCESS_TKN } from '@/constants/auth'
 import type { UserResponse } from '@/types'
 import { zodResolver } from '@hookform/resolvers/zod'
 import axios, { isAxiosError } from 'axios'
 import { router } from 'expo-router'
 import * as SecureStore from 'expo-secure-store'
 import { Controller, useForm } from 'react-hook-form'
-import { ActivityIndicator } from 'react-native'
-import { Button, Card, Input, Label, ScrollView, Text, View, YStack } from 'tamagui'
+import { ActivityIndicator, ScrollView, View } from 'react-native'
 import type { z } from 'zod'
 
+import { ACCESS_TKN, API_URL } from '@/lib/constants'
 import { loginSchema } from '@/lib/schemas/form'
 import { storage } from '@/lib/storage'
+import { Button } from '@/components/ui/button'
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
+import { Text } from '@/components/ui/text'
 import { Avocado } from '@/components/icons'
 
 const LOGIN_EP = `${API_URL}/login`
@@ -45,66 +55,72 @@ const LogIn = () => {
   })
 
   return (
-    <ScrollView contentInsetAdjustmentBehavior="automatic">
-      <Card m="$2">
-        <Card.Header gap="$2">
-          <View alignSelf="center">
-            <Avocado width={48} height={48} />
-          </View>
-          <YStack>
-            <Label htmlFor="email">Email</Label>
-            <YStack gap="$2">
-              <Controller
-                name="email"
-                control={form.control}
-                render={({ field }) => (
-                  <Input
-                    id="email"
-                    value={field.value}
-                    onBlur={field.onBlur}
-                    onChangeText={field.onChange}
-                  />
+    <ScrollView contentInsetAdjustmentBehavior="automatic" automaticallyAdjustKeyboardInsets>
+      <View className="w-full p-4">
+        <Card className="w-full">
+          <CardHeader>
+            <View className="mb-2 self-center">
+              <Avocado width={48} height={48} />
+            </View>
+            <CardTitle>Welcome</CardTitle>
+            <CardDescription>Sign in below, or sign up above</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <View className="gap-2">
+              <View className="gap-1">
+                <Label nativeID="email">Email</Label>
+                <Controller
+                  name="email"
+                  control={form.control}
+                  render={({ field }) => (
+                    <Input
+                      nativeID="email"
+                      value={field.value}
+                      onBlur={field.onBlur}
+                      onChangeText={field.onChange}
+                    />
+                  )}
+                />
+                {form.formState.errors.email && (
+                  <Text className="text-destructive">{form.formState.errors.email.message}</Text>
                 )}
-              />
-              {form.formState.errors.email && (
-                <Text col="$red10">{form.formState.errors.email.message}</Text>
-              )}
-            </YStack>
-            <Label htmlFor="password">Password</Label>
-            <YStack gap="$2">
-              <Controller
-                name="password"
-                control={form.control}
-                render={({ field }) => (
-                  <Input
-                    id="password"
-                    secureTextEntry
-                    value={field.value}
-                    onBlur={field.onBlur}
-                    onChangeText={field.onChange}
-                  />
+              </View>
+
+              <View className="gap-1">
+                <Label nativeID="password">Password</Label>
+                <Controller
+                  name="password"
+                  control={form.control}
+                  render={({ field }) => (
+                    <Input
+                      secureTextEntry
+                      nativeID="password"
+                      value={field.value}
+                      onBlur={field.onBlur}
+                      onChangeText={field.onChange}
+                    />
+                  )}
+                />
+                {form.formState.errors.password && (
+                  <Text className="text-destructive">{form.formState.errors.password.message}</Text>
                 )}
-              />
-              {form.formState.errors.password && (
-                <Text col="$red10">{form.formState.errors.password.message}</Text>
-              )}
-            </YStack>
-          </YStack>
-
-          {error && <Text col="$red10">{error}</Text>}
-
-          <Button
-            flexGrow={1}
-            disabled={form.formState.isSubmitting}
-            icon={form.formState.isSubmitting ? <ActivityIndicator /> : undefined}
-            onPress={() => {
-              void onSubmit()
-            }}
-          >
-            Log in
-          </Button>
-        </Card.Header>
-      </Card>
+              </View>
+            </View>
+            {error && <Text className="text-destructive">{error}</Text>}
+          </CardContent>
+          <CardFooter>
+            <Button
+              className="grow"
+              disabled={form.formState.isSubmitting}
+              onPress={() => {
+                void onSubmit()
+              }}
+            >
+              <Text>Log in {form.formState.isSubmitting && <ActivityIndicator />}</Text>
+            </Button>
+          </CardFooter>
+        </Card>
+      </View>
     </ScrollView>
   )
 }

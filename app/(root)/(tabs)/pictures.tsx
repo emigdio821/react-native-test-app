@@ -1,7 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import { Image } from 'expo-image'
-import { ActivityIndicator, Dimensions, RefreshControl, StyleSheet } from 'react-native'
-import { ScrollView, Text, View, XStack } from 'tamagui'
+import {
+  ActivityIndicator,
+  Dimensions,
+  RefreshControl,
+  ScrollView,
+  StyleSheet,
+  View,
+} from 'react-native'
+
+import { Text } from '@/components/ui/text'
 
 interface Images {
   id: string
@@ -41,7 +49,7 @@ const PicturesTab = () => {
 
   if (isLoading) {
     return (
-      <View flex={1} pt={16}>
+      <View>
         <ActivityIndicator />
       </View>
     )
@@ -62,9 +70,9 @@ const PicturesTab = () => {
         />
       }
     >
-      <XStack flex={1} gap={gap} flexWrap="wrap">
+      <View className="flex-1 flex-wrap gap-2">
         {images.map((img) => (
-          <View key={img.id} w={imageSize} h={imageSize}>
+          <View key={img.id} style={{ width: imageSize, height: imageSize }}>
             <Image
               transition={300}
               contentFit="cover"
@@ -73,7 +81,7 @@ const PicturesTab = () => {
             />
           </View>
         ))}
-      </XStack>
+      </View>
     </ScrollView>
   )
 }

@@ -1,29 +1,30 @@
 import React from 'react'
-import { blackA, size } from '@tamagui/themes'
 import { Image } from 'expo-image'
 import { router } from 'expo-router'
-import { ImageOffIcon as ImageOffIc } from 'lucide-react-native'
-import { Dimensions, FlatList, StyleSheet, TouchableOpacity } from 'react-native'
-import { Card, H3, H4, styled, View } from 'tamagui'
+import { Dimensions, FlatList, ScrollView, StyleSheet, TouchableOpacity, View } from 'react-native'
 
+import { cn } from '@/lib/utils'
 import { useCategories } from '@/hooks/use-categories'
 
 import ErrorCard from './error-card'
+import { ImageOffIcon } from './icons'
+import { Card, CardFooter } from './ui/card'
+import { Skeleton } from './ui/skeleton'
+import { H2, H3 } from './ui/typography'
 
 const { width: screenW } = Dimensions.get('window')
-const BASE_SPACING = size['$0.75']
 const cardW = screenW - 100
 const cardH = 180
 
-const CategoriesCarousel = () => {
+export function CategoriesCarousel() {
   const { data, error, isLoading, refetch } = useCategories()
 
   if (isLoading) {
     return (
-      <View m="$2" gap="$2">
-        <Card w="$11" h="$1" />
-        <Card w={cardW} h={cardH} />
-      </View>
+      <Card className="m-2 justify-end gap-2 p-2" style={{ width: cardW, height: cardH }}>
+        <Skeleton className="h-3 w-20" />
+        <Skeleton className="h-2 w-12" />
+      </Card>
     )
   }
 
@@ -38,90 +39,82 @@ const CategoriesCarousel = () => {
     )
   }
 
-  return (
-    <View gap="$2">
-      <H3 px="$2">Categories</H3>
-      {data && data.length > 0 && (
-        <FlatList
-          horizontal
-          data={data}
-          // decelerationRate="fast"
-          // snapToInterval={cardW + BASE_SPACING}
-          showsHorizontalScrollIndicator={false}
-          keyExtractor={(item) => `${item.id}-${item.imgUrl}`}
-          renderItem={({ item, index }) => {
-            const isLastItem = index === data.length - 1
-            const lastItemStyles = isLastItem ? styles.lastTouchableCard : null
+  if (!data) {
+    return (
+      <ScrollView contentInsetAdjustmentBehavior="automatic">
+        <ErrorCard msg="No items found" />
+      </ScrollView>
+    )
+  }
 
-            return (
-              <TouchableOpacity
-                onPress={() => {
-                  router.navigate({
-                    pathname: '/category/[id]',
-                    params: {
-                      id: item.id,
-                      category: item.name,
-                    },
-                  })
-                }}
-                activeOpacity={0.9}
-                style={[styles.touchableCard, lastItemStyles]}
-              >
-                <Card style={styles.card} w={cardW} h={cardH}>
-                  <Card.Footer p="$2">
-                    <H4 col="white">{item.name}</H4>
-                  </Card.Footer>
-                  <Card.Background>
-                    <View style={styles.bgMask} />
-                    {item.imgUrl ? (
+  return (
+    <View>
+      <H2 className="mx-2">Categories</H2>
+      <FlatList
+        horizontal
+        data={data}
+        // decelerationRate="fast"
+        // snapToInterval={cardW + BASE_SPACING}
+        showsHorizontalScrollIndicator={false}
+        keyExtractor={(item) => `${item.id}-${item.imgUrl}`}
+        renderItem={({ item, index }) => {
+          const isLastItem = index === data.length - 1
+
+          return (
+            <TouchableOpacity
+              onPress={() => {
+                router.navigate({
+                  pathname: '/category/[id]',
+                  params: {
+                    id: item.id,
+                    category: item.name,
+                  },
+                })
+              }}
+              activeOpacity={0.9}
+              className={cn('ml-2', {
+                'mr-2': isLastItem,
+              })}
+            >
+              <Card style={{ width: cardW, height: cardH }} className="relative overflow-hidden">
+                {!item.imgUrl ? (
+                  <View className="m-2 items-center justify-center rounded-lg bg-muted px-4 py-10">
+                    <ImageOffIcon className="text-foreground" />
+                  </View>
+                ) : (
+                  <>
+                    <View className="absolute z-10 h-full w-full bg-black/60" />
+                    <View className="absolute h-full w-full">
                       <Image
                         transition={300}
                         contentFit="cover"
                         style={styles.image}
                         source={item.imgUrl}
                       />
-                    ) : (
-                      <View bg="$color0" h="100%" justifyContent="center" alignItems="center">
-                        <ImageOffIcon />
-                      </View>
-                    )}
-                  </Card.Background>
-                </Card>
-              </TouchableOpacity>
-            )
-          }}
-        />
-      )}
+                    </View>
+                  </>
+                )}
+                <CardFooter className="absolute bottom-0 z-20">
+                  <H3
+                    className={cn({
+                      'text-white': item.imgUrl,
+                    })}
+                  >
+                    {item.name}
+                  </H3>
+                </CardFooter>
+              </Card>
+            </TouchableOpacity>
+          )
+        }}
+      />
     </View>
   )
 }
 
-const ImageOffIcon = styled(ImageOffIc, {
-  color: '$color',
-})
-
 const styles = StyleSheet.create({
-  bgMask: {
-    backgroundColor: blackA.blackA10,
-    height: '100%',
-    position: 'absolute',
-    width: '100%',
-    zIndex: 1,
-  },
-  card: {
-    overflow: 'hidden',
-    position: 'relative',
-  },
   image: {
     height: '100%',
     width: '100%',
   },
-  lastTouchableCard: {
-    marginEnd: BASE_SPACING,
-  },
-  touchableCard: {
-    marginStart: BASE_SPACING,
-  },
 })
-
-export default CategoriesCarousel

@@ -1,15 +1,30 @@
 import React from 'react'
 import { Image } from 'expo-image'
 import { router, useLocalSearchParams } from 'expo-router'
-import { BanIcon, ImageOffIcon as ImageOffIc, SmilePlusIcon } from 'lucide-react-native'
-import { Button, Card, H3, ScrollView, styled, Text, View, YStack } from 'tamagui'
+import { ScrollView, StyleSheet, View } from 'react-native'
 
 import { formatDate } from '@/lib/utils'
+import { Button } from '@/components/ui/button'
+import { Card, CardHeader } from '@/components/ui/card'
+import { Text } from '@/components/ui/text'
+import { H4, Muted } from '@/components/ui/typography'
+import { BanIcon, ImageOffIcon } from '@/components/icons'
+
+// eslint-disable-next-line @typescript-eslint/consistent-type-definitions
+type CategoryItemParams = {
+  id: string
+  itemName: string
+  imgUrl: string
+  isBorrowed: string
+  category: string
+  returnDate: string
+}
 
 const CategoryItemPage = () => {
-  const { itemName, category, imgUrl, isBorrowed, returnDate } = useLocalSearchParams()
+  const { itemName, category, imgUrl, isBorrowed, returnDate } =
+    useLocalSearchParams<CategoryItemParams>()
   const borrowed = isBorrowed === 'true'
-  const date = new Date(returnDate as string)
+  const date = new Date(returnDate)
   const returningDate = returnDate ? formatDate(date) : null
 
   function handleBorrowingProcess() {
@@ -25,49 +40,45 @@ const CategoryItemPage = () => {
 
   return (
     <ScrollView contentInsetAdjustmentBehavior="automatic">
-      <Card m="$2">
-        <Card.Header gap="$2">
+      <Card className="m-2">
+        <CardHeader className="gap-2">
           {imgUrl ? (
-            <ImageContainer>
-              <ItemImg source={imgUrl} transition={300} contentFit="cover" />
-            </ImageContainer>
+            <View className="h-48 overflow-hidden rounded-lg">
+              <Image source={imgUrl} transition={300} contentFit="cover" style={styles.image} />
+            </View>
           ) : (
-            <ImageContainer alignItems="center" justifyContent="center" bg="$color4">
-              <ImageOffIcon />
-            </ImageContainer>
+            <View className="h-48 items-center justify-center rounded-lg bg-muted px-4 py-10">
+              <ImageOffIcon size={16} className="text-foreground" />
+            </View>
           )}
-          <YStack>
-            <H3>{itemName}</H3>
-            <Text color="$color05">{category}</Text>
-            {returningDate && <Text color="$color05">Returning on {returningDate}</Text>}
-          </YStack>
+          <View>
+            <Muted>{category}</Muted>
+            <H4>{itemName}</H4>
+            {returningDate && (
+              <Text>
+                Returning on <Text className="font-semibold">{returningDate}</Text>
+              </Text>
+            )}
+          </View>
           <Button
             disabled={borrowed}
             onPress={handleBorrowingProcess}
-            icon={borrowed ? <BanIcon /> : <SmilePlusIcon />}
+            className="flex-row items-center"
           >
-            {borrowed ? 'Unavailable' : 'I want to take it'}
+            <Text>{borrowed ? 'Unavailable' : 'I want to take it'}</Text>
+            {borrowed && <BanIcon className="ml-2 text-primary-foreground" size={16} />}
           </Button>
-        </Card.Header>
+        </CardHeader>
       </Card>
     </ScrollView>
   )
 }
 
-const ItemImg = styled(Image, {
-  br: '$true',
-  h: '100%',
-  w: '100%',
-})
-
-const ImageContainer = styled(View, {
-  br: '$true',
-  h: 200,
-  w: '100%',
-})
-
-const ImageOffIcon = styled(ImageOffIc, {
-  color: '$color',
+const styles = StyleSheet.create({
+  image: {
+    height: '100%',
+    width: '100%',
+  },
 })
 
 export default CategoryItemPage

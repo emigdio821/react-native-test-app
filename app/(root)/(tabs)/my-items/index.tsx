@@ -1,73 +1,61 @@
 import React from 'react'
 import { router } from 'expo-router'
-import { ChevronRight } from 'lucide-react-native'
-import { ActivityIndicator } from 'react-native'
-import { ListItem, ScrollView, Text, View, YGroup } from 'tamagui'
+import { ActivityIndicator, FlatList, ScrollView, TouchableOpacity, View } from 'react-native'
 
 import { formatDate } from '@/lib/utils'
 import { useMyItems } from '@/hooks/use-myitems'
+import { Text } from '@/components/ui/text'
+import { Small } from '@/components/ui/typography'
+import { ChevronRightIcon } from '@/components/icons'
 
 const MyItems = () => {
   const { data, isLoading } = useMyItems('0')
 
   if (isLoading) {
     return (
-      <View flex={1} pt={16}>
+      <ScrollView contentInsetAdjustmentBehavior="automatic">
         <ActivityIndicator />
-      </View>
+      </ScrollView>
     )
   }
 
   if (!data) return <Text>no data...</Text>
 
   return (
-    <ScrollView contentInsetAdjustmentBehavior="automatic">
-      <View m="$2" gap="$2">
-        <YGroup mb="$2">
-          {data.items.map((item) => (
-            <YGroup.Item key={item.id}>
-              <ListItem
-                onPress={() => {
-                  router.navigate({
-                    pathname: '/my-items/[id]',
-                    params: {
-                      category: item.category,
-                      imgUrl: item.imgUrl,
-                      itemName: item.name,
-                      returnDate: item.returnDate,
-                      borrowedDate: item.borrowedDate,
-                    },
-                  })
-                }}
-                pressTheme
-                title={item.name}
-                iconAfter={<ChevronRight />}
-                subTitle={
-                  <>
-                    {item.isBorrowed ? (
-                      <>
-                        <Text fontSize={12} color="$color05">
-                          Unavailable
-                        </Text>
-                        {item.returnDate != null && (
-                          <Text fontSize={12} color="$color05">
-                            Returning on {formatDate(new Date(item.returnDate))}
-                          </Text>
-                        )}
-                      </>
-                    ) : (
-                      <Text fontSize={12} color="$color05">
-                        Available
-                      </Text>
-                    )}
-                  </>
-                }
-              />
-            </YGroup.Item>
-          ))}
-        </YGroup>
-      </View>
-    </ScrollView>
+    <FlatList
+      data={data.items}
+      contentInsetAdjustmentBehavior="automatic"
+      keyExtractor={(item) => `${item.id}-${item.imgUrl}`}
+      renderItem={({ item }) => (
+        <TouchableOpacity
+          activeOpacity={0.5}
+          onPress={() => {
+            router.navigate({
+              pathname: '/my-items/[id]',
+              params: {
+                category: item.category,
+                imgUrl: item.imgUrl,
+                itemName: item.name,
+                returnDate: item.returnDate,
+                borrowedDate: item.borrowedDate,
+              },
+            })
+          }}
+        >
+          <View className="flex-row items-center justify-between px-2 py-3">
+            <View>
+              <Text className="font-semibold">{item.name}</Text>
+              <View className="gap-1 opacity-80">
+                {item.returnDate && (
+                  <Small>Return it on {formatDate(new Date(item.returnDate))}</Small>
+                )}
+              </View>
+            </View>
+            <ChevronRightIcon size={16} className="text-foreground" />
+          </View>
+        </TouchableOpacity>
+      )}
+    />
   )
 }
 

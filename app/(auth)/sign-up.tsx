@@ -1,19 +1,21 @@
 import React, { useState } from 'react'
-import { API_URL } from '@/constants/api'
-import { ACCESS_TKN } from '@/constants/auth'
 import type { UserResponse } from '@/types'
 import { zodResolver } from '@hookform/resolvers/zod'
 import axios, { isAxiosError } from 'axios'
 import { router } from 'expo-router'
 import * as SecureStore from 'expo-secure-store'
 import { Controller, useForm } from 'react-hook-form'
-import { ActivityIndicator, KeyboardAvoidingView } from 'react-native'
-import { Button, Card, Input, Label, ScrollView, styled, Text, View, YStack } from 'tamagui'
+import { ActivityIndicator, ScrollView, View } from 'react-native'
 import type { z } from 'zod'
 
+import { ACCESS_TKN, API_URL } from '@/lib/constants'
 import { signupSchema } from '@/lib/schemas/form'
 import { storage } from '@/lib/storage'
-import { Avocado } from '@/components/icons'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardFooter } from '@/components/ui/card'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
+import { Text } from '@/components/ui/text'
 
 const LOGIN_EP = `${API_URL}/login`
 
@@ -48,81 +50,83 @@ const SignUp = () => {
   })
 
   return (
-    <StyledKeyboardAvoidingView flex={1} behavior="padding" keyboardVerticalOffset={0}>
-      <ScrollView contentInsetAdjustmentBehavior="automatic">
-        <Card m="$2">
-          <Card.Header gap="$2">
-            <View alignSelf="center">
-              <Avocado width={48} height={48} />
-            </View>
-            <YStack>
-              <YStack gap="$2">
+    <ScrollView contentInsetAdjustmentBehavior="automatic" automaticallyAdjustKeyboardInsets>
+      <View className="w-full p-4">
+        <Card className="w-full">
+          <CardContent className="p-6">
+            <View className="gap-2">
+              <View className="gap-1">
                 <Controller
                   name="firstName"
                   control={form.control}
                   render={({ field }) => (
-                    <YStack>
-                      <Label htmlFor={`${field.name}-signup`}>First name</Label>
+                    <>
+                      <Label nativeID={`${field.name}-signup`}>First name</Label>
                       <Input
                         value={field.value}
                         onBlur={field.onBlur}
                         id={`${field.name}-signup`}
                         onChangeText={field.onChange}
                       />
-                    </YStack>
+                    </>
                   )}
                 />
                 {form.formState.errors.firstName && (
-                  <Text col="$red10">{form.formState.errors.firstName.message}</Text>
+                  <Text className="text-destructive">
+                    {form.formState.errors.firstName.message}
+                  </Text>
                 )}
-              </YStack>
-              <YStack gap="$2">
+              </View>
+
+              <View className="gap-1">
                 <Controller
                   name="lastName"
                   control={form.control}
                   render={({ field }) => (
-                    <YStack>
-                      <Label htmlFor={`${field.name}-signup`}>Last name</Label>
+                    <>
+                      <Label nativeID={`${field.name}-signup`}>Last name</Label>
                       <Input
                         value={field.value}
                         onBlur={field.onBlur}
                         id={`${field.name}-signup`}
                         onChangeText={field.onChange}
                       />
-                    </YStack>
+                    </>
                   )}
                 />
                 {form.formState.errors.lastName && (
-                  <Text col="$red10">{form.formState.errors.lastName.message}</Text>
+                  <Text className="text-destructive">{form.formState.errors.lastName.message}</Text>
                 )}
-              </YStack>
-              <YStack gap="$2">
+              </View>
+
+              <View className="gap-1">
                 <Controller
                   name="email"
                   control={form.control}
                   render={({ field }) => (
-                    <YStack>
-                      <Label htmlFor={`${field.name}-signup`}>Email</Label>
+                    <>
+                      <Label nativeID={`${field.name}-signup`}>Email</Label>
                       <Input
                         value={field.value}
                         onBlur={field.onBlur}
                         id={`${field.name}-signup`}
                         onChangeText={field.onChange}
                       />
-                    </YStack>
+                    </>
                   )}
                 />
                 {form.formState.errors.email && (
-                  <Text col="$red10">{form.formState.errors.email.message}</Text>
+                  <Text className="text-destructive">{form.formState.errors.email.message}</Text>
                 )}
-              </YStack>
-              <YStack gap="$2">
+              </View>
+
+              <View className="gap-1">
                 <Controller
                   name="password"
                   control={form.control}
                   render={({ field }) => (
-                    <YStack>
-                      <Label htmlFor={`${field.name}-signup`}>Password</Label>
+                    <>
+                      <Label nativeID={`${field.name}-signup`}>Password</Label>
                       <Input
                         secureTextEntry
                         value={field.value}
@@ -130,56 +134,54 @@ const SignUp = () => {
                         id={`${field.name}-signup`}
                         onChangeText={field.onChange}
                       />
-                    </YStack>
+                    </>
                   )}
                 />
                 {form.formState.errors.password && (
-                  <Text col="$red10">{form.formState.errors.password.message}</Text>
+                  <Text className="text-destructive">{form.formState.errors.password.message}</Text>
                 )}
-              </YStack>
-              <YStack gap="$2">
+              </View>
+
+              <View className="gap-1">
                 <Controller
                   name="avatarUrl"
                   control={form.control}
                   render={({ field }) => (
-                    <YStack>
-                      <Label htmlFor={`${field.name}-signup`}>Avatar URL</Label>
+                    <>
+                      <Label nativeID={`${field.name}-signup`}>Avatar URL</Label>
                       <Input
                         value={field.value}
                         onBlur={field.onBlur}
                         id={`${field.name}-signup`}
                         onChangeText={field.onChange}
                       />
-                    </YStack>
+                    </>
                   )}
                 />
                 {form.formState.errors.avatarUrl && (
-                  <Text col="$red10">{form.formState.errors.avatarUrl.message}</Text>
+                  <Text className="text-destructive">
+                    {form.formState.errors.avatarUrl.message}
+                  </Text>
                 )}
-              </YStack>
-            </YStack>
-
-            {error && <Text col="$red10">{error}</Text>}
-
+              </View>
+            </View>
+            {error && <Text className="text-destructive">{error}</Text>}
+          </CardContent>
+          <CardFooter>
             <Button
-              flexGrow={1}
+              className="grow"
               disabled={form.formState.isSubmitting}
-              icon={form.formState.isSubmitting ? <ActivityIndicator /> : undefined}
               onPress={() => {
                 void onSubmit()
               }}
             >
-              Sign up
+              <Text>Log in {form.formState.isSubmitting && <ActivityIndicator />}</Text>
             </Button>
-          </Card.Header>
+          </CardFooter>
         </Card>
-      </ScrollView>
-    </StyledKeyboardAvoidingView>
+      </View>
+    </ScrollView>
   )
 }
-
-const StyledKeyboardAvoidingView = styled(KeyboardAvoidingView, {
-  name: 'StyledKeyboardAvoidingView',
-})
 
 export default SignUp

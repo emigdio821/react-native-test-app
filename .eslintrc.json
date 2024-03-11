@@ -3,7 +3,7 @@
     "standard-with-typescript",
     "plugin:jsx-a11y/recommended",
     "eslint:recommended",
-    "plugin:react/recommended",
+    // "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:react-native/all",
     "plugin:@tanstack/eslint-plugin-query/recommended",
@@ -18,7 +18,7 @@
   "env": {
     "react-native/react-native": true
   },
-  "ignorePatterns": ["mock-api"],
+  "ignorePatterns": ["mock-api", "tailwind.config.js", "babel.config.js"],
   "plugins": ["react", "react-native"],
   "rules": {
     "@typescript-eslint/explicit-function-return-type": "off",

@@ -1,6 +1,10 @@
 import React from 'react'
-import { GhostIcon, RotateCwIcon } from 'lucide-react-native'
-import { Button, Card, Paragraph, styled } from 'tamagui'
+
+import { GhostIcon } from '@/components/icons'
+
+import { Button } from './ui/button'
+import { Card, CardContent, CardFooter, CardHeader } from './ui/card'
+import { Text } from './ui/text'
 
 interface ErrorCardProps {
   msg?: string
@@ -9,32 +13,27 @@ interface ErrorCardProps {
 
 const ErrorCard = ({ msg, action }: ErrorCardProps) => {
   return (
-    <Card m="$2">
-      <Card.Header alignItems="center">
-        <StyledGhostIcon size={32} />
-        <Paragraph>{msg ?? 'Something went wrong, try again'}</Paragraph>
-      </Card.Header>
-      <Card.Footer p="$2">
-        {action && (
+    <Card className="m-2">
+      <CardHeader className="mx-auto">
+        <GhostIcon size={32} className="text-primary" />
+      </CardHeader>
+      <CardContent>
+        <Text className="text-center">{msg ?? 'Something went wrong, try again'}</Text>
+      </CardContent>
+      {action && (
+        <CardFooter>
           <Button
-            flexGrow={1}
-            icon={<RotateCwIcon />}
+            className="grow"
             onPress={() => {
               action()
             }}
           >
-            Reload
+            <Text>Reload</Text>
           </Button>
-        )}
-      </Card.Footer>
-      <Card.Background />
+        </CardFooter>
+      )}
     </Card>
   )
 }
-
-const StyledGhostIcon = styled(GhostIcon, {
-  name: 'StyledGhostIcon',
-  color: '$accentColor',
-})
 
 export default ErrorCard

@@ -23,3 +23,9 @@ export const updateProfileSchema = z.object({
   password: z.string().optional(),
   avatarUrl: z.string(),
 })
+
+export const borrowSchema = z.object({
+  name: requiredStringField,
+  lastName: requiredStringField,
+  returnDate: requiredStringField,
+})

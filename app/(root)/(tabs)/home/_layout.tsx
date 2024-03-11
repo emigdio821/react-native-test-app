@@ -9,14 +9,8 @@ const HomeLayout = () => {
     <Stack
       screenOptions={{
         headerLargeTitle: isiOS,
-        headerTransparent: isiOS,
-        headerBlurEffect: isiOS ? 'regular' : undefined,
-        headerLargeTitleStyle: {
-          fontFamily: 'InterBold',
-        },
-        headerTitleStyle: {
-          fontFamily: 'InterBold',
-        },
+        // headerTransparent: isiOS,
+        // headerBlurEffect: isiOS ? 'regular' : undefined,
       }}
     >
       <Stack.Screen

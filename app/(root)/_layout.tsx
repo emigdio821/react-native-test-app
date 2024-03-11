@@ -1,7 +1,6 @@
 import React from 'react'
 import { Redirect, Stack } from 'expo-router'
-import { Platform } from 'react-native'
-import { Text } from 'tamagui'
+import { Platform, Text } from 'react-native'
 
 import useSession from '@/hooks/use-session'
 
@@ -21,14 +20,8 @@ export default function RootLayout() {
     <Stack
       screenOptions={{
         headerLargeTitle: isiOS,
-        headerTransparent: isiOS,
-        headerBlurEffect: isiOS ? 'regular' : undefined,
-        headerLargeTitleStyle: {
-          fontFamily: 'InterBold',
-        },
-        headerTitleStyle: {
-          fontFamily: 'InterBold',
-        },
+        // headerTransparent: isiOS,
+        // headerBlurEffect: isiOS ? 'regular' : undefined,
       }}
     >
       <Stack.Screen name="(tabs)" options={{ headerShown: false, headerTitle: 'Home' }} />

@@ -1,9 +1,24 @@
 import React from 'react'
+import {
+  BanIcon,
+  CalendarClockIcon,
+  CalendarIcon,
+  ChevronRightIcon,
+  ClockIcon,
+  Edit2Icon,
+  GhostIcon,
+  ImageOffIcon,
+  LogOutIcon,
+  QrCodeIcon,
+  SmilePlusIcon,
+  type LucideIcon,
+} from 'lucide-react-native'
+import { cssInterop } from 'nativewind'
 import Svg, { Path, type SvgProps } from 'react-native-svg'
 
 type IconProps = SvgProps
 
-export const Avocado = (props: IconProps) => (
+const Avocado = (props: IconProps) => (
   <Svg
     role="img"
     width="800px"
@@ -38,3 +53,42 @@ export const Avocado = (props: IconProps) => (
     />
   </Svg>
 )
+
+function interopIcon(icon: LucideIcon) {
+  cssInterop(icon, {
+    className: {
+      target: 'style',
+      nativeStyleToProp: {
+        color: true,
+        opacity: true,
+      },
+    },
+  })
+}
+
+interopIcon(CalendarIcon)
+interopIcon(CalendarClockIcon)
+interopIcon(ClockIcon)
+interopIcon(LogOutIcon)
+interopIcon(ImageOffIcon)
+interopIcon(GhostIcon)
+interopIcon(QrCodeIcon)
+interopIcon(Edit2Icon)
+interopIcon(ChevronRightIcon)
+interopIcon(BanIcon)
+interopIcon(SmilePlusIcon)
+
+export {
+  Avocado,
+  CalendarIcon,
+  CalendarClockIcon,
+  ClockIcon,
+  LogOutIcon,
+  ImageOffIcon,
+  GhostIcon,
+  QrCodeIcon,
+  Edit2Icon,
+  ChevronRightIcon,
+  BanIcon,
+  SmilePlusIcon,
+}
