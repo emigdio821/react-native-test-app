@@ -145,7 +145,7 @@ export default function CategoryPage() {
             })
           }}
         >
-          <View className="flex-row items-center justify-between px-3 py-3">
+          <View className="flex-row items-center justify-between bg-card px-3 py-3">
             <View>
               <Text className="font-semibold">{item.name}</Text>
               {item.isBorrowed ? (

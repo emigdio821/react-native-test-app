@@ -5,7 +5,7 @@ import axios, { isAxiosError } from 'axios'
 import { router } from 'expo-router'
 import * as SecureStore from 'expo-secure-store'
 import { Controller, useForm } from 'react-hook-form'
-import { ActivityIndicator, ScrollView, View } from 'react-native'
+import { ScrollView, View } from 'react-native'
 import type { z } from 'zod'
 
 import { ACCESS_TKN, API_URL } from '@/lib/constants'
@@ -24,6 +24,7 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Text } from '@/components/ui/text'
 import { Avocado } from '@/components/icons'
+import { Spinner } from '@/components/spinner'
 
 const LOGIN_EP = `${API_URL}/login`
 
@@ -110,13 +111,16 @@ const LogIn = () => {
           </CardContent>
           <CardFooter>
             <Button
-              className="grow"
+              className="grow flex-row items-center"
               disabled={form.formState.isSubmitting}
               onPress={() => {
                 void onSubmit()
               }}
             >
-              <Text>Log in {form.formState.isSubmitting && <ActivityIndicator />}</Text>
+              <Text>Log in</Text>
+              {form.formState.isSubmitting && (
+                <Spinner size={16} className="ml-2 text-primary-foreground" />
+              )}
             </Button>
           </CardFooter>
         </Card>

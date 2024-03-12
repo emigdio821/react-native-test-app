@@ -40,7 +40,7 @@ export function FeaturedItemsCarousel() {
   }
 
   return (
-    <View>
+    <View className="gap-2">
       <H2 className="mx-2">Featured</H2>
       {data && data.length > 0 && (
         <FlatList
@@ -73,7 +73,10 @@ export function FeaturedItemsCarousel() {
                   'mr-2': isLastItem,
                 })}
               >
-                <Card style={{ width: cardW, height: cardH }} className="relative overflow-hidden">
+                <Card
+                  style={{ width: cardW, height: cardH }}
+                  className="relative overflow-hidden border-0"
+                >
                   {!item.imgUrl ? (
                     <View className="m-2 items-center justify-center rounded-lg bg-muted px-4 py-10">
                       <ImageOffIcon className="text-foreground" />

@@ -48,7 +48,7 @@ export function CategoriesCarousel() {
   }
 
   return (
-    <View>
+    <View className="gap-2">
       <H2 className="mx-2">Categories</H2>
       <FlatList
         horizontal
@@ -76,7 +76,10 @@ export function CategoriesCarousel() {
                 'mr-2': isLastItem,
               })}
             >
-              <Card style={{ width: cardW, height: cardH }} className="relative overflow-hidden">
+              <Card
+                style={{ width: cardW, height: cardH }}
+                className="relative overflow-hidden border-0"
+              >
                 {!item.imgUrl ? (
                   <View className="m-2 items-center justify-center rounded-lg bg-muted px-4 py-10">
                     <ImageOffIcon className="text-foreground" />

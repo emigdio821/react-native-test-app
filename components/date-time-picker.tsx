@@ -29,9 +29,9 @@ export function DateTimePicker(props: PickerProps) {
   }
 
   const handleConfirm = (date: Date) => {
+    hideDatePicker()
     setValue(date)
     onConfirm && onConfirm(date)
-    hideDatePicker()
   }
 
   const handleModeIcon = () => {
@@ -75,7 +75,7 @@ export function DateTimePicker(props: PickerProps) {
     >
       {trigger ?? (
         <View className="relative items-center justify-center">
-          <Input pointerEvents="none" value={handleValue()} className="w-full pr-9" />
+          <Input pointerEvents="none" readOnly value={handleValue()} className="w-full pr-9" />
           <View className="absolute right-0 pr-3">{handleModeIcon()}</View>
         </View>
       )}

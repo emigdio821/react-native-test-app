@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { router } from 'expo-router'
 import * as SecureStore from 'expo-secure-store'
-import { ActivityIndicator, Alert, ScrollView, Switch, View } from 'react-native'
+import { Alert, ScrollView, Switch, View } from 'react-native'
 
 import { ACCESS_TKN } from '@/lib/constants'
 import { storage } from '@/lib/storage'
@@ -12,8 +12,9 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
 import { Text } from '@/components/ui/text'
-import { H2, H3, Muted } from '@/components/ui/typography'
+import { H3, Muted } from '@/components/ui/typography'
 import { Edit2Icon, LogOutIcon } from '@/components/icons'
+import { Spinner } from '@/components/spinner'
 
 const ProfileTab = () => {
   const { user, isLoading } = useSession()
@@ -66,15 +67,15 @@ const ProfileTab = () => {
 
   if (isLoading) {
     return (
-      <View>
-        <ActivityIndicator />
-      </View>
+      <ScrollView contentInsetAdjustmentBehavior="automatic">
+        <Spinner />
+      </ScrollView>
     )
   }
 
   return (
     <ScrollView contentInsetAdjustmentBehavior="automatic">
-      <View className="w-full gap-2 p-4">
+      <View className="w-full gap-2 p-2">
         <Card>
           <CardHeader>
             <Avatar alt="User avatar" className="h-24 w-24">
@@ -85,9 +86,9 @@ const ProfileTab = () => {
             </Avatar>
           </CardHeader>
           <CardContent>
-            <H2>
+            <H3>
               {user?.firstname} {user?.lastname}
-            </H2>
+            </H3>
             <Muted className="text-base">{user?.email}</Muted>
           </CardContent>
           <CardFooter className="gap-2">

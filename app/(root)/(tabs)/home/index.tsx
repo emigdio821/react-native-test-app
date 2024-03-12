@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <View className="flex-1">
       <ScrollView contentInsetAdjustmentBehavior="automatic">
-        <View className="my-2 gap-2">
+        <View className="my-2 gap-4">
           <CategoriesCarousel />
           <FeaturedItemsCarousel />
         </View>

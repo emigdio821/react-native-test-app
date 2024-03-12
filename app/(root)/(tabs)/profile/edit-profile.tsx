@@ -5,7 +5,7 @@ import axios, { isAxiosError } from 'axios'
 import * as ImagePicker from 'expo-image-picker'
 import * as SecureStore from 'expo-secure-store'
 import { Controller, useForm } from 'react-hook-form'
-import { ActivityIndicator, Alert, Pressable, ScrollView, View } from 'react-native'
+import { Alert, Pressable, ScrollView, View } from 'react-native'
 import type { z } from 'zod'
 
 import { ACCESS_TKN, API_URL } from '@/lib/constants'
@@ -17,6 +17,7 @@ import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Text } from '@/components/ui/text'
+import { Spinner } from '@/components/spinner'
 
 const USERS_EP = `${API_URL}/users`
 
@@ -102,11 +103,12 @@ const EditProfileModal = () => {
       <Card className="m-2">
         <CardHeader>
           <Pressable
+            className="h-24 w-24"
             onPress={() => {
               void onCaptureImage()
             }}
           >
-            <Avatar alt="User avatar" className="h-24 w-24">
+            <Avatar alt="User avatar" className="h-full w-full">
               <AvatarImage source={{ uri: user?.avatarUrl }} />
               <AvatarFallback>
                 <Text>User</Text>
@@ -232,7 +234,7 @@ const EditProfileModal = () => {
             }}
           >
             <Text>Update</Text>
-            {form.formState.isSubmitting && <ActivityIndicator className="ml-2" />}
+            {form.formState.isSubmitting && <Spinner className="ml-2" />}
           </Button>
         </CardFooter>
       </Card>

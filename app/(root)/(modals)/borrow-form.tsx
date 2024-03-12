@@ -96,18 +96,12 @@ const BorrowFormModal = () => {
 
             <View className="gap-1">
               <Label nativeID="returnDate">Return date</Label>
-              <Controller
-                name="returnDate"
-                control={form.control}
-                render={() => (
-                  <DateTimePicker
-                    onChange={(date) => {
-                      form.setValue('returnDate', date.toISOString(), {
-                        shouldValidate: true,
-                      })
-                    }}
-                  />
-                )}
+              <DateTimePicker
+                onChange={(date) => {
+                  form.setValue('returnDate', date.toISOString(), {
+                    shouldValidate: true,
+                  })
+                }}
               />
               {form.formState.errors.returnDate && (
                 <Text className="text-destructive">{form.formState.errors.returnDate.message}</Text>
@@ -125,7 +119,9 @@ const BorrowFormModal = () => {
             }}
           >
             <Text>Apply</Text>
-            {form.formState.isSubmitting && <Spinner className="ml-2 text-primary-foreground" />}
+            {form.formState.isSubmitting && (
+              <Spinner size={16} className="ml-2 text-primary-foreground" />
+            )}
           </Button>
         </CardFooter>
       </Card>

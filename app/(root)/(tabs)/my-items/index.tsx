@@ -1,12 +1,13 @@
 import React from 'react'
 import { router } from 'expo-router'
-import { ActivityIndicator, FlatList, ScrollView, TouchableOpacity, View } from 'react-native'
+import { FlatList, ScrollView, TouchableOpacity, View } from 'react-native'
 
 import { formatDate } from '@/lib/utils'
 import { useMyItems } from '@/hooks/use-myitems'
 import { Text } from '@/components/ui/text'
 import { Small } from '@/components/ui/typography'
 import { ChevronRightIcon } from '@/components/icons'
+import { Spinner } from '@/components/spinner'
 
 const MyItems = () => {
   const { data, isLoading } = useMyItems('0')
@@ -14,7 +15,7 @@ const MyItems = () => {
   if (isLoading) {
     return (
       <ScrollView contentInsetAdjustmentBehavior="automatic">
-        <ActivityIndicator />
+        <Spinner />
       </ScrollView>
     )
   }
@@ -42,7 +43,7 @@ const MyItems = () => {
             })
           }}
         >
-          <View className="flex-row items-center justify-between px-2 py-3">
+          <View className="flex-row items-center justify-between bg-card p-3">
             <View>
               <Text className="font-semibold">{item.name}</Text>
               <View className="gap-1 opacity-80">
