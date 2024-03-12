@@ -1,13 +1,18 @@
-import { API_URL } from '@/lib/constants'
-import { ACCESS_TKN } from '@/lib/constants'
 import type { Category } from '@/types'
 import { useQuery } from '@tanstack/react-query'
 import axios, { isAxiosError } from 'axios'
 import * as SecureStore from 'expo-secure-store'
 
+import { ACCESS_TKN, API_URL } from '@/lib/constants'
+
+interface CategoryByIdProps {
+  id: number | string
+  filterFn?: (data: Category | undefined) => typeof data
+}
+
 const EP = `${API_URL}/categories`
 
-export const useCategoryById = (id: number | string) => {
+export const useCategoryById = ({ id, filterFn }: CategoryByIdProps) => {
   const getCategory = async () => {
     const ep = `${EP}/${id}`
 
@@ -28,5 +33,5 @@ export const useCategoryById = (id: number | string) => {
     }
   }
 
-  return useQuery({ queryKey: ['category', id], queryFn: getCategory })
+  return useQuery({ queryKey: ['category', id], queryFn: getCategory, select: filterFn })
 }

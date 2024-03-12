@@ -1,15 +1,15 @@
-import React, { useCallback, useEffect, useLayoutEffect, useState } from 'react'
-import type { CategoryItem } from '@/types'
-import { router, useLocalSearchParams, useNavigation } from 'expo-router'
+import React, { useCallback, useState } from 'react'
+import { router, Stack, useLocalSearchParams } from 'expo-router'
 import {
   FlatList,
+  Platform,
   ScrollView,
   TouchableOpacity,
+  useColorScheme,
   View,
-  type NativeSyntheticEvent,
-  type TextInputFocusEventData,
 } from 'react-native'
 
+import { NAV_THEME } from '@/lib/constants'
 import { formatDate } from '@/lib/utils'
 import { useCategoryById } from '@/hooks/use-category-byid'
 import { Text } from '@/components/ui/text'
@@ -25,47 +25,51 @@ type CategoryParams = {
 }
 
 export default function CategoryPage() {
-  const navigation = useNavigation()
-  const { id, category } = useLocalSearchParams<CategoryParams>()
-  const { data, error, refetch, isLoading } = useCategoryById(id)
-  const [filteredItems, setFilteredItems] = useState<CategoryItem[]>([])
   const [filters, setFilters] = useState({
     hasFilter: false,
     byName: '',
     byStatus: '',
     asc: false,
   })
+  const { id, category } = useLocalSearchParams<CategoryParams>()
+  const { data, error, refetch, isLoading } = useCategoryById({ id, filterFn: filterCategories })
+  const colorScheme = useColorScheme()
+  const searchTextColor = colorScheme === 'dark' ? NAV_THEME.dark.text : NAV_THEME.light.text
+  const headerIconColor = colorScheme === 'dark' ? NAV_THEME.dark.primary : NAV_THEME.light.primary
 
-  const handleFilters = useCallback(() => {
-    if (data) {
-      let filterData = data.items
-      const byName = filters.byName
-      const byStatus = filters.byStatus
+  function filterCategories(category: typeof data) {
+    if (!category) return category
 
-      if (byName) {
-        const filtered = filterData.filter((item) =>
-          item.name.toLowerCase().includes(byName.toLowerCase()),
-        )
-        filterData = filtered
-      }
+    let filterData = category.items
+    const byName = filters.byName
+    const byStatus = filters.byStatus
 
-      if (byStatus) {
-        const filtered = filterData.filter((item) => {
-          switch (byStatus) {
-            case 'available':
-              return !item.isBorrowed
-            case 'unavailable':
-              return item.isBorrowed
-            default:
-              return true
-          }
-        })
-        filterData = filtered
-      }
-
-      setFilteredItems(filterData)
+    if (byName) {
+      const filtered = filterData.filter((item) =>
+        item.name.toLowerCase().includes(byName.toLowerCase()),
+      )
+      filterData = filtered
     }
-  }, [data, filters.byName, filters.byStatus])
+
+    if (byStatus) {
+      const filtered = filterData.filter((item) => {
+        switch (byStatus) {
+          case 'available':
+            return !item.isBorrowed
+          case 'unavailable':
+            return item.isBorrowed
+          default:
+            return true
+        }
+      })
+      filterData = filtered
+    }
+
+    return {
+      ...category,
+      items: filterData,
+    }
+  }
 
   const handleTextFilter = useCallback(
     (value: string) => {
@@ -73,24 +77,6 @@ export default function CategoryPage() {
     },
     [filters],
   )
-
-  useLayoutEffect(() => {
-    navigation.setOptions({
-      headerTitle: category,
-      headerSearchBarOptions: {
-        autoFocus: false,
-        placeholder: 'Search',
-        onChangeText: (e: NativeSyntheticEvent<TextInputFocusEventData>) => {
-          const inputVal = e.nativeEvent.text
-          handleTextFilter(inputVal)
-        },
-      },
-    })
-  }, [navigation, category, filters, handleTextFilter])
-
-  useEffect(() => {
-    handleFilters()
-  }, [handleFilters])
 
   if (isLoading) {
     return (
@@ -121,48 +107,69 @@ export default function CategoryPage() {
     )
   }
 
-  const categories = filteredItems.length > 0 ? filteredItems : data.items
-
   return (
-    <FlatList
-      data={categories}
-      contentInsetAdjustmentBehavior="automatic"
-      keyExtractor={(item) => `${item.id}-${item.imgUrl}`}
-      renderItem={({ item }) => (
-        <TouchableOpacity
-          activeOpacity={0.5}
-          onPress={() => {
-            router.navigate({
-              pathname: '/category/item/[id]',
-              params: {
-                category: item.category,
-                id: item.id,
-                imgUrl: item.imgUrl,
-                itemName: item.name,
-                isBorrowed: item.isBorrowed,
-                returnDate: item.returnDate,
-              },
-            })
-          }}
-        >
-          <View className="flex-row items-center justify-between bg-card px-3 py-3">
-            <View>
-              <Text className="font-semibold">{item.name}</Text>
-              {item.isBorrowed ? (
-                <View className="gap-1 opacity-80">
-                  <Small>Unavailable</Small>
-                  {item.returnDate && (
-                    <Small>Returning on {formatDate(new Date(item.returnDate))}</Small>
+    <>
+      <Stack.Screen
+        options={{
+          headerTitle: category,
+          headerSearchBarOptions: {
+            headerIconColor,
+            autoFocus: false,
+            placeholder: 'Search',
+            hintTextColor: searchTextColor,
+            shouldShowHintSearchIcon: false,
+            textColor: Platform.OS === 'android' ? searchTextColor : undefined,
+            onChangeText: (e) => {
+              const inputVal = e.nativeEvent.text
+              handleTextFilter(inputVal)
+            },
+          },
+        }}
+      />
+      {data.items.length > 0 ? (
+        <FlatList
+          data={data.items}
+          contentInsetAdjustmentBehavior="automatic"
+          keyExtractor={(item) => `${item.id}-${item.imgUrl}`}
+          renderItem={({ item }) => (
+            <TouchableOpacity
+              activeOpacity={0.5}
+              onPress={() => {
+                router.navigate({
+                  pathname: '/category/item/[id]',
+                  params: {
+                    category: item.category,
+                    id: item.id,
+                    imgUrl: item.imgUrl,
+                    itemName: item.name,
+                    isBorrowed: item.isBorrowed,
+                    returnDate: item.returnDate,
+                  },
+                })
+              }}
+            >
+              <View className="flex-row items-center justify-between bg-card px-3 py-3">
+                <View>
+                  <Text className="font-semibold">{item.name}</Text>
+                  {item.isBorrowed ? (
+                    <View className="gap-1 opacity-80">
+                      <Small>Unavailable</Small>
+                      {item.returnDate && (
+                        <Small>Returning on {formatDate(new Date(item.returnDate))}</Small>
+                      )}
+                    </View>
+                  ) : (
+                    <Small>Available</Small>
                   )}
                 </View>
-              ) : (
-                <Small>Available</Small>
-              )}
-            </View>
-            <ChevronRightIcon size={16} className="text-foreground" />
-          </View>
-        </TouchableOpacity>
+                <ChevronRightIcon size={16} className="text-foreground" />
+              </View>
+            </TouchableOpacity>
+          )}
+        />
+      ) : (
+        <ErrorCard msg="No items found" />
       )}
-    />
+    </>
   )
 }
