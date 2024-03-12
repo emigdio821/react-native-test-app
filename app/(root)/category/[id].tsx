@@ -1,6 +1,6 @@
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useLayoutEffect, useState } from 'react'
 import type { CategoryFilters } from '@/types'
-import { router, Stack, useLocalSearchParams } from 'expo-router'
+import { router, useLocalSearchParams, useNavigation } from 'expo-router'
 import {
   FlatList,
   Platform,
@@ -27,6 +27,7 @@ type CategoryParams = {
 }
 
 export default function CategoryPage() {
+  const navigation = useNavigation()
   const [filters, setFilters] = useState<CategoryFilters>({
     byName: '',
     byStatus: '',
@@ -35,8 +36,6 @@ export default function CategoryPage() {
   const { id, category } = useLocalSearchParams<CategoryParams>()
   const { data, error, refetch, isLoading } = useCategoryById({ id, filterFn: filterCategories })
   const colorScheme = useColorScheme()
-  const searchTextColor = colorScheme === 'dark' ? NAV_THEME.dark.text : NAV_THEME.light.text
-  const headerIconColor = colorScheme === 'dark' ? NAV_THEME.dark.primary : NAV_THEME.light.primary
 
   function filterCategories(category: typeof data) {
     if (!category) return category
@@ -94,6 +93,44 @@ export default function CategoryPage() {
     [filters],
   )
 
+  useLayoutEffect(() => {
+    const searchTextColor = colorScheme === 'dark' ? NAV_THEME.dark.text : NAV_THEME.light.text
+    const headerIconColor =
+      colorScheme === 'dark' ? NAV_THEME.dark.primary : NAV_THEME.light.primary
+
+    navigation.setOptions({
+      headerTitle: category,
+      headerRight: () => (
+        <TouchableOpacity
+          // className="p-2"
+          onPress={() => {
+            void SheetManager.show('category-filters-sheet', {
+              payload: {
+                filters,
+                setFilters,
+              },
+            })
+          }}
+        >
+          <FilterIcon className="text-primary" size={16} />
+        </TouchableOpacity>
+      ),
+      headerSearchBarOptions: {
+        headerIconColor,
+        autoFocus: false,
+        placeholder: 'Search',
+        hintTextColor: searchTextColor,
+        shouldShowHintSearchIcon: false,
+        textColor: Platform.OS === 'android' ? searchTextColor : undefined,
+        onChangeText: (e: any) => {
+          // TODO: fix types
+          const inputVal = e.nativeEvent.text
+          handleTextFilter(inputVal as string)
+        },
+      },
+    })
+  }, [category, colorScheme, filters, handleTextFilter, navigation])
+
   if (isLoading) {
     return (
       <ScrollView contentInsetAdjustmentBehavior="automatic">
@@ -125,37 +162,6 @@ export default function CategoryPage() {
 
   return (
     <>
-      <Stack.Screen
-        options={{
-          headerTitle: category,
-          headerRight: () => (
-            <FilterIcon
-              className="text-primary"
-              onPress={() => {
-                void SheetManager.show('category-filters-sheet', {
-                  payload: {
-                    filters,
-                    setFilters,
-                  },
-                })
-              }}
-              size={16}
-            />
-          ),
-          headerSearchBarOptions: {
-            headerIconColor,
-            autoFocus: false,
-            placeholder: 'Search',
-            hintTextColor: searchTextColor,
-            shouldShowHintSearchIcon: false,
-            textColor: Platform.OS === 'android' ? searchTextColor : undefined,
-            onChangeText: (e) => {
-              const inputVal = e.nativeEvent.text
-              handleTextFilter(inputVal)
-            },
-          },
-        }}
-      />
       {data.items.length > 0 ? (
         <FlatList
           data={data.items}

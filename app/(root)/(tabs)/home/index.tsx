@@ -18,7 +18,7 @@ export default function Home() {
         </View>
       </ScrollView>
 
-      <Link href={'/test-view'} asChild>
+      <Link href={'/qr-scanner'} asChild>
         <Button className="mx-2 mb-2 flex-row">
           <Text>Scan QR code</Text>
           <QrCodeIcon className="ml-2 text-primary-foreground" size={16} />

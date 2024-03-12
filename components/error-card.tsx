@@ -9,9 +9,10 @@ import { Text } from './ui/text'
 interface ErrorCardProps {
   msg?: string
   action?: () => void
+  actionMsg?: string
 }
 
-const ErrorCard = ({ msg, action }: ErrorCardProps) => {
+const ErrorCard = ({ msg, action, actionMsg }: ErrorCardProps) => {
   return (
     <Card className="m-2">
       <CardHeader className="mx-auto">
@@ -28,7 +29,7 @@ const ErrorCard = ({ msg, action }: ErrorCardProps) => {
               action()
             }}
           >
-            <Text>Reload</Text>
+            <Text>{actionMsg ?? 'Reload'}</Text>
           </Button>
         </CardFooter>
       )}

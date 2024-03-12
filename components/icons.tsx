@@ -8,11 +8,15 @@ import {
   ClockIcon,
   Edit2Icon,
   FilterIcon,
+  FlashlightIcon,
+  FlashlightOffIcon,
   GhostIcon,
   ImageOffIcon,
   LogOutIcon,
   QrCodeIcon,
+  RotateCcwSquareIcon,
   SmilePlusIcon,
+  SwitchCameraIcon,
   type LucideIcon,
 } from 'lucide-react-native'
 import { cssInterop } from 'nativewind'
@@ -81,6 +85,10 @@ interopIcon(BanIcon)
 interopIcon(SmilePlusIcon)
 interopIcon(FilterIcon)
 interopIcon(ArrowDownAZIcon)
+interopIcon(SwitchCameraIcon)
+interopIcon(FlashlightIcon)
+interopIcon(FlashlightOffIcon)
+interopIcon(RotateCcwSquareIcon)
 
 export {
   Avocado,
@@ -97,4 +105,8 @@ export {
   SmilePlusIcon,
   FilterIcon,
   ArrowDownAZIcon,
+  SwitchCameraIcon,
+  FlashlightIcon,
+  FlashlightOffIcon,
+  RotateCcwSquareIcon,
 }

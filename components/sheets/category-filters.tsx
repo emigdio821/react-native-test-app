@@ -39,6 +39,7 @@ export function CategoryFiltersSheet(props: CategoryFiltersProps) {
         <H4>Filter by</H4>
         <View className="flex-row flex-wrap gap-2">
           <Toggle
+            variant="outline"
             pressed={filters.byStatus === 'available'}
             onPressedChange={(val) => {
               setFilters({ ...filters, byStatus: val ? 'available' : '' })
@@ -48,6 +49,7 @@ export function CategoryFiltersSheet(props: CategoryFiltersProps) {
             <Text>Available</Text>
           </Toggle>
           <Toggle
+            variant="outline"
             pressed={filters.byStatus === 'unavailable'}
             onPressedChange={(val) => {
               setFilters({ ...filters, byStatus: val ? 'unavailable' : '' })
@@ -57,6 +59,7 @@ export function CategoryFiltersSheet(props: CategoryFiltersProps) {
             <Text>Unavailable</Text>
           </Toggle>
           <Toggle
+            variant="outline"
             pressed={filters.asc}
             onPressedChange={(val) => {
               setFilters({ ...filters, asc: val })

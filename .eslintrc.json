@@ -9,6 +9,9 @@
     "plugin:@tanstack/eslint-plugin-query/recommended",
     "prettier"
   ],
+  "globals": {
+    "NodeJS": true
+  },
   "parserOptions": {
     "project": "./tsconfig.json",
     "ecmaFeatures": {

@@ -37,6 +37,13 @@ export default {
           faceIDPermission: 'Allow $(PRODUCT_NAME) to access your Face ID biometric data.',
         },
       ],
+      [
+        'react-native-vision-camera',
+        {
+          cameraPermissionText: '$(PRODUCT_NAME) needs access to your Camera.',
+          enableCodeScanner: true,
+        },
+      ],
     ],
     experiments: {
       typedRoutes: true,

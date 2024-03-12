@@ -30,12 +30,14 @@ export function CategoriesCarousel() {
 
   if (error) {
     return (
-      <ErrorCard
-        msg={error.message}
-        action={() => {
-          void refetch()
-        }}
-      />
+      <ScrollView contentInsetAdjustmentBehavior="automatic">
+        <ErrorCard
+          msg={error.message}
+          action={() => {
+            void refetch()
+          }}
+        />
+      </ScrollView>
     )
   }
 
