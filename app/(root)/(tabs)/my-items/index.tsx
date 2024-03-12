@@ -1,26 +1,52 @@
 import React from 'react'
+import type { User } from '@/types'
 import { router } from 'expo-router'
 import { FlatList, ScrollView, TouchableOpacity, View } from 'react-native'
 
+import { storage } from '@/lib/storage'
 import { formatDate } from '@/lib/utils'
 import { useMyItems } from '@/hooks/use-myitems'
 import { Text } from '@/components/ui/text'
 import { Small } from '@/components/ui/typography'
+import ErrorCard from '@/components/error-card'
 import { ChevronRightIcon } from '@/components/icons'
 import { Spinner } from '@/components/spinner'
 
 const MyItems = () => {
-  const { data, isLoading } = useMyItems('0')
+  const userFromStorage = storage.getString('user')
+  const user: User | null = userFromStorage ? JSON.parse(userFromStorage) : null
+  const { data, isLoading, refetch, error } = useMyItems(user?.id ?? '')
 
   if (isLoading) {
     return (
       <ScrollView contentInsetAdjustmentBehavior="automatic">
-        <Spinner />
+        <Spinner className="m-2" />
       </ScrollView>
     )
   }
 
-  if (!data) return <Text>no data...</Text>
+  if (error) {
+    return (
+      <ErrorCard
+        msg={error.message}
+        action={() => {
+          void refetch()
+        }}
+      />
+    )
+  }
+
+  if (!data)
+    return (
+      <ScrollView contentInsetAdjustmentBehavior="automatic">
+        <ErrorCard
+          msg="No items found"
+          action={() => {
+            void refetch()
+          }}
+        />
+      </ScrollView>
+    )
 
   return (
     <FlatList

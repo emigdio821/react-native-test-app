@@ -1,4 +1,5 @@
 import React, { useCallback, useState } from 'react'
+import type { CategoryFilters } from '@/types'
 import { router, Stack, useLocalSearchParams } from 'expo-router'
 import {
   FlatList,
@@ -8,6 +9,7 @@ import {
   useColorScheme,
   View,
 } from 'react-native'
+import { SheetManager } from 'react-native-actions-sheet'
 
 import { NAV_THEME } from '@/lib/constants'
 import { formatDate } from '@/lib/utils'
@@ -15,7 +17,7 @@ import { useCategoryById } from '@/hooks/use-category-byid'
 import { Text } from '@/components/ui/text'
 import { Small } from '@/components/ui/typography'
 import ErrorCard from '@/components/error-card'
-import { ChevronRightIcon } from '@/components/icons'
+import { ChevronRightIcon, FilterIcon } from '@/components/icons'
 import { Spinner } from '@/components/spinner'
 
 // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
@@ -25,8 +27,7 @@ type CategoryParams = {
 }
 
 export default function CategoryPage() {
-  const [filters, setFilters] = useState({
-    hasFilter: false,
+  const [filters, setFilters] = useState<CategoryFilters>({
     byName: '',
     byStatus: '',
     asc: false,
@@ -43,6 +44,7 @@ export default function CategoryPage() {
     let filterData = category.items
     const byName = filters.byName
     const byStatus = filters.byStatus
+    const byAsc = filters.asc
 
     if (byName) {
       const filtered = filterData.filter((item) =>
@@ -65,6 +67,20 @@ export default function CategoryPage() {
       filterData = filtered
     }
 
+    if (byAsc) {
+      const filterDataCopy = [...filterData]
+      const filtered = filterDataCopy.sort((a, b) => {
+        if (a.name > b.name) {
+          return 1
+        }
+        if (a.name < b.name) {
+          return -1
+        }
+        return 0
+      })
+      filterData = filtered
+    }
+
     return {
       ...category,
       items: filterData,
@@ -73,7 +89,7 @@ export default function CategoryPage() {
 
   const handleTextFilter = useCallback(
     (value: string) => {
-      setFilters({ ...filters, byName: value, hasFilter: !!value })
+      setFilters({ ...filters, byName: value })
     },
     [filters],
   )
@@ -112,6 +128,20 @@ export default function CategoryPage() {
       <Stack.Screen
         options={{
           headerTitle: category,
+          headerRight: () => (
+            <FilterIcon
+              className="text-primary"
+              onPress={() => {
+                void SheetManager.show('category-filters-sheet', {
+                  payload: {
+                    filters,
+                    setFilters,
+                  },
+                })
+              }}
+              size={16}
+            />
+          ),
           headerSearchBarOptions: {
             headerIconColor,
             autoFocus: false,

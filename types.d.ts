@@ -42,3 +42,9 @@ export interface MyItems {
   id: string
   items: CategoryItem[]
 }
+
+export interface CategoryFilters {
+  byName: string
+  byStatus: 'available' | 'unavailable' | ''
+  asc: boolean
+}

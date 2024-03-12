@@ -21,6 +21,7 @@ const ProfileTab = () => {
   const { colorScheme, isDarkColorScheme } = useColorScheme()
   const [loading, setLoading] = useState(false)
   const [darkMode, setDarkMode] = useState(isDarkColorScheme)
+  const [systemTheme, setSystemTheme] = useState(true)
   const [allowNotif, setAllowNotif] = useState(true)
 
   async function handleLogOut() {
@@ -106,25 +107,15 @@ const ProfileTab = () => {
           </CardHeader>
           <CardContent className="gap-2">
             <View className="flex-row items-center justify-between gap-2">
-              <Label
-                nativeID="airplane-mode"
-                onPress={() => {
-                  setDarkMode((prev) => !prev)
-                }}
-              >
-                Dark mode
-              </Label>
-              <Switch onValueChange={setDarkMode} value={darkMode} />
+              <Label nativeID="airplane-mode">Dark mode</Label>
+              <Switch disabled={systemTheme} onValueChange={setDarkMode} value={darkMode} />
             </View>
             <View className="flex-row items-center justify-between gap-2">
-              <Label
-                nativeID="notifications"
-                onPress={() => {
-                  setAllowNotif((prev) => !prev)
-                }}
-              >
-                Allow notifications
-              </Label>
+              <Label nativeID="airplane-mode">Follow device theme</Label>
+              <Switch onValueChange={setSystemTheme} value={systemTheme} />
+            </View>
+            <View className="flex-row items-center justify-between gap-2">
+              <Label nativeID="notifications">Allow notifications</Label>
               <Switch onValueChange={setAllowNotif} value={allowNotif} id="notifications" />
             </View>
             <Button variant="destructive">

@@ -1,11 +1,13 @@
 import React from 'react'
 import {
+  ArrowDownAZIcon,
   BanIcon,
   CalendarClockIcon,
   CalendarIcon,
   ChevronRightIcon,
   ClockIcon,
   Edit2Icon,
+  FilterIcon,
   GhostIcon,
   ImageOffIcon,
   LogOutIcon,
@@ -77,6 +79,8 @@ interopIcon(Edit2Icon)
 interopIcon(ChevronRightIcon)
 interopIcon(BanIcon)
 interopIcon(SmilePlusIcon)
+interopIcon(FilterIcon)
+interopIcon(ArrowDownAZIcon)
 
 export {
   Avocado,
@@ -91,4 +95,6 @@ export {
   ChevronRightIcon,
   BanIcon,
   SmilePlusIcon,
+  FilterIcon,
+  ArrowDownAZIcon,
 }

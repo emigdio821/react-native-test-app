@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { Slot } from 'expo-router'
 import { StatusBar } from 'expo-status-bar'
 import { useColorScheme } from 'react-native'
+import { SheetProvider } from 'react-native-actions-sheet'
 // import { Platform } from 'react-native'
 import { DevToolsBubble } from 'react-native-react-query-devtools'
 
@@ -13,6 +14,8 @@ import { NAV_THEME } from '@/lib/constants'
 // import { storage } from '@/lib/storage'
 // import { useColorScheme } from '@/hooks/use-color-scheme'
 import { PortalHost } from '@/components/primitives/portal'
+
+import '@/components/sheets'
 
 // import { ThemeToggle } from '@/components/ThemeToggle'
 
@@ -58,9 +61,11 @@ export default function RootLayout() {
   return (
     <ThemeProvider value={isDarkColorScheme ? DARK_THEME : LIGHT_THEME}>
       <QueryClientProvider client={queryClient}>
-        <StatusBar style={isDarkColorScheme ? 'light' : 'dark'} />
-        <Slot />
-        <PortalHost />
+        <SheetProvider>
+          <StatusBar style={isDarkColorScheme ? 'light' : 'dark'} />
+          <Slot />
+          <PortalHost />
+        </SheetProvider>
         <DevToolsBubble />
       </QueryClientProvider>
     </ThemeProvider>

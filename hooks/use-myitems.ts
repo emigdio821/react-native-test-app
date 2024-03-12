@@ -1,9 +1,9 @@
-import { API_URL } from '@/lib/constants'
-import { ACCESS_TKN } from '@/lib/constants'
 import type { MyItems } from '@/types'
 import { useQuery } from '@tanstack/react-query'
 import axios, { isAxiosError } from 'axios'
 import * as SecureStore from 'expo-secure-store'
+
+import { ACCESS_TKN, API_URL } from '@/lib/constants'
 
 const EP = `${API_URL}/my-items`
 
