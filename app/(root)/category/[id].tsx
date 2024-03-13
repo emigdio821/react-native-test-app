@@ -1,7 +1,8 @@
 import React, { useLayoutEffect, useState } from 'react'
 import type { CategoryFilters, CategoryItem } from '@/types'
+import { Image } from 'expo-image'
 import { router, useLocalSearchParams, useNavigation } from 'expo-router'
-import { FlatList, ScrollView, TouchableOpacity, View } from 'react-native'
+import { FlatList, ScrollView, StyleSheet, TouchableOpacity, View } from 'react-native'
 import { SheetManager } from 'react-native-actions-sheet'
 import ContextMenu from 'react-native-context-menu-view'
 
@@ -184,18 +185,28 @@ export default function CategoryPage() {
                 }}
               >
                 <View className="flex-row items-center justify-between bg-card px-3 py-3">
-                  <View>
-                    <Text className="font-semibold">{item.name}</Text>
-                    {item.isBorrowed ? (
-                      <View className="gap-1 opacity-80">
-                        <Small>Unavailable</Small>
-                        {item.returnDate && (
-                          <Small>Returning on {formatDate(new Date(item.returnDate))}</Small>
-                        )}
-                      </View>
-                    ) : (
-                      <Small>Available</Small>
-                    )}
+                  <View className="flex-row items-center gap-2">
+                    <View className="h-12 w-12 overflow-hidden rounded-lg">
+                      <Image
+                        transition={300}
+                        contentFit="cover"
+                        source={item.imgUrl}
+                        style={styles.image}
+                      />
+                    </View>
+                    <View>
+                      <Text className="font-semibold">{item.name}</Text>
+                      {item.isBorrowed ? (
+                        <View className="gap-1 opacity-80">
+                          <Small>Unavailable</Small>
+                          {item.returnDate && (
+                            <Small>Returning on {formatDate(new Date(item.returnDate))}</Small>
+                          )}
+                        </View>
+                      ) : (
+                        <Small>Available</Small>
+                      )}
+                    </View>
                   </View>
                   <ChevronRightIcon size={16} className="text-foreground" />
                 </View>
@@ -209,3 +220,10 @@ export default function CategoryPage() {
     </>
   )
 }
+
+const styles = StyleSheet.create({
+  image: {
+    height: '100%',
+    width: '100%',
+  },
+})

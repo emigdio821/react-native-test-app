@@ -56,8 +56,11 @@ const MyItemPage = () => {
             )}
           </View>
         </CardHeader>
-        <CardFooter>
-          <Button className="grow">
+        <CardFooter className="flex-col gap-2">
+          <Button className="w-full">
+            <Text>Return now</Text>
+          </Button>
+          <Button className="w-full" variant="secondary">
             <Text>Report a problem</Text>
           </Button>
         </CardFooter>

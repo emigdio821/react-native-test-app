@@ -25,7 +25,9 @@ export function CategoryFiltersSheet(props: CategoryFiltersProps) {
   const filters2 = props.payload.filters
   const setFiltersCallback = props.payload.setFilters
   const { asc, byStatus, byName } = filters2
-  const sheetStyles = colorScheme === 'dark' ? styles.sheetDark : styles.sheet
+  const isDarkScheme = colorScheme === 'dark'
+  const sheetStyles = isDarkScheme ? styles.sheetDark : styles.sheet
+  const sheetIndicatorStyles = isDarkScheme ? styles.indicatorDark : styles.indicator
   const [filters, setFilters] = useState<CategoryFilters>({
     byName,
     byStatus,
@@ -44,7 +46,7 @@ export function CategoryFiltersSheet(props: CategoryFiltersProps) {
   }
 
   return (
-    <ActionSheet gestureEnabled containerStyle={sheetStyles}>
+    <ActionSheet gestureEnabled containerStyle={sheetStyles} indicatorStyle={sheetIndicatorStyles}>
       <View className="gap-2 p-6">
         <H4>Filter by</H4>
         <View className="flex-row flex-wrap gap-2">
@@ -105,6 +107,10 @@ export function CategoryFiltersSheet(props: CategoryFiltersProps) {
 }
 
 const styles = StyleSheet.create({
+  indicator: { backgroundColor: NAV_THEME.light.border },
+  indicatorDark: {
+    backgroundColor: NAV_THEME.dark.border,
+  },
   sheet: {
     backgroundColor: NAV_THEME.light.card,
   },

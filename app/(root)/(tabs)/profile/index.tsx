@@ -13,7 +13,6 @@ import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
 import { Text } from '@/components/ui/text'
 import { H3, Muted } from '@/components/ui/typography'
-import { Edit2Icon, LogOutIcon } from '@/components/icons'
 import { Spinner } from '@/components/spinner'
 
 const ProfileTab = () => {
@@ -93,11 +92,11 @@ const ProfileTab = () => {
             <Muted className="text-base">{user?.email}</Muted>
           </CardContent>
           <CardFooter className="gap-2">
-            <Button variant="outline" size="icon" disabled={loading} onPress={handleEditPress}>
-              <Edit2Icon className="text-foreground" size={16} />
+            <Button variant="secondary" disabled={loading} onPress={handleEditPress}>
+              <Text>Edit</Text>
             </Button>
-            <Button variant="outline" size="icon" disabled={loading} onPress={handleLogOutPress}>
-              <LogOutIcon className="text-foreground" size={16} />
+            <Button variant="secondary" disabled={loading} onPress={handleLogOutPress}>
+              <Text>Log out</Text>
             </Button>
           </CardFooter>
         </Card>

@@ -19,7 +19,7 @@ import {
   SwitchCameraIcon,
 } from '@/components/icons'
 
-export default function QrScanner() {
+export default function QrScannerPage() {
   const [cameraToUse, setCameraToUse] = useState<CameraPosition>('back')
   const [torch, setTorch] = useState(false)
   const [isActiveCam, setActiveCam] = useState(true)

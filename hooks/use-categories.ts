@@ -1,13 +1,14 @@
-import { API_URL } from '@/lib/constants'
-import { ACCESS_TKN } from '@/lib/constants'
 import type { Category } from '@/types'
 import { useQuery } from '@tanstack/react-query'
 import axios, { isAxiosError } from 'axios'
 import * as SecureStore from 'expo-secure-store'
 
-const EP = `${API_URL}/categories`
+import { ACCESS_TKN, API_URL } from '@/lib/constants'
 
-export const useCategories = () => {
+const EP = `${API_URL}/categories`
+const MAX_ITEMS = 5
+
+export function useCategories(returnAll?: boolean) {
   const getCategories = async () => {
     try {
       const AT = await SecureStore.getItemAsync(ACCESS_TKN)
@@ -16,7 +17,17 @@ export const useCategories = () => {
           Authorization: `Bearer ${AT}`,
         },
       })
-      return res.data
+
+      if (returnAll) return res.data
+
+      const data: Category[] = []
+      res.data.forEach((item) => {
+        if (data.length < MAX_ITEMS) {
+          data.push(item)
+        }
+      })
+
+      return data
     } catch (err) {
       let errorMsg = 'Something went wrong while fetching categories'
       if (isAxiosError(err)) {
@@ -26,5 +37,5 @@ export const useCategories = () => {
     }
   }
 
-  return useQuery({ queryKey: ['categories'], queryFn: getCategories })
+  return useQuery({ queryKey: ['categories', returnAll], queryFn: getCategories })
 }

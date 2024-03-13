@@ -31,6 +31,8 @@ export default function RootLayout() {
     >
       <Stack.Screen name="(tabs)" options={{ headerShown: false, headerTitle: 'Home' }} />
       <Stack.Screen name="qr-scanner" options={{ headerTitle: 'QR scanner' }} />
+      <Stack.Screen name="categories" options={{ headerTitle: 'Categories' }} />
+      <Stack.Screen name="featured" options={{ headerTitle: 'Featured' }} />
       <Stack.Screen name="category/[id]" options={{ headerTitle: '' }} />
       <Stack.Screen name="category/item/[id]" options={{ headerTitle: 'Item details' }} />
       <Stack.Screen name="(modals)/borrow-form" options={{ headerTitle: 'Borrow' }} />

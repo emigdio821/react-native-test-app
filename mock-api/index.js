@@ -47,7 +47,7 @@ function generateCategoryItem(category) {
 function generateMostBorrowedItems() {
   data.categories.forEach((cat) => {
     cat.items.forEach((catItem) => {
-      if (data['featured-items'].length >= 10) return
+      if (data['featured-items'].length >= 20) return
       if (catItem.borrowedTimes > 15) {
         data['featured-items'].push(catItem)
       }
@@ -58,7 +58,7 @@ function generateMostBorrowedItems() {
 function generateMyItems() {
   data.categories.forEach((cat) => {
     cat.items.forEach((catItem) => {
-      if (data['my-items'][0].items.length >= 5) return
+      if (data['my-items'][0].items.length >= 8) return
       if (catItem.isBorrowed) {
         data['my-items'][0].items.push(catItem)
       }

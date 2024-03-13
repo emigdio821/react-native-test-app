@@ -1,15 +1,16 @@
 import React from 'react'
 import { Image } from 'expo-image'
-import { router } from 'expo-router'
+import { Link, router } from 'expo-router'
 import { Dimensions, FlatList, ScrollView, StyleSheet, TouchableOpacity, View } from 'react-native'
 
 import { cn } from '@/lib/utils'
 import { useCategories } from '@/hooks/use-categories'
 
 import ErrorCard from './error-card'
-import { ImageOffIcon } from './icons'
+import { ChevronRightIcon, ImageOffIcon } from './icons'
 import { Card, CardFooter } from './ui/card'
 import { Skeleton } from './ui/skeleton'
+import { Text } from './ui/text'
 import { H2, H3 } from './ui/typography'
 
 const { width: screenW } = Dimensions.get('window')
@@ -51,7 +52,15 @@ export function CategoriesCarousel() {
 
   return (
     <View className="gap-2">
-      <H2 className="mx-2">Categories</H2>
+      <View className="mx-2 flex-row items-center justify-between">
+        <H2>Categories</H2>
+        <Link href="/categories" asChild>
+          <TouchableOpacity activeOpacity={0.5} className="flex-row items-center">
+            <Text className="text-primary">See all</Text>
+            <ChevronRightIcon size={16} className="ml-2 text-primary" />
+          </TouchableOpacity>
+        </Link>
+      </View>
       <FlatList
         horizontal
         data={data}

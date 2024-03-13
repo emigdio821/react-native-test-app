@@ -1,27 +1,21 @@
 import React from 'react'
-import type { User } from '@/types'
 import { Image } from 'expo-image'
 import { router } from 'expo-router'
 import { FlatList, ScrollView, StyleSheet, TouchableOpacity, View } from 'react-native'
 
-import { storage } from '@/lib/storage'
-import { formatDate } from '@/lib/utils'
-import { useMyItems } from '@/hooks/use-myitems'
+import { useCategories } from '@/hooks/use-categories'
 import { Text } from '@/components/ui/text'
-import { Small } from '@/components/ui/typography'
 import ErrorCard from '@/components/error-card'
 import { ChevronRightIcon } from '@/components/icons'
 import { Spinner } from '@/components/spinner'
 
-export default function MyItems() {
-  const userFromStorage = storage.getString('user')
-  const user: User | null = userFromStorage ? JSON.parse(userFromStorage) : null
-  const { data, isLoading, refetch, error } = useMyItems(user?.id ?? '')
+export default function CategoriesPage() {
+  const { data, error, isLoading, refetch } = useCategories(true)
 
   if (isLoading) {
     return (
       <ScrollView contentInsetAdjustmentBehavior="automatic">
-        <Spinner className="m-2" />
+        <Spinner />
       </ScrollView>
     )
   }
@@ -39,40 +33,35 @@ export default function MyItems() {
     )
   }
 
-  if (!data)
+  if (!data) {
     return (
       <ScrollView contentInsetAdjustmentBehavior="automatic">
-        <ErrorCard
-          msg="No items found"
-          action={() => {
-            void refetch()
-          }}
-        />
+        <ErrorCard msg="No categories found" />
       </ScrollView>
     )
+  }
 
   return (
     <FlatList
-      data={data.items}
+      data={data}
       contentInsetAdjustmentBehavior="automatic"
       keyExtractor={(item) => `${item.id}-${item.imgUrl}`}
       renderItem={({ item }) => (
         <TouchableOpacity
           activeOpacity={0.5}
+          delayLongPress={250}
+          onLongPress={() => {}}
           onPress={() => {
             router.navigate({
-              pathname: '/my-items/[id]',
+              pathname: '/category/[id]',
               params: {
-                category: item.category,
-                imgUrl: item.imgUrl,
-                itemName: item.name,
-                returnDate: item.returnDate,
-                borrowedDate: item.borrowedDate,
+                id: item.id,
+                category: item.name,
               },
             })
           }}
         >
-          <View className="flex-row items-center justify-between bg-card p-3">
+          <View className="flex-row items-center justify-between bg-card px-3 py-3">
             <View className="flex-row items-center gap-2">
               <View className="h-12 w-12 overflow-hidden rounded-lg">
                 <Image
@@ -84,11 +73,6 @@ export default function MyItems() {
               </View>
               <View>
                 <Text className="font-semibold">{item.name}</Text>
-                <View className="gap-1 opacity-80">
-                  {item.returnDate && (
-                    <Small>Return it on {formatDate(new Date(item.returnDate))}</Small>
-                  )}
-                </View>
               </View>
             </View>
             <ChevronRightIcon size={16} className="text-foreground" />
