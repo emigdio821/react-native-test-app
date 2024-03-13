@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import * as Haptics from 'expo-haptics'
 import { Linking, ScrollView, StyleSheet, View } from 'react-native'
 import {
   Camera,
@@ -29,6 +30,7 @@ export default function QrScanner() {
   const codeScanner = useCodeScanner({
     codeTypes: ['qr'],
     onCodeScanned: (codes) => {
+      void Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success)
       setActiveCam(false)
       setQrData(codes[0].value)
     },
@@ -60,7 +62,7 @@ export default function QrScanner() {
   return (
     <ScrollView contentInsetAdjustmentBehavior="automatic">
       <View className="m-2 items-center justify-center gap-2">
-        <View className="rounded-xl border-4 border-primary p-1">
+        <View className="rounded-xl border-4 border-primary p-1.5">
           <View className="mx-auto h-64 w-64 overflow-hidden rounded-lg">
             <Camera
               device={device}
@@ -120,7 +122,7 @@ export default function QrScanner() {
 
 const styles = StyleSheet.create({
   camera: {
-    height: '100%',
-    width: '100%',
+    height: 256,
+    width: 256,
   },
 })

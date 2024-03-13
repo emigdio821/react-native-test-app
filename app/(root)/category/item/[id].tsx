@@ -65,7 +65,7 @@ const CategoryItemPage = () => {
             onPress={handleBorrowingProcess}
             className="flex-row items-center"
           >
-            <Text>{borrowed ? 'Unavailable' : 'I want to take it'}</Text>
+            <Text>{borrowed ? 'Unavailable' : 'Borrow'}</Text>
             {borrowed && <BanIcon className="ml-2 text-primary-foreground" size={16} />}
           </Button>
         </CardHeader>

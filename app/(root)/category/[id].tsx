@@ -1,17 +1,10 @@
-import React, { useCallback, useLayoutEffect, useState } from 'react'
-import type { CategoryFilters } from '@/types'
+import React, { useLayoutEffect, useState } from 'react'
+import type { CategoryFilters, CategoryItem } from '@/types'
 import { router, useLocalSearchParams, useNavigation } from 'expo-router'
-import {
-  FlatList,
-  Platform,
-  ScrollView,
-  TouchableOpacity,
-  useColorScheme,
-  View,
-} from 'react-native'
+import { FlatList, ScrollView, TouchableOpacity, View } from 'react-native'
 import { SheetManager } from 'react-native-actions-sheet'
+import ContextMenu from 'react-native-context-menu-view'
 
-import { NAV_THEME } from '@/lib/constants'
 import { formatDate } from '@/lib/utils'
 import { useCategoryById } from '@/hooks/use-category-byid'
 import { Text } from '@/components/ui/text'
@@ -35,7 +28,6 @@ export default function CategoryPage() {
   })
   const { id, category } = useLocalSearchParams<CategoryParams>()
   const { data, error, refetch, isLoading } = useCategoryById({ id, filterFn: filterCategories })
-  const colorScheme = useColorScheme()
 
   function filterCategories(category: typeof data) {
     if (!category) return category
@@ -86,23 +78,25 @@ export default function CategoryPage() {
     }
   }
 
-  const handleTextFilter = useCallback(
-    (value: string) => {
-      setFilters({ ...filters, byName: value })
-    },
-    [filters],
-  )
+  function handleDetailsPress(item: CategoryItem) {
+    router.navigate({
+      pathname: '/category/item/[id]',
+      params: {
+        category: item.category,
+        id: item.id,
+        imgUrl: item.imgUrl,
+        itemName: item.name,
+        isBorrowed: item.isBorrowed,
+        returnDate: item.returnDate,
+      },
+    })
+  }
 
   useLayoutEffect(() => {
-    const searchTextColor = colorScheme === 'dark' ? NAV_THEME.dark.text : NAV_THEME.light.text
-    const headerIconColor =
-      colorScheme === 'dark' ? NAV_THEME.dark.primary : NAV_THEME.light.primary
-
     navigation.setOptions({
       headerTitle: category,
       headerRight: () => (
         <TouchableOpacity
-          // className="p-2"
           onPress={() => {
             void SheetManager.show('category-filters-sheet', {
               payload: {
@@ -115,21 +109,8 @@ export default function CategoryPage() {
           <FilterIcon className="text-primary" size={16} />
         </TouchableOpacity>
       ),
-      headerSearchBarOptions: {
-        headerIconColor,
-        autoFocus: false,
-        placeholder: 'Search',
-        hintTextColor: searchTextColor,
-        shouldShowHintSearchIcon: false,
-        textColor: Platform.OS === 'android' ? searchTextColor : undefined,
-        onChangeText: (e: any) => {
-          // TODO: fix types
-          const inputVal = e.nativeEvent.text
-          handleTextFilter(inputVal as string)
-        },
-      },
     })
-  }, [category, colorScheme, filters, handleTextFilter, navigation])
+  }, [category, filters, navigation])
 
   if (isLoading) {
     return (
@@ -168,39 +149,58 @@ export default function CategoryPage() {
           contentInsetAdjustmentBehavior="automatic"
           keyExtractor={(item) => `${item.id}-${item.imgUrl}`}
           renderItem={({ item }) => (
-            <TouchableOpacity
-              activeOpacity={0.5}
-              onPress={() => {
-                router.navigate({
-                  pathname: '/category/item/[id]',
-                  params: {
-                    category: item.category,
-                    id: item.id,
-                    imgUrl: item.imgUrl,
-                    itemName: item.name,
-                    isBorrowed: item.isBorrowed,
-                    returnDate: item.returnDate,
-                  },
-                })
+            <ContextMenu
+              actions={[
+                {
+                  title: 'Borrow',
+                  disabled: item.isBorrowed,
+                },
+                {
+                  title: 'Details',
+                },
+              ]}
+              onPress={(e) => {
+                if (e.nativeEvent.index === 0) {
+                  router.navigate({
+                    pathname: '/(modals)/borrow-form',
+                    params: {
+                      category,
+                      itemName: item.name,
+                      imgUrl: item.imgUrl,
+                    },
+                  })
+                }
+                if (e.nativeEvent.index === 1) {
+                  handleDetailsPress(item)
+                }
               }}
             >
-              <View className="flex-row items-center justify-between bg-card px-3 py-3">
-                <View>
-                  <Text className="font-semibold">{item.name}</Text>
-                  {item.isBorrowed ? (
-                    <View className="gap-1 opacity-80">
-                      <Small>Unavailable</Small>
-                      {item.returnDate && (
-                        <Small>Returning on {formatDate(new Date(item.returnDate))}</Small>
-                      )}
-                    </View>
-                  ) : (
-                    <Small>Available</Small>
-                  )}
+              <TouchableOpacity
+                activeOpacity={0.5}
+                delayLongPress={250}
+                onLongPress={() => {}}
+                onPress={() => {
+                  handleDetailsPress(item)
+                }}
+              >
+                <View className="flex-row items-center justify-between bg-card px-3 py-3">
+                  <View>
+                    <Text className="font-semibold">{item.name}</Text>
+                    {item.isBorrowed ? (
+                      <View className="gap-1 opacity-80">
+                        <Small>Unavailable</Small>
+                        {item.returnDate && (
+                          <Small>Returning on {formatDate(new Date(item.returnDate))}</Small>
+                        )}
+                      </View>
+                    ) : (
+                      <Small>Available</Small>
+                    )}
+                  </View>
+                  <ChevronRightIcon size={16} className="text-foreground" />
                 </View>
-                <ChevronRightIcon size={16} className="text-foreground" />
-              </View>
-            </TouchableOpacity>
+              </TouchableOpacity>
+            </ContextMenu>
           )}
         />
       ) : (

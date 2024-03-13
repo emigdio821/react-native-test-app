@@ -8,6 +8,7 @@ import {
   ClockIcon,
   Edit2Icon,
   FilterIcon,
+  FilterXIcon,
   FlashlightIcon,
   FlashlightOffIcon,
   GhostIcon,
@@ -89,6 +90,7 @@ interopIcon(SwitchCameraIcon)
 interopIcon(FlashlightIcon)
 interopIcon(FlashlightOffIcon)
 interopIcon(RotateCcwSquareIcon)
+interopIcon(FilterXIcon)
 
 export {
   Avocado,
@@ -109,4 +111,5 @@ export {
   FlashlightIcon,
   FlashlightOffIcon,
   RotateCcwSquareIcon,
+  FilterXIcon,
 }
